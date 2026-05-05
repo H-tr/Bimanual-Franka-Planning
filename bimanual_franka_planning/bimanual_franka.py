@@ -86,15 +86,15 @@ _FR3_ACCEL = np.full(7, 6.0)
 MAX_VELOCITY = np.concatenate(
     [
         np.array([0.5, 0.5, 1.0]),  # relative_base x, y, yaw
-        _FR3_VELOCITY,              # right arm
-        _FR3_VELOCITY,              # left arm
+        _FR3_VELOCITY,  # right arm
+        _FR3_VELOCITY,  # left arm
     ]
 )
 MAX_ACCELERATION = np.concatenate(
     [
         np.array([1.0, 1.0, 2.0]),  # relative_base
-        _FR3_ACCEL,                 # right arm
-        _FR3_ACCEL,                 # left arm
+        _FR3_ACCEL,  # right arm
+        _FR3_ACCEL,  # left arm
     ]
 )
 
@@ -162,7 +162,7 @@ _RELATIVE_BASE_HOME = np.array([0.0, -0.8, 0.0])
 HOME_JOINTS = np.concatenate(
     [
         _RELATIVE_BASE_HOME,  # relative_base x, y, yaw
-        _READY,               # right arm joints 1-7
-        _READY,               # left arm joints 1-7
+        _READY,  # right arm joints 1-7
+        _READY,  # left arm joints 1-7
     ]
 )

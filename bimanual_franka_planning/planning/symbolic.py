@@ -113,9 +113,7 @@ class SymbolicContext:
             self._backend = "pinocchio"
             # Numeric + symbolic pinocchio models — fixed root, every
             # joint encodes as 1 dim of q (no planar wrapper).
-            self.pin_model = pin.buildModelFromUrdf(
-                bimanual_fr3_robot_config.urdf_path
-            )
+            self.pin_model = pin.buildModelFromUrdf(bimanual_fr3_robot_config.urdf_path)
             self.pin_data = self.pin_model.createData()
             self.cmodel = cpin.Model(self.pin_model)
             self.cdata = self.cmodel.createData()

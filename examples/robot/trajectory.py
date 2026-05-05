@@ -24,7 +24,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from robot.bimanual_fr3_planner import BimanualFr3Planner  # noqa: E402
 from robot.visualize import _DEFAULT_GOALS  # noqa: E402
 
-from bimanual_franka_planning.bimanual_franka import bimanual_fr3_robot_config  # noqa: E402
+from bimanual_franka_planning.bimanual_franka import (  # noqa: E402
+    bimanual_fr3_robot_config,
+)
 
 # ---------------------------------------------------------------------------
 # Visualisation

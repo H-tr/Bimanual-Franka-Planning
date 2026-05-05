@@ -60,41 +60,37 @@ _FR3_READY = np.array([0.0, -0.785398, 0.0, -2.356194, 0.0, 1.570796, 0.785398])
 
 # Stage 1 — left arm pre-grasp + grasp poses (extended toward +x).
 LEFT_PREGRASP = np.concatenate(
-    [_BASE,
-     _FR3_READY,
-     np.array([0.6, -0.4, 0.0, -1.9, 0.0, 1.5, 0.785])]
+    [_BASE, _FR3_READY, np.array([0.6, -0.4, 0.0, -1.9, 0.0, 1.5, 0.785])]
 )
 LEFT_GRASP = np.concatenate(
-    [_BASE,
-     _FR3_READY,
-     np.array([0.6, -0.2, 0.0, -1.7, 0.0, 1.4, 0.785])]
+    [_BASE, _FR3_READY, np.array([0.6, -0.2, 0.0, -1.7, 0.0, 1.4, 0.785])]
 )
 LEFT_LIFT = np.concatenate(
-    [_BASE,
-     _FR3_READY,
-     np.array([0.4, -0.6, 0.0, -2.1, 0.0, 1.5, 0.785])]
+    [_BASE, _FR3_READY, np.array([0.4, -0.6, 0.0, -2.1, 0.0, 1.5, 0.785])]
 )
 
 # Stage 4 — dual arm handover ready.  Grippers point toward each
 # other across the cell midline.
 HANDOVER_READY = np.concatenate(
-    [_BASE,
-     # right arm: face +y (toward the left arm), pose mirrored
-     np.array([-0.4, -0.6, 0.0, -2.1, 0.0, 1.5, -0.785]),
-     # left arm: face -y (toward the right arm)
-     np.array([0.4, -0.6, 0.0, -2.1, 0.0, 1.5, 0.785])]
+    [
+        _BASE,
+        # right arm: face +y (toward the left arm), pose mirrored
+        np.array([-0.4, -0.6, 0.0, -2.1, 0.0, 1.5, -0.785]),
+        # left arm: face -y (toward the right arm)
+        np.array([0.4, -0.6, 0.0, -2.1, 0.0, 1.5, 0.785]),
+    ]
 )
 HANDOVER_DELIVERED = np.concatenate(
-    [_BASE,
-     np.array([-0.6, -0.5, 0.0, -2.0, 0.0, 1.5, -0.785]),
-     np.array([0.6, -0.5, 0.0, -2.0, 0.0, 1.5, 0.785])]
+    [
+        _BASE,
+        np.array([-0.6, -0.5, 0.0, -2.0, 0.0, 1.5, -0.785]),
+        np.array([0.6, -0.5, 0.0, -2.0, 0.0, 1.5, 0.785]),
+    ]
 )
 
 # Stage 6 — right arm place (extends to release the object).
 RIGHT_PLACE = np.concatenate(
-    [_BASE,
-     np.array([-0.6, -0.2, 0.0, -1.7, 0.0, 1.4, -0.785]),
-     _FR3_READY]
+    [_BASE, np.array([-0.6, -0.2, 0.0, -1.7, 0.0, 1.4, -0.785]), _FR3_READY]
 )
 
 
@@ -238,22 +234,25 @@ def main(visualize: bool = True) -> None:
 
     # Stage 1: left arm reaches pre-grasp.
     print("\n── stage 1: left arm → pregrasp ──")
-    path = plan_arm(planner, "bimanual_fr3_left_arm", current, LEFT_PREGRASP,
-                    "s1 left→pregrasp")
+    path = plan_arm(
+        planner, "bimanual_fr3_left_arm", current, LEFT_PREGRASP, "s1 left→pregrasp"
+    )
     segs.append(Segment(path, "stage 1: left arm to pre-grasp"))
     current = path[-1]
 
     # Stage 2: left arm descends to grasp (line-like, plain rrtc here).
     print("\n── stage 2: left arm → grasp ──")
-    path = plan_arm(planner, "bimanual_fr3_left_arm", current, LEFT_GRASP,
-                    "s2 left→grasp")
+    path = plan_arm(
+        planner, "bimanual_fr3_left_arm", current, LEFT_GRASP, "s2 left→grasp"
+    )
     segs.append(Segment(path, "stage 2: grasp object"))
     current = path[-1]
 
     # Stage 3: left arm lifts to handover-ready.
     print("\n── stage 3: left arm → lift ──")
-    path = plan_arm(planner, "bimanual_fr3_left_arm", current, LEFT_LIFT,
-                    "s3 left→lift")
+    path = plan_arm(
+        planner, "bimanual_fr3_left_arm", current, LEFT_LIFT, "s3 left→lift"
+    )
     segs.append(Segment(path, "stage 3: lift toward handover"))
     current = path[-1]
 
@@ -261,30 +260,32 @@ def main(visualize: bool = True) -> None:
     # arms move (left from LEFT_LIFT to HANDOVER_READY, right from HOME
     # to HANDOVER_READY), use the dual-arm subgroup but free (no coupling).
     print("\n── stage 4a: dual arm → rendezvous (free) ──")
-    path = plan_arm(planner, "bimanual_fr3_dual_arm", current, HANDOVER_READY,
-                    "s4a rendezvous")
+    path = plan_arm(
+        planner, "bimanual_fr3_dual_arm", current, HANDOVER_READY, "s4a rendezvous"
+    )
     segs.append(Segment(path, "stage 4a: rendezvous at handover"))
     current = path[-1]
 
     # Stage 4b: synchronised carry — both arms hold the object so the
     # gripper-to-gripper offset stays constant (Cartesian coupling).
     print("\n── stage 4b: dual arm → synchronised carry (Cartesian coupling) ──")
-    path = plan_handover(planner, current, HANDOVER_DELIVERED,
-                         "s4b coupled carry")
+    path = plan_handover(planner, current, HANDOVER_DELIVERED, "s4b coupled carry")
     segs.append(Segment(path, "stage 4b: coupled carry"))
     current = path[-1]
 
     # Stage 5: right arm releases the object at the place location.
     print("\n── stage 5: right arm → place ──")
-    path = plan_arm(planner, "bimanual_fr3_right_arm", current, RIGHT_PLACE,
-                    "s5 right→place")
+    path = plan_arm(
+        planner, "bimanual_fr3_right_arm", current, RIGHT_PLACE, "s5 right→place"
+    )
     segs.append(Segment(path, "stage 5: right arm places object"))
     current = path[-1]
 
     # Stage 6: retract both arms to home.
     print("\n── stage 6: dual arm → home ──")
-    path = plan_arm(planner, "bimanual_fr3_dual_arm", current, HOME_JOINTS,
-                    "s6 retract")
+    path = plan_arm(
+        planner, "bimanual_fr3_dual_arm", current, HOME_JOINTS, "s6 retract"
+    )
     segs.append(Segment(path, "stage 6: retract to home"))
 
     total = sum(s.path.shape[0] for s in segs)

@@ -61,7 +61,9 @@ OUT_URDF = ASSETS_OUT / "urdf" / "bimanual_fr3.urdf"
 OUT_SRDF = ASSETS_OUT / "urdf" / "bimanual_fr3.srdf"
 
 # Resource copies (consumed by the planning Python package + cricket FK gen).
-RESOURCES_OUT = ROOT / "bimanual_franka_planning" / "resources" / "robot" / "bimanual_fr3"
+RESOURCES_OUT = (
+    ROOT / "bimanual_franka_planning" / "resources" / "robot" / "bimanual_fr3"
+)
 OUT_URDF_RESOURCES = RESOURCES_OUT / "bimanual_fr3.urdf"
 OUT_URDF_SPHERIZED = RESOURCES_OUT / "bimanual_fr3_spherized.urdf"
 OUT_URDF_VIZ = RESOURCES_OUT / "bimanual_fr3_viz.urdf"
@@ -91,12 +93,14 @@ def _retarget_name(value: str, prefix: str, known: set[str]) -> str:
     if value not in known:
         return value
     if value.startswith(SOURCE_PREFIX):
-        return prefix + value[len(SOURCE_PREFIX):]
+        return prefix + value[len(SOURCE_PREFIX) :]
     return prefix + value
 
 
 def _collect_link_joint_names(arm_root: ET.Element) -> tuple[set[str], set[str]]:
-    links = {el.attrib["name"] for el in arm_root.findall("link") if "name" in el.attrib}
+    links = {
+        el.attrib["name"] for el in arm_root.findall("link") if "name" in el.attrib
+    }
     joints = {
         el.attrib["name"] for el in arm_root.findall("joint") if "name" in el.attrib
     }
@@ -195,7 +199,9 @@ def _arm_copy(prefix: str, src_urdf: Path = SRC_URDF) -> ET.Element:
     return arm_root
 
 
-def _origin(xyz: tuple[float, float, float], rpy: tuple[float, float, float]) -> ET.Element:
+def _origin(
+    xyz: tuple[float, float, float], rpy: tuple[float, float, float]
+) -> ET.Element:
     el = ET.Element("origin")
     el.set("xyz", " ".join(str(v) for v in xyz))
     el.set("rpy", " ".join(str(v) for v in rpy))
@@ -304,7 +310,7 @@ def _build_srdf() -> str:
         '  <group name="bimanual_fr3">\n'
         '    <group name="fr3_left_arm"/>\n'
         '    <group name="fr3_right_arm"/>\n'
-        '  </group>\n'
+        "  </group>\n"
         '  <virtual_joint child_link="world" name="virtual_joint" parent_frame="world" type="fixed"/>\n'
         + left
         + "\n"
@@ -338,9 +344,7 @@ def _build_combined(
 
     # ── World (= LEFT arm's base) ─────────────────────────────────────
     bimanual.append(_empty_link("world"))
-    bimanual.append(
-        _fixed_joint("world_to_fr3_left_base", "world", "fr3_left_link0")
-    )
+    bimanual.append(_fixed_joint("world_to_fr3_left_base", "world", "fr3_left_link0"))
 
     # ── Relative base chain: world → ... → fr3_right_link0 ────────────
     # Three serial 1-DOF joints (x prismatic → y prismatic → yaw revolute).
@@ -349,26 +353,38 @@ def _build_combined(
     bimanual.append(_empty_link("relative_base_x_link"))
     bimanual.append(
         _planar_joint(
-            "relative_base_x", "world", "relative_base_x_link",
-            axis=(1, 0, 0), joint_type="prismatic",
-            lower=-RELATIVE_BASE_XY_LIMIT, upper=RELATIVE_BASE_XY_LIMIT,
+            "relative_base_x",
+            "world",
+            "relative_base_x_link",
+            axis=(1, 0, 0),
+            joint_type="prismatic",
+            lower=-RELATIVE_BASE_XY_LIMIT,
+            upper=RELATIVE_BASE_XY_LIMIT,
             velocity=0.5,
         )
     )
     bimanual.append(_empty_link("relative_base_y_link"))
     bimanual.append(
         _planar_joint(
-            "relative_base_y", "relative_base_x_link", "relative_base_y_link",
-            axis=(0, 1, 0), joint_type="prismatic",
-            lower=-RELATIVE_BASE_XY_LIMIT, upper=RELATIVE_BASE_XY_LIMIT,
+            "relative_base_y",
+            "relative_base_x_link",
+            "relative_base_y_link",
+            axis=(0, 1, 0),
+            joint_type="prismatic",
+            lower=-RELATIVE_BASE_XY_LIMIT,
+            upper=RELATIVE_BASE_XY_LIMIT,
             velocity=0.5,
         )
     )
     bimanual.append(
         _planar_joint(
-            "relative_base_yaw", "relative_base_y_link", "fr3_right_link0",
-            axis=(0, 0, 1), joint_type="revolute",
-            lower=-RELATIVE_BASE_YAW_LIMIT, upper=RELATIVE_BASE_YAW_LIMIT,
+            "relative_base_yaw",
+            "relative_base_y_link",
+            "fr3_right_link0",
+            axis=(0, 0, 1),
+            joint_type="revolute",
+            lower=-RELATIVE_BASE_YAW_LIMIT,
+            upper=RELATIVE_BASE_YAW_LIMIT,
             velocity=1.0,
         )
     )
@@ -377,8 +393,11 @@ def _build_combined(
     bimanual.append(_empty_link("world_camera"))
     bimanual.append(
         _fixed_joint(
-            "world_to_camera", "world", "world_camera",
-            CAMERA_XYZ, CAMERA_RPY,
+            "world_to_camera",
+            "world",
+            "world_camera",
+            CAMERA_XYZ,
+            CAMERA_RPY,
         )
     )
 
@@ -438,7 +457,9 @@ def _check_dof(root: ET.Element, expected: int) -> None:
     n_revolute = len(re.findall(r'<joint[^>]*type="revolute"', xml))
     n_prismatic = len(re.findall(r'<joint[^>]*type="prismatic"', xml))
     total = n_revolute + n_prismatic
-    print(f"  active joints: {n_revolute} revolute + {n_prismatic} prismatic = {total} (expected {expected})")
+    print(
+        f"  active joints: {n_revolute} revolute + {n_prismatic} prismatic = {total} (expected {expected})"
+    )
     assert total == expected, f"expected {expected} active DOF, got {total}"
 
 
@@ -473,6 +494,7 @@ def main() -> None:
     # package resources folder so a pip install ships everything the
     # planner and PyBullet need without depending on the assets/ tree.
     import shutil
+
     meshes_dst = RESOURCES_OUT / "meshes"
     viz_dst = RESOURCES_OUT / "viz_meshes"
 

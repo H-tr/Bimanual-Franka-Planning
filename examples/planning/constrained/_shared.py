@@ -16,7 +16,10 @@ from __future__ import annotations
 
 import numpy as np
 
-from bimanual_franka_planning.bimanual_franka import HOME_JOINTS, bimanual_fr3_robot_config
+from bimanual_franka_planning.bimanual_franka import (
+    HOME_JOINTS,
+    bimanual_fr3_robot_config,
+)
 from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv
 from bimanual_franka_planning.planning import SymbolicContext
 

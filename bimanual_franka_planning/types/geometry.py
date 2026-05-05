@@ -4,7 +4,10 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from bimanual_franka_planning.utils.rot_utils import matrix_to_quaternion, quaternion_to_matrix
+from bimanual_franka_planning.utils.rot_utils import (
+    matrix_to_quaternion,
+    quaternion_to_matrix,
+)
 
 
 @dataclass

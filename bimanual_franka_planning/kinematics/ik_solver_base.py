@@ -132,7 +132,9 @@ def create_ik_solver(
         return TracIKSolver(chain_config, ik_config)
 
     if backend == "pink":
-        from bimanual_franka_planning.kinematics.collision_model import build_collision_model
+        from bimanual_franka_planning.kinematics.collision_model import (
+            build_collision_model,
+        )
         from bimanual_franka_planning.kinematics.pink_ik_solver import PinkIKSolver
 
         pink_config = config if isinstance(config, PinkIKConfig) else None

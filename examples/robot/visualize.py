@@ -1,23 +1,12 @@
 """Interactive path visualizer for bimanual_fr3_planner.plan_to_joints.
 
-Plans a path for every group listed in *groups* (default: all supported
-groups) and lets you step through them one by one in a PyBullet GUI.
+Cycles through every supported subgroup, plans from HOME to a
+hand-crafted goal, and animates the result in PyBullet.
 
-Usage::
-
-    pixi run python robot/visualize.py
-    pixi run python robot/visualize.py --group bimanual_fr3_left_arm
-    pixi run python robot/visualize.py --planner rrtc --time_limit 1.0
-    pixi run python robot/visualize.py --fps 30
-
-Controls inside the viewer:
-    SPACE       toggle auto-play / pause
-    ← / →       step one waypoint back / forward (while paused)
-    n           advance to the next group
-    close       quit
+Usage:
+    pixi run -e dev python examples/robot/visualize.py
+    pixi run -e dev python examples/robot/visualize.py --group bimanual_fr3_left_arm
 """
-
-from __future__ import annotations
 
 import sys
 import time
@@ -28,7 +17,10 @@ from fire import Fire
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from robot.bimanual_fr3_planner import SUPPORTED_GROUPS, BimanualFr3Planner  # noqa: E402
+from robot.bimanual_fr3_planner import (  # noqa: E402
+    SUPPORTED_GROUPS,
+    BimanualFr3Planner,
+)
 
 from bimanual_franka_planning.bimanual_franka import (  # noqa: E402
     HOME_JOINTS,
@@ -40,66 +32,35 @@ from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv  # noqa: E402
 # ---------------------------------------------------------------------------
 # Default goals — one hand-crafted 17-DOF target per supported group.
 #
-# Layout: [base(3), legs(2), waist(2), left_arm(7), neck(3), right_arm(7)]
+# Layout: [relative_base(3), right_arm(7), left_arm(7)]
 #
-# Only the joints owned by the group differ from HOME; every frozen joint
-# keeps its HOME value so plan_to_joints never returns "not same".
+# Only the joints owned by the group differ from HOME; every frozen
+# joint keeps its HOME value so plan_to_joints never returns "not same".
 # ---------------------------------------------------------------------------
 
-# Start segments (frozen joints always stay here).
-_BASE = HOME_JOINTS[0:3].tolist()  # [0, 0, 0]
-_LEGS = [-0.2, 0.3]  # slight squat (HOME is [0, 0])
-_WAIST = [0.2, 0.0]  # slight pitch (HOME is [0.00, -0.14])
-_L_ARM = HOME_JOINTS[7:14].tolist()  # [0.70, -0.14, -0.09,  2.31,  0.04, -0.40, 0.0]
-_NECK = HOME_JOINTS[14:17].tolist()  # [0, 0, 0]
-_R_ARM = HOME_JOINTS[17:24].tolist()  # [-0.70, 0.14, -0.09, -2.31, -0.04, -0.40, 0.0]
-
-# Goal segments (active joints moved to natural poses).
-_GOAL_L_ARM = [0.6, -0.50, 0.30, 1.80, -0.20, -0.60, 0.50]  # left arm reach
-_GOAL_R_ARM = [
-    -0.6,
-    0.50,
-    0.30,
-    -1.80,
-    0.20,
-    -0.60,
-    -0.50,
-]  # right arm reach (symmetric)
-_GOAL_WAIST = [0.6, 0.5]  # slight pitch + yaw
-_GOAL_LEGS = [0.78, 1.40]  # mid-squat (ankle, knee)
+# Goal segments (active joints moved to natural reach poses).
+_GOAL_LEFT_ARM = np.array([0.6, -0.50, 0.30, -1.80, -0.20, 1.40, 0.50])
+_GOAL_RIGHT_ARM = np.array([-0.6, -0.50, 0.30, -1.80, 0.20, 1.40, -0.50])
 
 
-def _cfg(*segments: list) -> np.ndarray:
-    return np.array([v for seg in segments for v in seg])
+def _goal_for(group: str) -> np.ndarray:
+    goal = HOME_JOINTS.copy()
+    if group == "bimanual_fr3_left_arm":
+        goal[10:17] = _GOAL_LEFT_ARM
+    elif group == "bimanual_fr3_right_arm":
+        goal[3:10] = _GOAL_RIGHT_ARM
+    elif group == "bimanual_fr3_dual_arm":
+        goal[3:10] = _GOAL_RIGHT_ARM
+        goal[10:17] = _GOAL_LEFT_ARM
+    else:
+        raise ValueError(f"Unknown group: {group!r}")
+    return goal
 
 
-# Each value is a full 17-DOF goal config; only the group's active DOFs differ.
-_DEFAULT_GOALS: dict[str, np.ndarray] = {
-    "bimanual_fr3_left_arm": _cfg(_BASE, _LEGS, _WAIST, _GOAL_L_ARM, _NECK, _R_ARM),
-    "bimanual_fr3_right_arm": _cfg(_BASE, _LEGS, _WAIST, _L_ARM, _NECK, _GOAL_R_ARM),
-    "bimanual_fr3_dual_arm": _cfg(_BASE, _LEGS, _WAIST, _GOAL_L_ARM, _NECK, _GOAL_R_ARM),
-    "bimanual_fr3_base_left_arm": _cfg(
-        _BASE, _LEGS, _GOAL_WAIST, _GOAL_L_ARM, _NECK, _R_ARM
-    ),
-    "bimanual_fr3_base_right_arm": _cfg(
-        _BASE, _LEGS, _GOAL_WAIST, _L_ARM, _NECK, _GOAL_R_ARM
-    ),
-    "bimanual_fr3_dual_arm": _cfg(
-        _BASE, _LEGS, _GOAL_WAIST, _GOAL_L_ARM, _NECK, _GOAL_R_ARM
-    ),
-    "bimanual_fr3_dual_arm": _cfg(
-        _BASE, _GOAL_LEGS, _GOAL_WAIST, _GOAL_L_ARM, _NECK, _GOAL_R_ARM
-    ),
-}
-
-# Ordered for a natural demo progression (fast single-arm → whole-body).
+# Ordered for a natural demo progression: each arm individually, then both.
 _DEFAULT_GROUP_ORDER = [
     "bimanual_fr3_left_arm",
     "bimanual_fr3_right_arm",
-    "bimanual_fr3_dual_arm",
-    "bimanual_fr3_base_left_arm",
-    "bimanual_fr3_base_right_arm",
-    "bimanual_fr3_dual_arm",
     "bimanual_fr3_dual_arm",
 ]
 
@@ -161,11 +122,11 @@ def main(
     )
 
     ap = BimanualFr3Planner(planner_name=planner, time_limit=time_limit)
-    start = _BASE + _LEGS + _WAIST + _L_ARM + _NECK + _R_ARM
+    start = HOME_JOINTS.copy()
     env.set_configuration(start)
 
     for g in groups:
-        goal = _DEFAULT_GOALS[g]
+        goal = _goal_for(g)
 
         t0 = time.perf_counter()
         result = ap.plan_to_joints(g, start, goal)

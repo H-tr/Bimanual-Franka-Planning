@@ -66,7 +66,8 @@ inline auto extract_real_state(const ob::State *state)
 
 class BimanualFr3ValidityChecker : public ob::StateValidityChecker {
  public:
-  BimanualFr3ValidityChecker(const ob::SpaceInformationPtr &si, const VampEnv &env)
+  BimanualFr3ValidityChecker(const ob::SpaceInformationPtr &si,
+                             const VampEnv &env)
       : ob::StateValidityChecker(si), env_(env) {}
 
   auto isValid(const ob::State *state) const -> bool override {
@@ -97,7 +98,8 @@ class BimanualFr3ValidityChecker : public ob::StateValidityChecker {
 
 class BimanualFr3MotionValidator : public ob::MotionValidator {
  public:
-  BimanualFr3MotionValidator(const ob::SpaceInformationPtr &si, const VampEnv &env)
+  BimanualFr3MotionValidator(const ob::SpaceInformationPtr &si,
+                             const VampEnv &env)
       : ob::MotionValidator(si), env_(env) {}
 
   auto checkMotion(const ob::State *s1, const ob::State *s2) const

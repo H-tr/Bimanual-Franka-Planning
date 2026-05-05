@@ -29,7 +29,12 @@ import pytest
 
 def test_top_level_package_imports():
     import bimanual_franka_planning  # noqa: F401
-    from bimanual_franka_planning import bimanual_franka, planning, trajectory, types  # noqa: F401
+    from bimanual_franka_planning import (  # noqa: F401
+        bimanual_franka,
+        planning,
+        trajectory,
+        types,
+    )
 
 
 def test_bimanual_fr3_robot_config_populated():

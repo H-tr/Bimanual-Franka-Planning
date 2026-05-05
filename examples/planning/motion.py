@@ -18,7 +18,10 @@ import trimesh
 from fire import Fire
 
 import bimanual_franka_planning
-from bimanual_franka_planning.bimanual_franka import HOME_JOINTS, bimanual_fr3_robot_config
+from bimanual_franka_planning.bimanual_franka import (
+    HOME_JOINTS,
+    bimanual_fr3_robot_config,
+)
 from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv
 from bimanual_franka_planning.planning import create_planner
 from bimanual_franka_planning.types import PlannerConfig

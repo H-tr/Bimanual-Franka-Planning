@@ -105,7 +105,8 @@ class OmplVampPlanner {
     // can read a SIMD-aligned full block; reading past dimension on a
     // size-dimension array is UB and produces NaNs in the padding.
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded> zeros{}, ones{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            zeros{}, ones{};
     std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
     lo = Robot::Configuration(zeros.data());
     hi = Robot::Configuration(ones.data());
@@ -140,7 +141,8 @@ class OmplVampPlanner {
     // can read a SIMD-aligned full block; reading past dimension on a
     // size-dimension array is UB and produces NaNs in the padding.
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded> zeros{}, ones{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            zeros{}, ones{};
     std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
     lo = Robot::Configuration(zeros.data());
     hi = Robot::Configuration(ones.data());
@@ -687,7 +689,8 @@ class OmplVampPlanner {
     // can read a SIMD-aligned full block; reading past dimension on a
     // size-dimension array is UB and produces NaNs in the padding.
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded> zeros{}, ones{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            zeros{}, ones{};
     std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
     lo = Robot::Configuration(zeros.data());
     hi = Robot::Configuration(ones.data());
