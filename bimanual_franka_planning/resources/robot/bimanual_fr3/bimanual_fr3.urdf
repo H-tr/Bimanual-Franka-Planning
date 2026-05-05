@@ -2,18 +2,36 @@
 <robot name="bimanual_fr3">
   <link name="world" />
   <joint name="world_to_fr3_left_base" type="fixed">
-    <origin xyz="0.0 0.4 0.0" rpy="0.0 0.0 0.0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="world" />
     <child link="fr3_left_link0" />
   </joint>
-  <joint name="world_to_fr3_right_base" type="fixed">
-    <origin xyz="0.0 -0.4 0.0" rpy="0.0 0.0 0.0" />
+  <link name="relative_base_x_link" />
+  <joint name="relative_base_x" type="prismatic">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
     <parent link="world" />
+    <child link="relative_base_x_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.5" upper="1.5" effort="100.0" velocity="0.5" />
+  </joint>
+  <link name="relative_base_y_link" />
+  <joint name="relative_base_y" type="prismatic">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="relative_base_x_link" />
+    <child link="relative_base_y_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5" upper="1.5" effort="100.0" velocity="0.5" />
+  </joint>
+  <joint name="relative_base_yaw" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="relative_base_y_link" />
     <child link="fr3_right_link0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159265" upper="3.14159265" effort="100.0" velocity="1.0" />
   </joint>
   <link name="world_camera" />
   <joint name="world_to_camera" type="fixed">
-    <origin xyz="0.5 0.0 0.6" rpy="0.0 0.3 0.0" />
+    <origin xyz="0.5 -0.4 0.6" rpy="0.0 0.3 0.0" />
     <parent link="world" />
     <child link="world_camera" />
   </joint>

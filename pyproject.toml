@@ -1,0 +1,115 @@
+[build-system]
+requires = [
+    "scikit-build-core>=0.10",
+    "nanobind>=1.9.2,<2; python_version < '3.9'",
+    "nanobind>=2.0.0; python_version >= '3.9'",
+    "pybind11>=2.10",
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "bimanual_franka_planning"
+version = "0.1.0"
+description = "Planning library for a bimanual Franka FR3 cell."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "scipy",
+    # Pure-Python symbolic-FK backend used by SymbolicContext.  Always
+    # installed so pip-only users have a working fallback when
+    # ``pinocchio.casadi`` (the preferred backend) is not present —
+    # ``pinocchio.casadi`` is not available on PyPI for any Python
+    # version, so pip-only installs always end up here.  Conda/pixi
+    # users have ``pinocchio.casadi`` and SymbolicContext picks it
+    # automatically (see bimanual_franka_planning/planning/symbolic.py).
+    # Pinned ``<1.2`` because urdf2casadi 1.2.0 hard-pins
+    # ``casadi==3.5.5`` and ``numpy<2.0.0``; 1.0.x is unpinned.
+    "urdf2casadi>=1.0,<1.2",
+    # Numeric pinocchio (Stack-Of-Tasks).  Used by every module under
+    # bimanual_franka_planning.kinematics.  cp38 is excluded because
+    # pin's source-build dep ``cmeel-boost~=1.89`` has no cp38 wheel.
+    "pin; python_version >= '3.9'",
+    # Caron's Pink IK library.  Only needed by the optional Pink IK
+    # solver in bimanual_franka_planning.kinematics.pink_ik_solver;
+    # PyPI requires Python >=3.10.
+    "pin-pink; python_version >= '3.10'",
+]
+
+[project.urls]
+Homepage = "https://github.com/H-tr/Bimanual-Franka-Planning"
+Repository = "https://github.com/H-tr/Bimanual-Franka-Planning"
+Issues = "https://github.com/H-tr/Bimanual-Franka-Planning/issues"
+
+[tool.scikit-build]
+minimum-version = "0.10"
+build-dir = "build/{wheel_tag}"
+wheel.packages = ["bimanual_franka_planning"]
+cmake.build-type = "Release"
+
+# Keep sdist lean enough for PyPI's 100 MB limit.
+sdist.exclude = [
+    # Repo-level non-build content
+    "assets/",
+    "docs/",
+    "site/",
+    "examples/",
+    "tests/",
+    "scripts/",
+    "tools/",
+    "build/",
+    "dist/",
+    ".pixi/",
+    ".pytest_cache/",
+    ".claude/",
+    ".vscode/",
+    ".coverage",
+    "pixi.lock",
+    "pixi.toml",
+
+    # Unused third-party trees (only consumed by build_robot scripts)
+    "third_party/cricket/",
+    "third_party/foam/",
+
+    # OMPL: ship only what the build links against
+    "third_party/ompl/doc/",
+    "third_party/ompl/tests/",
+    "third_party/ompl/demos/",
+    "third_party/ompl/py-bindings/",
+    "third_party/ompl/scripts/",
+
+    # VAMP: header-only, CMake needs cmake/ + src/impl/ only
+    "third_party/vamp/resources/",
+    "third_party/vamp/build/",
+    "third_party/vamp/docker/",
+    "third_party/vamp/scripts/",
+]
+
+[project.optional-dependencies]
+dev = ["pre-commit", "pybullet", "pytest>=8.0", "trimesh>=4.0"]
+examples = [
+    "casadi",
+    "fire",
+    "matplotlib",
+    "pybullet",
+]
+
+# ── cibuildwheel ─────────────────────────────────────────────────────
+[tool.cibuildwheel]
+build = "cp38-* cp39-* cp310-* cp311-* cp312-* cp313-*"
+skip = "*-musllinux_* *-win32 *-manylinux_i686 pp*"
+build-verbosity = 1
+archs = ["x86_64"]
+
+[tool.cibuildwheel.linux]
+manylinux-x86_64-image = "manylinux_2_34"
+before-all = "dnf install -y boost-devel eigen3-devel patch"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning:osqp",
+    "ignore::Warning:qpsolvers",
+]
