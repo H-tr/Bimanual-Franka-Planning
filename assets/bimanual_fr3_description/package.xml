@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>bimanual_fr3_description</name>
+  <version>0.1.0</version>
+  <description>URDF and meshes for the bimanual Franka FR3 cell.</description>
+  <maintainer email="tianrunhu@gmail.com">Hu Tianrun</maintainer>
+  <license>BSD-3-Clause</license>
+</package>
