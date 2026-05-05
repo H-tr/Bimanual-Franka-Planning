@@ -38,7 +38,7 @@ from bimanual_franka_planning.bimanual_franka import (  # noqa: E402
 from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv  # noqa: E402
 
 # ---------------------------------------------------------------------------
-# Default goals — one hand-crafted 24-DOF target per supported group.
+# Default goals — one hand-crafted 17-DOF target per supported group.
 #
 # Layout: [base(3), legs(2), waist(2), left_arm(7), neck(3), right_arm(7)]
 #
@@ -73,7 +73,7 @@ def _cfg(*segments: list) -> np.ndarray:
     return np.array([v for seg in segments for v in seg])
 
 
-# Each value is a full 24-DOF goal config; only the group's active DOFs differ.
+# Each value is a full 17-DOF goal config; only the group's active DOFs differ.
 _DEFAULT_GOALS: dict[str, np.ndarray] = {
     "bimanual_fr3_left_arm": _cfg(_BASE, _LEGS, _WAIST, _GOAL_L_ARM, _NECK, _R_ARM),
     "bimanual_fr3_right_arm": _cfg(_BASE, _LEGS, _WAIST, _L_ARM, _NECK, _GOAL_R_ARM),

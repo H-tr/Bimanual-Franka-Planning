@@ -59,7 +59,16 @@ def build_collision_model(
         if os.path.exists(candidate):
             srdf_path = candidate
 
-    model, collision_model, _ = pin.buildModelsFromUrdf(urdf_path, mesh_dir)
+    # Build kinematic model + collision-only geometry.  Loading the
+    # full ``buildModelsFromUrdf`` triple also tries to resolve every
+    # ``<visual>`` mesh, which trips on the bimanual FR3 URDF where
+    # collision geometries are .stl in meshes/ but visual geometries
+    # are .dae in viz_meshes/.  We skip the visual geometry here — the
+    # collision model is the only thing the QP barrier needs.
+    model = pin.buildModelFromUrdf(urdf_path)
+    collision_model = pin.buildGeomFromUrdf(
+        model, urdf_path, pin.GeometryType.COLLISION, package_dirs=[mesh_dir]
+    )
 
     collision_model.addAllCollisionPairs()
     if srdf_path is not None:

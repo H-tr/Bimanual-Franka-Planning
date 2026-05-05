@@ -1,0 +1,204 @@
+"""End-to-end checks for the OMPL+VAMP planner without obstacles.
+
+Mirrors the spirit of ``examples/subgroup_planning_example.py`` and
+``examples/motion_planning_example.py`` (without the table) — small,
+fast, and only exercises the bits the demos demonstrate.
+"""
+
+from __future__ import annotations
+
+import numpy as np
+import pytest
+
+pytest.importorskip("bimanual_franka_planning._ompl_vamp")
+
+
+def test_available_robots_includes_known_subgroups():
+    from bimanual_franka_planning.planning import available_robots
+
+    names = available_robots()
+    assert "bimanual_fr3" in names
+    assert "bimanual_fr3_left_arm" in names
+    assert "bimanual_fr3_right_arm" in names
+    assert "bimanual_fr3_dual_arm" in names
+
+
+def test_planner_dimension_matches_subgroup(left_arm_planner):
+    # Left arm is the 7-DOF chain in PLANNING_SUBGROUPS.
+    assert left_arm_planner._ndof == 7
+    lo = np.asarray(left_arm_planner._planner.lower_bounds())
+    hi = np.asarray(left_arm_planner._planner.upper_bounds())
+    assert lo.shape == (7,) and hi.shape == (7,)
+    assert np.all(hi > lo)
+
+
+def test_extract_embed_round_trip(left_arm_planner, home_joints):
+    extracted = left_arm_planner.extract_config(home_joints)
+    embedded = left_arm_planner.embed_config(extracted)
+    np.testing.assert_allclose(embedded, home_joints)
+
+
+def test_home_is_collision_free(left_arm_planner, left_arm_start):
+    assert left_arm_planner.validate(left_arm_start)
+
+
+def test_sample_valid_returns_collision_free(left_arm_planner):
+    cfg = left_arm_planner.sample_valid()
+    assert cfg.shape == (7,)
+    assert left_arm_planner.validate(cfg)
+
+
+def test_trivial_plan_succeeds(left_arm_planner, left_arm_start):
+    """Planning from a state to itself must always succeed."""
+    result = left_arm_planner.plan(left_arm_start, left_arm_start)
+    assert result.success
+    assert result.path is not None and result.path.shape[1] == 7
+
+
+def test_plan_to_random_valid_goal(left_arm_planner, left_arm_start):
+    np.random.seed(0)
+    goal = left_arm_planner.sample_valid()
+    result = left_arm_planner.plan(left_arm_start, goal)
+    # rrtc with 2 s + a free workspace should solve almost surely; if
+    # the random sample lands in a tricky pocket we still want a clean
+    # status, not a crash.
+    assert result.status.value in {"success", "failed"}
+    if result.success:
+        assert result.path is not None
+        np.testing.assert_allclose(result.path[0], left_arm_start, atol=1e-6)
+        np.testing.assert_allclose(result.path[-1], goal, atol=1e-6)
+
+
+def test_plan_rejects_wrong_dimension(left_arm_planner, left_arm_start):
+    with pytest.raises(ValueError):
+        left_arm_planner.plan(left_arm_start, np.zeros(8))
+
+
+def test_simplify_and_interpolate_path(home_joints):
+    """Post-hoc simplify + interpolate round-trip on a real plan."""
+    from bimanual_franka_planning.planning import create_planner
+    from bimanual_franka_planning.types import PlannerConfig
+
+    # Plan without simplification/interpolation so the standalone
+    # helpers have room to actually do something.
+    raw_planner = create_planner(
+        "bimanual_fr3_left_arm",
+        config=PlannerConfig(
+            planner_name="rrtc",
+            time_limit=2.0,
+            simplify=False,
+            interpolate=False,
+        ),
+    )
+    start = raw_planner.extract_config(home_joints)
+    np.random.seed(0)
+    goal = raw_planner.sample_valid()
+    result = raw_planner.plan(start, goal)
+    if not result.success:
+        pytest.skip("rrtc didn't find a path for this random goal")
+
+    n_raw = result.path.shape[0]
+
+    # Simplify: endpoint-preserving, size can only shrink or stay.
+    simp = raw_planner.simplify_path(result.path, time_limit=1.0)
+    assert simp.shape[1] == 7
+    assert simp.shape[0] <= n_raw
+    np.testing.assert_allclose(simp[0], start, atol=1e-6)
+    np.testing.assert_allclose(simp[-1], goal, atol=1e-6)
+
+    # Interpolate by count — exact output size.
+    dense_count = raw_planner.interpolate_path(simp, count=50, resolution=0.0)
+    assert dense_count.shape == (50, 7)
+    np.testing.assert_allclose(dense_count[0], simp[0], atol=1e-6)
+    np.testing.assert_allclose(dense_count[-1], simp[-1], atol=1e-6)
+
+    # Interpolate by resolution — denser than the simplified path.
+    dense_res = raw_planner.interpolate_path(simp, count=0, resolution=64.0)
+    assert dense_res.shape[1] == 7
+    assert dense_res.shape[0] >= simp.shape[0]
+
+    # Mutual-exclusion guardrail.
+    with pytest.raises(ValueError):
+        raw_planner.interpolate_path(simp, count=10, resolution=64.0)
+
+
+def test_simplify_path_rejects_wrong_dimension(left_arm_planner):
+    with pytest.raises(ValueError):
+        left_arm_planner.simplify_path(np.zeros((4, 8)))
+
+
+def test_interpolate_path_rejects_wrong_dimension(left_arm_planner):
+    with pytest.raises(ValueError):
+        left_arm_planner.interpolate_path(np.zeros((4, 8)))
+
+
+def test_validate_batch_matches_single(left_arm_planner, left_arm_start):
+    """Batched SIMD check must agree with per-config calls on every sample."""
+    np.random.seed(0)
+    lo = np.asarray(left_arm_planner._planner.lower_bounds())
+    hi = np.asarray(left_arm_planner._planner.upper_bounds())
+    # Spans across and past kRake=8: tail blocks, pure blocks, mixed validity.
+    samples = np.random.uniform(lo, hi, size=(37, 7))
+    # Anchor one known-valid row so the common "all-valid block" path runs.
+    samples[0] = left_arm_start
+
+    expected = np.array([left_arm_planner.validate(s) for s in samples], dtype=bool)
+    got = left_arm_planner.validate_batch(samples)
+    assert got.shape == (37,) and got.dtype == bool
+    np.testing.assert_array_equal(got, expected)
+
+
+def test_validate_batch_empty(left_arm_planner):
+    out = left_arm_planner.validate_batch(np.zeros((0, 7)))
+    assert out.shape == (0,) and out.dtype == bool
+
+
+def test_validate_batch_rejects_wrong_dimension(left_arm_planner):
+    with pytest.raises(ValueError):
+        left_arm_planner.validate_batch(np.zeros((4, 8)))
+
+
+def test_validate_batch_full_body_roundtrip(home_joints):
+    """Full-body (17-DOF) batched check — no subgroup expansion path."""
+    from bimanual_franka_planning._ompl_vamp import OmplVampPlanner
+
+    planner = OmplVampPlanner()
+    home = home_joints.tolist()
+    out_of_bounds = [10.0] * 17
+
+    batch = [home, out_of_bounds, home, out_of_bounds] * 3  # 12 = 1 full + 1 tail
+    got = planner.validate_batch(batch)
+    expected = [planner.validate(c) for c in batch]
+    assert got == expected
+
+
+def test_dual_arm_home_collision_free(home_joints):
+    """The 14-DOF dual-arm home config must validate as collision-free.
+
+    Guards against SIMD-padding / FK-header regressions: when the
+    ``Robot::Configuration`` buffer was sized as ``num_scalars`` instead
+    of ``num_scalars_rounded``, this assertion failed because VAMP's
+    bound check read NaN garbage from the unzeroed padding.
+    """
+    from bimanual_franka_planning.planning import create_planner
+
+    planner = create_planner("bimanual_fr3_dual_arm", base_config=home_joints)
+    assert planner._ndof == 14
+    home_dual = planner.extract_config(home_joints)
+    assert planner.validate(
+        home_dual
+    ), "HOME 14-DOF dual-arm config should be collision-free"
+
+
+def test_dual_arm_relative_base_pinned(home_joints):
+    """Switching ``relative_base`` in base_config keeps the dual-arm subgroup
+    valid — the base is deployment-pinned, never planned over.
+    """
+    from bimanual_franka_planning.planning import create_planner
+
+    base = home_joints.copy()
+    # Move the right arm 0.2 m further away on y, no rotation.
+    base[1] = -1.0
+    planner = create_planner("bimanual_fr3_dual_arm", base_config=base)
+    assert planner._ndof == 14
+    assert planner.validate(planner.extract_config(base))

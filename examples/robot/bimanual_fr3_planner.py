@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from functools import lru_cache
-
 import numpy as np
 
 from bimanual_franka_planning.bimanual_franka import (
@@ -17,10 +15,6 @@ SUPPORTED_GROUPS = {
     "bimanual_fr3_left_arm",
     "bimanual_fr3_right_arm",
     "bimanual_fr3_dual_arm",
-    "bimanual_fr3_base_left_arm",
-    "bimanual_fr3_base_right_arm",
-    "bimanual_fr3_dual_arm",
-    "bimanual_fr3_dual_arm",
 }
 
 FULL_DOF = len(bimanual_fr3_robot_config.joint_names)
@@ -34,7 +28,7 @@ def _active_indices(group: str) -> np.ndarray:
     return np.asarray([full_joint_names.index(j) for j in subgroup_joints], dtype=int)
 
 
-def _validate_24d(name: str, q: np.ndarray) -> np.ndarray:
+def _validate_full(name: str, q: np.ndarray) -> np.ndarray:
     q = np.asarray(q, dtype=np.float64)
     if q.shape != (FULL_DOF,):
         raise ValueError(f"{name} must be shape ({FULL_DOF},), got {q.shape}")
@@ -47,27 +41,6 @@ def _frozen_joints_same(
     active = _active_indices(group)
     frozen = np.setdiff1d(np.arange(FULL_DOF), active)
     return np.allclose(start[frozen], goal[frozen], atol=tol, rtol=0.0)
-
-
-@lru_cache(maxsize=1)
-def _leg_torso_dual_arm_cost():
-    import casadi as ca
-
-    from bimanual_franka_planning.planning import Cost, SymbolicContext
-
-    # Penalise the horizontal (XY) offset between Link_Waist_Pitch_to_Waist_Yaw
-    # and Link_Ground_Vehicle — i.e. keep the waist directly above the base.
-    # residual = [dx, dy]  →  cost = dx² + dy²
-    ctx = SymbolicContext("bimanual_fr3_dual_arm")
-    waist_pos = ctx.link_translation("Link_Waist_Pitch_to_Waist_Yaw")
-    ground_pos = ctx.link_translation("Link_Ground_Vehicle")
-    residual = waist_pos[:2] - ground_pos[:2]
-    return Cost(
-        expression=ca.sumsqr(residual),
-        q_sym=ctx.q,
-        name="leg_torso_dual_arm_balance_cost",
-        weight=10.0,
-    )
 
 
 class BimanualFr3Planner:
@@ -113,7 +86,7 @@ class BimanualFr3Planner:
 
     @staticmethod
     def default_start() -> np.ndarray:
-        """Return the home full-body configuration (24-DOF)."""
+        """Return the home full-body configuration (17-DOF)."""
         return HOME_JOINTS.copy()
 
     # ------------------------------------------------------------------
@@ -128,18 +101,18 @@ class BimanualFr3Planner:
         planner_name: str | None = None,
         time_limit: float | None = None,
     ) -> np.ndarray | str | None:
-        """Plan a collision-free path for *group* between two 24-DOF configs.
+        """Plan a collision-free path for *group* between two 17-DOF configs.
 
         Args:
             group:        One of SUPPORTED_GROUPS.
-            start:        Full 24-DOF start vector.
-            goal:         Full 24-DOF goal vector.
+            start:        Full 17-DOF start vector.
+            goal:         Full 17-DOF goal vector.
             planner_name: Ignored (planner algorithm is fixed at construction).
             time_limit:   Planning timeout in seconds; defaults to ``self.time_limit``.
 
         Returns:
             - ``"not same"`` if any frozen joint differs between start and goal.
-            - ``np.ndarray`` of shape ``(N, 24)`` on success.
+            - ``np.ndarray`` of shape ``(N, 17)`` on success.
             - ``None`` when planning times out or fails.
         """
         if group not in SUPPORTED_GROUPS:
@@ -147,8 +120,8 @@ class BimanualFr3Planner:
                 f"group must be one of {sorted(SUPPORTED_GROUPS)}, got {group!r}"
             )
 
-        start = _validate_24d("start", start)
-        goal = _validate_24d("goal", goal)
+        start = _validate_full("start", start)
+        goal = _validate_full("goal", goal)
 
         if not _frozen_joints_same(group, start, goal, tol=self.tol):
             return "not same"
@@ -156,16 +129,7 @@ class BimanualFr3Planner:
         time_limit = time_limit if time_limit is not None else self.time_limit
 
         self._planner.set_subgroup(group, base_config=start)
-
-        if (
-            group == "bimanual_fr3_dual_arm"
-            and self.current_group != "bimanual_fr3_dual_arm"
-        ):
-            # Cost dim must match the subgroup — set after set_subgroup.
-            self._planner.set_costs([_leg_torso_dual_arm_cost()])
-        else:
-            self._planner.clear_costs()
-
+        self._planner.clear_costs()
         self.current_group = group
 
         start_sub = self._planner.extract_config(start)

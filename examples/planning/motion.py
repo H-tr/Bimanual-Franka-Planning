@@ -24,7 +24,7 @@ from bimanual_franka_planning.planning import create_planner
 from bimanual_franka_planning.types import PlannerConfig
 
 
-def load_table(distance: float = 0.85, height: float = 0.35) -> np.ndarray:
+def load_table(distance: float = 0.85, height: float = 0.20) -> np.ndarray:
     """Load ``table.ply`` and place it in front of the robot.
 
     The bundled scan lives a few metres away from the origin in its

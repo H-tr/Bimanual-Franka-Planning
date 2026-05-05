@@ -25,23 +25,17 @@ from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv
 from bimanual_franka_planning.planning import SymbolicContext
 
 SUBGROUP = "bimanual_fr3_left_arm"
-EE_LINK = "Link_Left_Gripper"
-LEFT_FINGER_LINK = "Link_Left_Gripper_Left_Finger"
-RIGHT_FINGER_LINK = "Link_Left_Gripper_Right_Finger"
+EE_LINK = "fr3_left_link8"
 
 
 def ee_translation(ctx: "SymbolicContext"):
-    """CasADi expression for the TCP (midpoint between the two fingers)."""
-    return 0.5 * (
-        ctx.link_translation(LEFT_FINGER_LINK) + ctx.link_translation(RIGHT_FINGER_LINK)
-    )
+    """CasADi expression for the EE flange position."""
+    return ctx.link_translation(EE_LINK)
 
 
 def ee_position(ctx: "SymbolicContext", q: np.ndarray) -> np.ndarray:
-    """Numeric evaluation of the TCP at joint config *q*."""
-    left = np.asarray(ctx.evaluate_link_pose(LEFT_FINGER_LINK, q))[:3, 3]
-    right = np.asarray(ctx.evaluate_link_pose(RIGHT_FINGER_LINK, q))[:3, 3]
-    return 0.5 * (left + right)
+    """Numeric evaluation of the EE flange position at joint config *q*."""
+    return np.asarray(ctx.evaluate_link_pose(EE_LINK, q))[:3, 3]
 
 
 def setup():

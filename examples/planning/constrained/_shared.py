@@ -21,33 +21,23 @@ from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv
 from bimanual_franka_planning.planning import SymbolicContext
 
 SUBGROUP = "bimanual_fr3_left_arm"
-# Rotation-reference link: Link_Left_Gripper is the rigid gripper
-# body frame, which is what the constraint residuals use for
-# orientation locks.  For translation constraints we use the TCP —
-# the symmetric midpoint between the two finger link origins — via
-# :func:`ee_translation` / :func:`ee_position` below.  That lands
-# visually at the grasping point between the fingers, which is a
-# more intuitive "this is where the constraint lives" marker than
-# either the wrist-gripper joint (inside the mesh) or
-# ``Link_Left_Gripper``'s own origin (asymmetric, chosen by the
-# SolidWorks exporter).
-EE_LINK = "Link_Left_Gripper"
-LEFT_FINGER_LINK = "Link_Left_Gripper_Left_Finger"
-RIGHT_FINGER_LINK = "Link_Left_Gripper_Right_Finger"
+# EE_LINK is the wrist flange (fr3_left_link8) that the constraint
+# residuals use both for orientation locks and translation targets.
+# The Franka gripper's tool-center-point sits ~0.103 m past flange
+# along +z (see fr3_hand_tcp in the URDF), so for translation-only
+# constraints we expose ``ee_translation`` as the flange position
+# (no offset) — callers add the gripper depth in their own frame.
+EE_LINK = "fr3_left_link8"
 
 
 def ee_translation(ctx: "SymbolicContext"):
-    """CasADi expression for the TCP (midpoint between the two fingers)."""
-    return 0.5 * (
-        ctx.link_translation(LEFT_FINGER_LINK) + ctx.link_translation(RIGHT_FINGER_LINK)
-    )
+    """CasADi expression for the EE flange position."""
+    return ctx.link_translation(EE_LINK)
 
 
 def ee_position(ctx: "SymbolicContext", q: np.ndarray) -> np.ndarray:
-    """Numeric evaluation of the TCP at joint config *q*."""
-    left = np.asarray(ctx.evaluate_link_pose(LEFT_FINGER_LINK, q))[:3, 3]
-    right = np.asarray(ctx.evaluate_link_pose(RIGHT_FINGER_LINK, q))[:3, 3]
-    return 0.5 * (left + right)
+    """Numeric evaluation of the EE flange position at joint config *q*."""
+    return np.asarray(ctx.evaluate_link_pose(EE_LINK, q))[:3, 3]
 
 
 def setup():

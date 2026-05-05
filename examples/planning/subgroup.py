@@ -1,9 +1,12 @@
-"""Plan every kinematic subgroup at three different stances.
+"""Sweep every kinematic subgroup at three different cell layouts.
 
 Demonstrates that the same subgroup name (e.g. ``bimanual_fr3_left_arm``)
-can be planned around any 24-DOF base configuration the caller passes
-in — no stance is baked into the planner name.  The three stances
-below are *example data*, not part of the planning API.
+can be planned around any 17-DOF base configuration the caller passes
+in — the relative-base offset between the two arms is part of that
+base config and gets pinned by ``base_config`` on every call.
+
+The three layouts below are *example data* (the cell calibration you
+might measure at deployment time) — not part of the planning API.
 
     pixi run python examples/planning/subgroup.py
 """
@@ -11,35 +14,45 @@ below are *example data*, not part of the planning API.
 import numpy as np
 from fire import Fire
 
-from bimanual_franka_planning.bimanual_franka import HOME_JOINTS, bimanual_fr3_robot_config
+from bimanual_franka_planning.bimanual_franka import (
+    HOME_JOINTS,
+    bimanual_fr3_robot_config,
+)
 from bimanual_franka_planning.envs.pybullet_env import PyBulletEnv
 from bimanual_franka_planning.planning import create_planner
 from bimanual_franka_planning.types import PlannerConfig
 
-# Joint values for three example stances.  Replace this dict with any
-# 24-DOF array (e.g. the live state from your env) to plan around an
-# arbitrary pose.
-STANCES = {
-    "high": {"Joint_Ankle": 0.0, "Joint_Knee": 0.0, "Joint_Waist_Pitch": 0.00},
-    "mid": {"Joint_Ankle": 0.78, "Joint_Knee": 1.60, "Joint_Waist_Pitch": 0.89},
-    "low": {"Joint_Ankle": 1.41, "Joint_Knee": 2.38, "Joint_Waist_Pitch": 0.95},
+# Three cell layouts: (relative_base_x, relative_base_y, relative_base_yaw).
+# These pin the right-arm base at deploy time; replace this dict with any
+# (x, y, yaw) measured at calibration to plan around an arbitrary cell.
+LAYOUTS = {
+    "wide": {
+        "relative_base_x": 0.0,
+        "relative_base_y": -1.0,
+        "relative_base_yaw": 0.0,
+    },
+    "default": {
+        "relative_base_x": 0.0,
+        "relative_base_y": -0.8,
+        "relative_base_yaw": 0.0,
+    },
+    "narrow_angled": {
+        "relative_base_x": 0.0,
+        "relative_base_y": -0.6,
+        "relative_base_yaw": -0.5,
+    },
 }
 
 SUBGROUPS = [
     "bimanual_fr3_left_arm",
     "bimanual_fr3_right_arm",
     "bimanual_fr3_dual_arm",
-    "bimanual_fr3_base_left_arm",
-    "bimanual_fr3_base_right_arm",
-    "bimanual_fr3_relative_base",  # 3 DOF: ankle + knee + waist pitch
-    "bimanual_fr3_relative_base",  # 3 DOF: virtual x, y, yaw
-    "bimanual_fr3_dual_arm",  # 21 DOF: legs + waist + arms + neck
 ]
 
 
-def base_with_stance(stance: dict[str, float]) -> np.ndarray:
+def base_with_layout(layout: dict[str, float]) -> np.ndarray:
     base = HOME_JOINTS.copy()
-    for joint_name, value in stance.items():
+    for joint_name, value in layout.items():
         base[bimanual_fr3_robot_config.joint_names.index(joint_name)] = value
     return base
 
@@ -68,7 +81,7 @@ def plan_and_show(
 
 
 def main(planner_name: str = "bitstar", time_limit: float = 0.5):
-    """Run the subgroup sweep with the chosen OMPL planner.
+    """Run the subgroup × layout sweep with the chosen OMPL planner.
 
     Available planner names (pick one and pass as ``--planner_name``):
 
@@ -83,23 +96,18 @@ def main(planner_name: str = "bitstar", time_limit: float = 0.5):
         Exploration-based .... est, biest, sbl, stride, pdst
 
     Single-query feasibility planners (``rrtc``, ``rrt``, ``kpiece``,
-    ``est``, …) terminate as soon as they find any valid path, usually
-    in a few milliseconds.  Asymptotically optimal anytime planners
-    (``bitstar``, ``aitstar``, ``rrtstar``, …) keep refining the path
-    until ``time_limit`` expires, so they always use the full budget —
-    keep ``time_limit`` small for a snappy demo and bump it when you
-    care about path quality.
+    ``est``, …) terminate as soon as they find any valid path.
+    Asymptotically optimal anytime planners (``bitstar``, ``aitstar``,
+    ``rrtstar``, …) keep refining the path until ``time_limit`` expires.
     """
     env = PyBulletEnv(bimanual_fr3_robot_config, visualize=True)
     config = PlannerConfig(planner_name=planner_name, time_limit=time_limit)
 
-    # Every subgroup × every stance.  Inactive joints are pinned to the
-    # stance values; active joints get the stance as their start pose.
-    for stance_name, stance in STANCES.items():
-        base = base_with_stance(stance)
+    for layout_name, layout in LAYOUTS.items():
+        base = base_with_layout(layout)
         for robot_name in SUBGROUPS:
             cont = plan_and_show(
-                env, robot_name, base, config, f"{robot_name} @ {stance_name}"
+                env, robot_name, base, config, f"{robot_name} @ {layout_name}"
             )
             if not cont:
                 return

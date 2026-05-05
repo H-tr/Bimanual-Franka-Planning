@@ -101,46 +101,36 @@ class SymbolicContext:
 
         self.q = ca.SX.sym("q", len(self.active_indices))
         self._full_names = list(bimanual_fr3_robot_config.joint_names)
-        self._root_link = "Link_Zero_Point"
-        self._uses_planar_base = any(
-            n in {"Joint_Virtual_X", "Joint_Virtual_Y", "Joint_Virtual_Theta"}
-            for n in self.active_names
-        )
+        self._root_link = "world"
+        # Bimanual cell has no virtual planar base — the relative-base
+        # joints are individual prismatic + prismatic + revolute joints
+        # that pinocchio handles like any other 1-dim joint.
+        self._uses_planar_base = False
 
         self._fk_cache: dict[str, dict[str, object]] = {}
 
         if pin is not None and cpin is not None:
             self._backend = "pinocchio"
-            # Numeric + symbolic pinocchio models with planar root.
+            # Numeric + symbolic pinocchio models — fixed root, every
+            # joint encodes as 1 dim of q (no planar wrapper).
             self.pin_model = pin.buildModelFromUrdf(
-                bimanual_fr3_robot_config.urdf_path, pin.JointModelPlanar()
+                bimanual_fr3_robot_config.urdf_path
             )
             self.pin_data = self.pin_model.createData()
             self.cmodel = cpin.Model(self.pin_model)
             self.cdata = self.cmodel.createData()
 
-            # Build the symbolic mapping q_active -> pinocchio q (nq=25).
+            # Build the symbolic mapping q_active -> pinocchio q (nq=17).
             self.q_pin = self._build_pinocchio_q(self.q)
 
             # Pre-run symbolic FK so users can access frame transforms.
             cpin.forwardKinematics(self.cmodel, self.cdata, self.q_pin)
             cpin.updateFramePlacements(self.cmodel, self.cdata)
         elif URDFparser is not None:
-            if self._uses_planar_base:
-                raise RuntimeError(
-                    "SymbolicContext fallback backend (urdf2casadi) does not support "
-                    "planar base symbolic joints (Joint_Virtual_X/Y/Theta). "
-                    "Install pinocchio + pinocchio.casadi for base-enabled groups."
-                )
             self._backend = "urdf2casadi"
             self._urdf_parser = URDFparser()
             self._urdf_parser.from_file(bimanual_fr3_robot_config.urdf_path)
-            # Use the same world-like root as PyBullet visualization when available.
-            try:
-                self._urdf_parser.get_joint_info("Link_Zero_Point", "Link_Zero_Point")
-                self._root_link = "Link_Zero_Point"
-            except Exception:
-                self._root_link = "Link_Ground_Vehicle"
+            self._root_link = "world"
         else:
             raise ModuleNotFoundError(
                 "SymbolicContext requires either pinocchio.casadi or urdf2casadi. "
@@ -148,19 +138,16 @@ class SymbolicContext:
             )
 
     def _build_pinocchio_q(self, q_active: ca.SX) -> ca.SX:
-        """Map active-dim symbol to pinocchio q (nq=25)."""
+        """Map active-dim symbol to pinocchio q (nq=17 for bimanual_fr3).
+
+        Every URDF joint encodes as one q dimension (no planar root,
+        no virtual base), so the mapping is just identity on the full
+        17-element configuration vector.
+        """
         full: list[ca.SX | ca.DM] = [ca.DM(float(v)) for v in self.base_config]
         for i, idx in enumerate(self.active_indices):
             full[idx] = q_active[i]
-        # full is 24 entries: [x, y, theta, j0..j20]
-        pin_q = ca.vertcat(
-            full[0],
-            full[1],
-            ca.cos(full[2]),
-            ca.sin(full[2]),
-            *full[3:],
-        )
-        return pin_q
+        return ca.vertcat(*full)
 
     def _build_full_q(self, q_active: ca.SX) -> list[ca.SX | ca.DM]:
         """Map active subgroup symbols onto full 17-DOF joint vector."""
@@ -260,12 +247,10 @@ class SymbolicContext:
             full = self.base_config.copy()
             for i, idx in enumerate(self.active_indices):
                 full[idx] = q_active_numeric[i]
-            q = np.empty(int(self.pin_model.nq))
-            q[0] = full[0]
-            q[1] = full[1]
-            q[2] = np.cos(full[2])
-            q[3] = np.sin(full[2])
-            q[4:] = full[3:]
+            # No planar root encoding: every URDF joint contributes
+            # exactly one q dimension, so the pinocchio q is the full
+            # 17-element bimanual configuration directly.
+            q = np.asarray(full, dtype=np.float64)
             pin.forwardKinematics(self.pin_model, self.pin_data, q)
             pin.updateFramePlacement(
                 self.pin_model,

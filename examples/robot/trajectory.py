@@ -182,7 +182,7 @@ def main(
 
     active = _active_indices(group).tolist()
 
-    # For leg_torso_dual_arm show only legs + torso + left arm; skip right arm.
+    # For dual_arm show only legs + torso + left arm; skip right arm.
     if group == "bimanual_fr3_dual_arm":
         right_arm = set(
             range(JOINT_GROUPS["right_arm"].start, JOINT_GROUPS["right_arm"].stop)
