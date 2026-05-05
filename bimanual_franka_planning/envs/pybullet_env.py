@@ -115,10 +115,13 @@ class PyBulletEnv(BaseEnv):
                 self.camera_link_idx = i
                 break
 
-        # Set initial pose
+        # Set initial pose — pass the full 17-DOF state directly; the
+        # PyBulletSimulator maps joint values to PyBullet indices by
+        # joint NAME, so the relative_base joints (x, y, yaw) are URDF
+        # joints, not a floating base.
         from bimanual_franka_planning.bimanual_franka import HOME_JOINTS
 
-        self.set_joint_states(HOME_JOINTS[3:])
+        self.set_joint_states(HOME_JOINTS)
 
     def get_joint_states(self) -> np.ndarray:
         states = []
@@ -138,9 +141,17 @@ class PyBulletEnv(BaseEnv):
         )
 
     def set_configuration(self, config: np.ndarray):
-        """Apply a full 17-DOF config (3 base + 14 joints) to the visualization."""
-        self.set_base_position(config[0], config[1], config[2])
-        self.set_joint_states(config[3:])
+        """Apply a full 17-DOF config (3 relative_base + 14 arm joints) to the
+        visualization.
+
+        The first three values configure the right-arm-relative-to-left
+        cell layout (``relative_base_x``, ``relative_base_y``,
+        ``relative_base_yaw``) — they are URDF joints, NOT a floating
+        base, so they get set via :meth:`set_joint_states` like every
+        other joint.  The PyBullet body itself stays anchored at the
+        world origin (which coincides with ``fr3_left_link0``).
+        """
+        self.set_joint_states(np.asarray(config))
 
     def get_localization(self) -> np.ndarray:
         pos, orn = self.sim.client.getBasePositionAndOrientation(self.sim.skel_id)
