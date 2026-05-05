@@ -80,8 +80,14 @@ class BimanualFr3ValidityChecker : public ob::StateValidityChecker {
 
   static auto ompl_to_vamp(const ob::State *state) -> Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars>
-            buf{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            buf;
+    // Zero the SIMD padding explicitly: ``std::array<float, N> buf{}``
+    // does NOT reliably zero-init when N exceeds Robot::dimension on
+    // some compilers, leaving NaN/garbage in the padded lanes that
+    // VAMP's SIMD bound check reads — producing a spurious false from
+    // validate_motion even on physically-valid configurations.
+    std::fill(buf.begin(), buf.end(), 0.0f);
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < Robot::dimension; ++i)
       buf[i] = static_cast<float>(rv->values[i]);
@@ -113,8 +119,14 @@ class BimanualFr3MotionValidator : public ob::MotionValidator {
 
   static auto ompl_to_vamp(const ob::State *state) -> Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars>
-            buf{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            buf;
+    // Zero the SIMD padding explicitly: ``std::array<float, N> buf{}``
+    // does NOT reliably zero-init when N exceeds Robot::dimension on
+    // some compilers, leaving NaN/garbage in the padded lanes that
+    // VAMP's SIMD bound check reads — producing a spurious false from
+    // validate_motion even on physically-valid configurations.
+    std::fill(buf.begin(), buf.end(), 0.0f);
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < Robot::dimension; ++i)
       buf[i] = static_cast<float>(rv->values[i]);
@@ -147,8 +159,9 @@ class SubgroupValidityChecker : public ob::StateValidityChecker {
 
   auto expand(const ob::State *state) const -> Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars>
-            buf{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            buf;
+    std::fill(buf.begin(), buf.end(), 0.0f);
     std::copy(frozen_.begin(), frozen_.end(), buf.begin());
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < active_.size(); ++i)
@@ -188,8 +201,9 @@ class SubgroupMotionValidator : public ob::MotionValidator {
 
   auto expand(const ob::State *state) const -> Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars>
-            buf{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            buf;
+    std::fill(buf.begin(), buf.end(), 0.0f);
     std::copy(frozen_.begin(), frozen_.end(), buf.begin());
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < active_.size(); ++i)

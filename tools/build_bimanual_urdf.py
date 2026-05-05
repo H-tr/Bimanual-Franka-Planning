@@ -155,6 +155,22 @@ def _drop_finger_dof(arm_root: ET.Element) -> None:
                     child = joint.find(tag)
 
 
+def _drop_safety_controllers(arm_root: ET.Element) -> None:
+    """Strip ``<safety_controller>`` from every joint.
+
+    Some URDF parsers (notably TRAC-IK's vendored KDL parser) read the
+    soft limits from ``safety_controller`` instead of the regular
+    ``<limit>`` block, which masks the real joint range with whatever
+    the safety values happen to be — for the FR3 source, those are
+    incomplete (only some axes have soft limits set), producing
+    near-zero ranges for most joints and breaking IK.  Stripping the
+    block forces every parser to fall back to ``<limit>``.
+    """
+    for joint in arm_root.iter("joint"):
+        for sc in list(joint.findall("safety_controller")):
+            joint.remove(sc)
+
+
 def _strip_world_root(arm_root: ET.Element) -> None:
     """Remove the existing ``base`` link + ``fr3_base_joint`` so each arm
     becomes a free chain rooted at ``fr3_link0``."""
@@ -173,6 +189,7 @@ def _arm_copy(prefix: str, src_urdf: Path = SRC_URDF) -> ET.Element:
     arm_root = tree.getroot()
     _strip_world_root(arm_root)
     _drop_finger_dof(arm_root)
+    _drop_safety_controllers(arm_root)
     _rename(arm_root, prefix)
     _retarget_meshes(arm_root)
     return arm_root

@@ -101,8 +101,12 @@ class OmplVampPlanner {
   /// Full-body constructor (24 DOF).
   OmplVampPlanner() : active_dim_(Robot::dimension), is_subgroup_(false) {
     Robot::Configuration lo, hi;
-    std::array<float, Robot::dimension> zeros{}, ones{};
-    ones.fill(1.0f);
+    // Use num_scalars_rounded so the FloatVector pointer-constructor
+    // can read a SIMD-aligned full block; reading past dimension on a
+    // size-dimension array is UB and produces NaNs in the padding.
+    alignas(Robot::Configuration::S::Alignment)
+        std::array<float, Robot::Configuration::num_scalars_rounded> zeros{}, ones{};
+    std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
     lo = Robot::Configuration(zeros.data());
     hi = Robot::Configuration(ones.data());
     Robot::scale_configuration(lo);
@@ -132,8 +136,12 @@ class OmplVampPlanner {
       frozen_config_[i] = static_cast<float>(frozen_config[i]);
 
     Robot::Configuration lo, hi;
-    std::array<float, Robot::dimension> zeros{}, ones{};
-    ones.fill(1.0f);
+    // Use num_scalars_rounded so the FloatVector pointer-constructor
+    // can read a SIMD-aligned full block; reading past dimension on a
+    // size-dimension array is UB and produces NaNs in the padding.
+    alignas(Robot::Configuration::S::Alignment)
+        std::array<float, Robot::Configuration::num_scalars_rounded> zeros{}, ones{};
+    std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
     lo = Robot::Configuration(zeros.data());
     hi = Robot::Configuration(ones.data());
     Robot::scale_configuration(lo);
@@ -633,8 +641,11 @@ class OmplVampPlanner {
   auto build_full_config_(const std::vector<double> &config) const
       -> Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars>
-            buf{};
+        std::array<float, Robot::Configuration::num_scalars_rounded>
+            buf;
+    // Zero the SIMD padding explicitly — see comment in
+    // validity.hpp::ompl_to_vamp.
+    std::fill(buf.begin(), buf.end(), 0.0f);
     if (is_subgroup_) {
       std::copy(frozen_config_.begin(), frozen_config_.end(), buf.begin());
       for (std::size_t i = 0; i < active_indices_.size(); ++i)
@@ -672,8 +683,12 @@ class OmplVampPlanner {
 
   void rebuild_space_() {
     Robot::Configuration lo, hi;
-    std::array<float, Robot::dimension> zeros{}, ones{};
-    ones.fill(1.0f);
+    // Use num_scalars_rounded so the FloatVector pointer-constructor
+    // can read a SIMD-aligned full block; reading past dimension on a
+    // size-dimension array is UB and produces NaNs in the padding.
+    alignas(Robot::Configuration::S::Alignment)
+        std::array<float, Robot::Configuration::num_scalars_rounded> zeros{}, ones{};
+    std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
     lo = Robot::Configuration(zeros.data());
     hi = Robot::Configuration(ones.data());
     Robot::scale_configuration(lo);

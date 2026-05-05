@@ -58,9 +58,9 @@ JOINT_GROUPS = {
 
 CHAIN_CONFIGS: dict[str, ChainConfig] = {
     # Single-arm chains: TRAC-IK / Pinocchio operate on 7 DOFs from each
-    # arm's base to the wrist flange.  ``base_link`` is each arm's link0
-    # (NOT the world frame) so the IK is independent of the relative_base
-    # pose — callers compose the world-frame target by hand when needed.
+    # arm's link0 to the wrist flange.  The relative-base joints are NOT
+    # part of any IK chain — they are deployment parameters, frozen for
+    # every plan.  IK targets are expressed in each arm's own base frame.
     "left_arm": ChainConfig(
         base_link="fr3_left_link0",
         ee_link="fr3_left_link8",
@@ -71,23 +71,6 @@ CHAIN_CONFIGS: dict[str, ChainConfig] = {
         base_link="fr3_right_link0",
         ee_link="fr3_right_link8",
         num_joints=7,
-        urdf_path=os.path.join(_RESOURCES_DIR, "bimanual_fr3.urdf"),
-    ),
-    # World-rooted chains: 10-DOF chains from the world frame to each
-    # gripper.  For the right arm this includes the 3 relative_base
-    # joints; for the left arm the chain still passes through the
-    # zero-offset fixed ``world_to_fr3_left_base`` so the IK targets
-    # are expressed in the same world frame the planner uses.
-    "world_left_arm": ChainConfig(
-        base_link="world",
-        ee_link="fr3_left_link8",
-        num_joints=7,
-        urdf_path=os.path.join(_RESOURCES_DIR, "bimanual_fr3.urdf"),
-    ),
-    "world_right_arm": ChainConfig(
-        base_link="world",
-        ee_link="fr3_right_link8",
-        num_joints=10,  # 3 relative_base + 7 fr3_right_joint
         urdf_path=os.path.join(_RESOURCES_DIR, "bimanual_fr3.urdf"),
     ),
 }
@@ -151,33 +134,19 @@ bimanual_fr3_robot_config = RobotConfig(
     max_acceleration=MAX_ACCELERATION,
 )
 
-# VAMP subgroup robot names for planning.  Each maps to the same
-# 17-DOF VAMP module but only the listed joints are movable; frozen
-# joints are pinned to ``base_config`` (defaults to HOME_JOINTS).
-_RELATIVE_BASE_JOINTS = ["relative_base_x", "relative_base_y", "relative_base_yaw"]
+# VAMP subgroup robot names for planning.  The relative-base joints
+# (relative_base_x/y/yaw) are deployment parameters, not planning
+# variables — they are always pinned by ``base_config`` to the cell
+# layout you measured at calibration time.  These three subgroups
+# cover every meaningful planning task on a bimanual arm cell.
 _LEFT_ARM_JOINTS = [f"fr3_left_joint{i}" for i in range(1, 8)]
 _RIGHT_ARM_JOINTS = [f"fr3_right_joint{i}" for i in range(1, 8)]
 PLANNING_SUBGROUPS = {
-    # Single arm (7 DOF) — relative base is pinned by base_config.
     "bimanual_fr3_left_arm": {"dof": 7, "joints": _LEFT_ARM_JOINTS},
     "bimanual_fr3_right_arm": {"dof": 7, "joints": _RIGHT_ARM_JOINTS},
-    # Both arms (14 DOF) — relative base is pinned.
     "bimanual_fr3_dual_arm": {
         "dof": 14,
         "joints": _LEFT_ARM_JOINTS + _RIGHT_ARM_JOINTS,
-    },
-    # Relative cell layout (3 DOF) — both arms pinned, only the
-    # right-arm-base-relative-to-left transform varies.  Useful for
-    # workspace-overlap analysis or layout optimisation.
-    "bimanual_fr3_relative_base": {"dof": 3, "joints": _RELATIVE_BASE_JOINTS},
-    # Single arm + relative base (10 DOF).
-    "bimanual_fr3_base_left_arm": {
-        "dof": 10,
-        "joints": _RELATIVE_BASE_JOINTS + _LEFT_ARM_JOINTS,
-    },
-    "bimanual_fr3_base_right_arm": {
-        "dof": 10,
-        "joints": _RELATIVE_BASE_JOINTS + _RIGHT_ARM_JOINTS,
     },
 }
 
