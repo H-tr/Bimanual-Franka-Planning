@@ -1,0 +1,170 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pdm
+.pdm-python
+.pdm-build/
+
+# pixi
+.pixi
+
+# PEP 582
+__pypackages__/
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Ruff stuff
+.ruff_cache/
+
+# PyPI configuration file
+.pypirc
+
+# Visual Studio Code
+.vscode
+
+# Top-level assets/ holds raw robot meshes (the build input for
+# scripts/build_robot_description.py). Scoped with a leading slash so
+# docs/assets/ (tracked documentation videos) isn't accidentally
+# ignored.
+# Use ``/dir/*`` rather than ``/dir/`` so the negations below can
+# re-include selected children — git refuses to recurse into a fully
+# excluded directory.
+/assets/*
+# Exception: ship the bimanual FR3 description so the build pipeline
+# is runnable straight from a fresh clone.
+!/assets/bimanual_fr3_description/
+# Exception: ship environment scenes (pointclouds) so the demos/tests
+# are runnable from a fresh clone.
+!/assets/envs/
+/assets/envs/*
+!/assets/envs/rls_env/
+/assets/envs/rls_env/*
+!/assets/envs/rls_env/pcd/
+
+# Generated FK headers (built by cricket, consumed by vamp).
+# Hand-written headers in this project use .hpp instead, so they are
+# never matched by this rule and stay tracked.
+*.hh
+# Exception: ship the bimanual_fr3 FK/collision header so downstream
+# builds (manylinux wheels, fresh clones without cricket's deps) don't
+# have to regenerate it. Regenerate via `pixi run generate-fk` when the
+# spherized URDF or SRDF changes, then re-commit.
+!ext/ompl_vamp/robot/bimanual_fr3.hh
+
+# Generated build artifacts
+output.json
+
+# pixi environments
+.pixi/*
+!.pixi/config.toml
