@@ -1,0 +1,27 @@
+Subject: gate OMPL's vendored nanobind on OMPL_BUILD_PYTHON_BINDINGS
+
+OMPL's CMakeModules/OMPLDependencies.cmake unconditionally
+add_subdirectory()s its own vendored nanobind (sub-sub-submodule) as
+soon as it sees the file on disk and finds a Python interpreter,
+without checking OMPL_BUILD_PYTHON_BINDINGS.  The vendored nanobind
+2.x then runs its own CMake which hard-errors on Python < 3.9 — making
+cp38 wheel builds impossible even when the consumer (us) has
+explicitly set OMPL_BUILD_PYTHON_BINDINGS=OFF and never wanted the
+vendored nanobind in the first place.
+
+This patch adds the missing OMPL_BUILD_PYTHON_BINDINGS gate so the
+add_subdirectory only runs when OMPL is actually going to build its
+own Python bindings.  When (eventually) OMPL accepts this fix
+upstream, this patch becomes a no-op and can be deleted.
+
+--- a/CMakeModules/OMPLDependencies.cmake
++++ b/CMakeModules/OMPLDependencies.cmake
+@@ -92,7 +92,7 @@ set_package_properties(Nanobind PROPERTIES
+     URL "https://github.com/wjakob/nanobind"
+     PURPOSE "Used for building Python bindings.")
+
+-if(OMPL_HAVE_PYTHON AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/nanobind/CMakeLists.txt")
++if(OMPL_BUILD_PYTHON_BINDINGS AND OMPL_HAVE_PYTHON AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/nanobind/CMakeLists.txt")
+     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/nanobind)
+     set(OMPL_HAVE_NANOBIND 1)
+ else()
