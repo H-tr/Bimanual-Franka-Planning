@@ -23,11 +23,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link0.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link0_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link0.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0172 0.0004 0.0745" />
       <mass value="2.3966" />
@@ -40,11 +35,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link1.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link1_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link1.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0000004128 -0.0181251324 -0.0386035970" />
       <mass value="2.9274653454" />
@@ -66,11 +56,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link2.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link2_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link2.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0031828864 -0.0743221644 0.0088146084" />
       <mass value="2.9355370338" />
@@ -92,11 +77,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link3.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link3_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link3.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0407015686 -0.0048200565 -0.0289730823" />
       <mass value="2.2449013699" />
@@ -118,11 +98,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link4.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link4_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link4.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0459100965 0.0630492960 -0.0085187868" />
       <mass value="2.6155955791" />
@@ -144,11 +119,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link5.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link5_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link5.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0016039605 0.0292536262 -0.0972965990" />
       <mass value="2.3271207594" />
@@ -170,11 +140,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link6.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link6_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link6.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0597131221 -0.0410294666 -0.0101692726" />
       <mass value="1.8170376524" />
@@ -196,11 +161,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link7.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link7_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link7.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0045225817 0.0086261921 -0.0161633251" />
       <mass value="0.6271432862" />
@@ -233,11 +193,6 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/hand.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_hand_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_ee/franka_hand_white/collision/hand.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0000376 0.0119128 0.0207260" />
       <mass value="0.6544" />
@@ -256,30 +211,6 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/finger.dae" />
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 18.5e-3 11e-3" />
-      <geometry>
-        <box size="22e-3 15e-3 20e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 6.8e-3 2.2e-3" />
-      <geometry>
-        <box size="22e-3 8.8e-3 3.8e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0.5235987755982988 0 0" xyz="0 15.9e-3 28.35e-3" />
-      <geometry>
-        <box size="17.5e-3 7e-3 23.5e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 7.58e-3 45.25e-3" />
-      <geometry>
-        <box size="17.5e-3 15.2e-3 18.5e-3" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0.0152850 0.0219675" />
       <mass value="0.0291" />
@@ -293,30 +224,6 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/finger.dae" />
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 18.5e-3 11e-3" />
-      <geometry>
-        <box size="22e-3 15e-3 20e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 6.8e-3 2.2e-3" />
-      <geometry>
-        <box size="22e-3 8.8e-3 3.8e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="-0.5235987755982988 0 3.141592653589793" xyz="0 15.9e-3 28.35e-3" />
-      <geometry>
-        <box size="17.5e-3 7e-3 23.5e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 7.58e-3 45.25e-3" />
-      <geometry>
-        <box size="17.5e-3 15.2e-3 18.5e-3" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0.0152850 0.0219675" />
       <mass value="0.0291" />
@@ -339,11 +246,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link0.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link0_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link0.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0172 0.0004 0.0745" />
       <mass value="2.3966" />
@@ -356,11 +258,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link1.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link1_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link1.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0000004128 -0.0181251324 -0.0386035970" />
       <mass value="2.9274653454" />
@@ -382,11 +279,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link2.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link2_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link2.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0031828864 -0.0743221644 0.0088146084" />
       <mass value="2.9355370338" />
@@ -408,11 +300,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link3.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link3_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link3.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0407015686 -0.0048200565 -0.0289730823" />
       <mass value="2.2449013699" />
@@ -434,11 +321,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link4.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link4_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link4.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0459100965 0.0630492960 -0.0085187868" />
       <mass value="2.6155955791" />
@@ -460,11 +342,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link5.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link5_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link5.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0016039605 0.0292536262 -0.0972965990" />
       <mass value="2.3271207594" />
@@ -486,11 +363,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link6.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link6_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link6.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0597131221 -0.0410294666 -0.0101692726" />
       <mass value="1.8170376524" />
@@ -512,11 +384,6 @@
         <mesh filename="package://meshes/robot_arms/fr3/visual/link7.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_link7_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_arms/fr3/collision/link7.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0045225817 0.0086261921 -0.0161633251" />
       <mass value="0.6271432862" />
@@ -549,11 +416,6 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/hand.dae" />
       </geometry>
     </visual>
-    <collision name="fr3_hand_collision">
-      <geometry>
-        <mesh filename="package://meshes/robot_ee/franka_hand_white/collision/hand.stl" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0000376 0.0119128 0.0207260" />
       <mass value="0.6544" />
@@ -572,30 +434,6 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/finger.dae" />
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 18.5e-3 11e-3" />
-      <geometry>
-        <box size="22e-3 15e-3 20e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 6.8e-3 2.2e-3" />
-      <geometry>
-        <box size="22e-3 8.8e-3 3.8e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0.5235987755982988 0 0" xyz="0 15.9e-3 28.35e-3" />
-      <geometry>
-        <box size="17.5e-3 7e-3 23.5e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 7.58e-3 45.25e-3" />
-      <geometry>
-        <box size="17.5e-3 15.2e-3 18.5e-3" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0.0152850 0.0219675" />
       <mass value="0.0291" />
@@ -609,30 +447,6 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/finger.dae" />
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 18.5e-3 11e-3" />
-      <geometry>
-        <box size="22e-3 15e-3 20e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 6.8e-3 2.2e-3" />
-      <geometry>
-        <box size="22e-3 8.8e-3 3.8e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="-0.5235987755982988 0 3.141592653589793" xyz="0 15.9e-3 28.35e-3" />
-      <geometry>
-        <box size="17.5e-3 7e-3 23.5e-3" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 7.58e-3 45.25e-3" />
-      <geometry>
-        <box size="17.5e-3 15.2e-3 18.5e-3" />
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0.0152850 0.0219675" />
       <mass value="0.0291" />

@@ -28,10 +28,21 @@ from pathlib import Path
 from typing import Iterable
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC_URDF = ROOT / "third_party" / "cricket" / "resources" / "fr3" / "fr3.urdf"
-SRC_SRDF = ROOT / "third_party" / "cricket" / "resources" / "fr3" / "fr3.srdf"
-OUT_URDF = ROOT / "assets" / "bimanual_fr3_description" / "urdf" / "bimanual_fr3.urdf"
-OUT_SRDF = ROOT / "assets" / "bimanual_fr3_description" / "urdf" / "bimanual_fr3.srdf"
+CRICKET_FR3 = ROOT / "third_party" / "cricket" / "resources" / "fr3"
+SRC_URDF = CRICKET_FR3 / "fr3.urdf"
+SRC_URDF_SPHERIZED = CRICKET_FR3 / "fr3_spherized.urdf"
+SRC_SRDF = CRICKET_FR3 / "fr3.srdf"
+
+ASSETS_OUT = ROOT / "assets" / "bimanual_fr3_description"
+OUT_URDF = ASSETS_OUT / "urdf" / "bimanual_fr3.urdf"
+OUT_SRDF = ASSETS_OUT / "urdf" / "bimanual_fr3.srdf"
+
+# Resource copies (consumed by the planning Python package + cricket FK gen).
+RESOURCES_OUT = ROOT / "bimanual_franka_planning" / "resources" / "robot" / "bimanual_fr3"
+OUT_URDF_RESOURCES = RESOURCES_OUT / "bimanual_fr3.urdf"
+OUT_URDF_SPHERIZED = RESOURCES_OUT / "bimanual_fr3_spherized.urdf"
+OUT_URDF_VIZ = RESOURCES_OUT / "bimanual_fr3_viz.urdf"
+OUT_SRDF_RESOURCES = RESOURCES_OUT / "bimanual_fr3.srdf"
 
 # Bimanual cell geometry: two arms 0.8 m apart, both facing forward (+x).
 LEFT_BASE_XYZ = (0.0, 0.4, 0.0)
@@ -93,13 +104,19 @@ def _rename(arm_root: ET.Element, prefix: str) -> None:
 
 
 def _retarget_meshes(arm_root: ET.Element) -> None:
-    """Rewrite ``package://franka_description/...`` → ``package://bimanual_fr3_description/...``."""
+    """Rewrite ``package://franka_description/meshes/...`` → ``package://meshes/...``.
+
+    Matches the convention used by the resource URDFs in
+    ``bimanual_franka_planning/resources/robot/bimanual_fr3/`` so the
+    PyBullet env's package resolver only needs to walk up a few
+    directories to find a ``meshes/`` folder — no ROS install required.
+    """
     for mesh in arm_root.iter("mesh"):
         fn = mesh.attrib.get("filename", "")
-        if fn.startswith("package://franka_description/"):
+        if fn.startswith("package://franka_description/meshes/"):
             mesh.attrib["filename"] = fn.replace(
-                "package://franka_description/",
-                "package://bimanual_fr3_description/",
+                "package://franka_description/meshes/",
+                "package://meshes/",
                 1,
             )
 
@@ -137,8 +154,8 @@ def _strip_world_root(arm_root: ET.Element) -> None:
         arm_root.remove(el)
 
 
-def _arm_copy(prefix: str) -> ET.Element:
-    tree = ET.parse(SRC_URDF)
+def _arm_copy(prefix: str, src_urdf: Path = SRC_URDF) -> ET.Element:
+    tree = ET.parse(src_urdf)
     arm_root = tree.getroot()
     _strip_world_root(arm_root)
     _drop_finger_dof(arm_root)
@@ -246,12 +263,28 @@ def _build_srdf() -> str:
     )
 
 
-def main() -> None:
-    OUT_URDF.parent.mkdir(parents=True, exist_ok=True)
+def _strip_visuals(root: ET.Element) -> None:
+    """Remove every ``<visual>`` element under ``root`` (used for the
+    spherized URDF — cricket's FK generator only consumes collision
+    primitives so the visual meshes aren't needed and only bloat the file)."""
+    for link in root.iter("link"):
+        for vis in list(link.findall("visual")):
+            link.remove(vis)
 
+
+def _strip_collisions(root: ET.Element) -> None:
+    """Remove every ``<collision>`` element under ``root`` (used for the
+    visualisation URDF — PyBullet's GUI client doesn't need collision
+    geometry and hides .stl meshes anyway)."""
+    for link in root.iter("link"):
+        for col in list(link.findall("collision")):
+            link.remove(col)
+
+
+def _build_combined(src_urdf: Path) -> ET.Element:
+    """Compose a full bimanual URDF document from ``src_urdf``."""
     bimanual = ET.Element("robot", attrib={"name": "bimanual_fr3"})
 
-    # World root + two arm-base offset joints.
     bimanual.append(_empty_link("world"))
     bimanual.append(
         _fixed_joint(
@@ -265,8 +298,6 @@ def main() -> None:
             RIGHT_BASE_XYZ, RIGHT_BASE_RPY,
         )
     )
-
-    # Virtual camera frame between the arms (used by Pink CoM/camera tasks).
     bimanual.append(_empty_link("world_camera"))
     bimanual.append(
         _fixed_joint(
@@ -275,24 +306,87 @@ def main() -> None:
         )
     )
 
-    # Stamp the two arm copies in place.
-    left = _arm_copy("fr3_left_")
-    right = _arm_copy("fr3_right_")
+    left = _arm_copy("fr3_left_", src_urdf)
+    right = _arm_copy("fr3_right_", src_urdf)
     _move_children(left, bimanual)
     _move_children(right, bimanual)
 
-    _indent(bimanual)
-    xml = ET.tostring(bimanual, encoding="unicode")
-    OUT_URDF.write_text('<?xml version="1.0" ?>\n' + xml + "\n")
-    print(f"wrote {OUT_URDF.relative_to(ROOT)}")
+    return bimanual
 
-    # Sanity check: count revolute joints — should be 14.
-    revolute = re.findall(r'<joint[^>]*type="revolute"', xml)
+
+def _serialize(root: ET.Element) -> str:
+    _indent(root)
+    xml = ET.tostring(root, encoding="unicode")
+    return '<?xml version="1.0" ?>\n' + xml + "\n"
+
+
+def _write_urdf(path: Path, root: ET.Element) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(_serialize(root))
+    print(f"wrote {path.relative_to(ROOT)}")
+
+
+def main() -> None:
+    # Assets URDF/SRDF (the source-of-truth that scripts/build_robot.sh consumes).
+    main_urdf = _build_combined(SRC_URDF)
+    _write_urdf(OUT_URDF, main_urdf)
+
+    revolute = re.findall(r'<joint[^>]*type="revolute"', _serialize(main_urdf))
     print(f"  revolute joints: {len(revolute)} (expected 14)")
     assert len(revolute) == 14
 
     OUT_SRDF.write_text(_build_srdf())
     print(f"wrote {OUT_SRDF.relative_to(ROOT)}")
+
+    # Resource copies inside the Python package: same URDF + spherized +
+    # viz variants, all under the package://bimanual_fr3_description/ mesh
+    # path so PyBullet/Pinocchio can find them.
+    main_urdf_pkg = _build_combined(SRC_URDF)
+    _write_urdf(OUT_URDF_RESOURCES, main_urdf_pkg)
+
+    spherized = _build_combined(SRC_URDF_SPHERIZED)
+    _strip_visuals(spherized)
+    _write_urdf(OUT_URDF_SPHERIZED, spherized)
+
+    viz = _build_combined(SRC_URDF)
+    _strip_collisions(viz)
+    _write_urdf(OUT_URDF_VIZ, viz)
+
+    OUT_SRDF_RESOURCES.parent.mkdir(parents=True, exist_ok=True)
+    OUT_SRDF_RESOURCES.write_text(_build_srdf())
+    print(f"wrote {OUT_SRDF_RESOURCES.relative_to(ROOT)}")
+
+    # Mirror collision (.stl) and visualisation (.dae) meshes into the
+    # package resources folder so a pip install ships everything the
+    # planner and PyBullet need without depending on the assets/ tree.
+    import shutil
+    meshes_dst = RESOURCES_OUT / "meshes"
+    viz_dst = RESOURCES_OUT / "viz_meshes"
+
+    for dst in (meshes_dst, viz_dst):
+        if dst.exists():
+            shutil.rmtree(dst)
+        dst.mkdir(parents=True)
+
+    src_meshes = ASSETS_OUT / "meshes"
+    if src_meshes.is_dir():
+        for f in src_meshes.rglob("*"):
+            if not f.is_file():
+                continue
+            rel = f.relative_to(src_meshes)
+            # collision .stl → meshes/, visual .dae → viz_meshes/
+            if f.suffix.lower() in {".stl"}:
+                target = meshes_dst / rel
+            else:
+                target = viz_dst / rel
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(f, target)
+
+    print(
+        "wrote "
+        f"{meshes_dst.relative_to(ROOT)}/ ({sum(1 for _ in meshes_dst.rglob('*') if _.is_file())} files), "
+        f"{viz_dst.relative_to(ROOT)}/ ({sum(1 for _ in viz_dst.rglob('*') if _.is_file())} files)"
+    )
 
 
 if __name__ == "__main__":
