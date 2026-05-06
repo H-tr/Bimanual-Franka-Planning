@@ -59,12 +59,8 @@ class MotionPlanner:
         constraints: list | None = None,
         costs: list | None = None,
     ) -> None:
-        from bimanual_franka_planning._ompl_vamp import OmplVampPlanner
-        from bimanual_franka_planning.bimanual_franka import (
-            HOME_JOINTS,
-            PLANNING_SUBGROUPS,
-            bimanual_fr3_robot_config,
-        )
+        import bimanual_franka_planning._ompl_vamp as _ext
+        from bimanual_franka_planning._robots import get_robot
 
         if config is None:
             config = PlannerConfig()
@@ -72,25 +68,34 @@ class MotionPlanner:
         self._config = config
         self._robot_name = robot_name
 
-        # Frozen 17-DOF joint values for any joint not controlled by
-        # this planner.  Defaults to HOME_JOINTS, but the caller can
-        # pass any 17-DOF array — e.g. the live config from the env —
-        # so the inactive joints are pinned wherever they currently are.
+        # Resolve which robot this planner is for.  ``robot_name`` may
+        # be either a top-level robot key (``"bimanual_fr3"``,
+        # ``"single_fr3"``) or a subgroup of one (``"bimanual_fr3_left_arm"``).
+        robot = get_robot(robot_name)
+        self._robot = robot
+        cpp_planner_cls = getattr(_ext, robot.cpp_planner_cls_name)
+
+        # Frozen full-body joint values for any joint not controlled by
+        # this planner.  Defaults to the robot's HOME, but the caller
+        # can pass any full-DOF array — e.g. the live config from the
+        # env — so the inactive joints are pinned wherever they
+        # currently are.
+        home = robot.home_joints
         if base_config is None:
-            base_config = HOME_JOINTS
+            base_config = home
         self._base_config = np.asarray(base_config, dtype=np.float64).copy()
-        if self._base_config.shape != HOME_JOINTS.shape:
+        if self._base_config.shape != home.shape:
             raise ValueError(
-                f"base_config must have shape {HOME_JOINTS.shape}, "
-                f"got {self._base_config.shape}"
+                f"base_config must have shape {home.shape} for robot "
+                f"'{robot.name}', got {self._base_config.shape}"
             )
 
-        full_names = bimanual_fr3_robot_config.joint_names
-        sg = PLANNING_SUBGROUPS.get(robot_name)
+        full_names = robot.joint_names
+        sg = robot.planning_subgroups.get(robot_name)
 
         if sg is None:
             # Full-body planner
-            self._planner = OmplVampPlanner()
+            self._planner = cpp_planner_cls()
             self._joint_names = list(full_names)
             self._subgroup_indices = None
         else:
@@ -99,7 +104,9 @@ class MotionPlanner:
             # active subset before every collision query.
             sg_joint_names = sg["joints"]
             active_indices = [full_names.index(j) for j in sg_joint_names]
-            self._planner = OmplVampPlanner(active_indices, self._base_config.tolist())
+            self._planner = cpp_planner_cls(
+                active_indices, self._base_config.tolist()
+            )
             self._joint_names = list(sg_joint_names)
             self._subgroup_indices = np.array(active_indices)
 
@@ -335,25 +342,37 @@ class MotionPlanner:
     ) -> None:
         """Switch active joints without rebuilding the collision environment.
 
-        Clears all constraints.  The pointcloud is preserved.
+        Clears all constraints.  The pointcloud is preserved.  ``robot_name``
+        must resolve to the same underlying C++ robot — switching from
+        a bimanual subgroup to a single-arm robot (or vice versa)
+        requires building a new ``MotionPlanner`` since each robot
+        has its own dedicated VAMP FK.
 
         Args:
-            robot_name: Subgroup name from ``PLANNING_SUBGROUPS``, or
-                ``"bimanual_fr3"`` for the full 17-DOF state.
-            base_config: 17-DOF frozen config for inactive joints.
+            robot_name: Subgroup name from this robot's
+                ``PLANNING_SUBGROUPS`` (e.g. ``"bimanual_fr3_left_arm"``),
+                or the robot's own name (``"bimanual_fr3"``,
+                ``"single_fr3"``) for the full state.
+            base_config: Full-DOF frozen config for inactive joints.
                 Defaults to the previously stored base config.
         """
-        from bimanual_franka_planning.bimanual_franka import (
-            PLANNING_SUBGROUPS,
-            bimanual_fr3_robot_config,
-        )
+        from bimanual_franka_planning._robots import get_robot
+
+        robot = get_robot(robot_name)
+        if robot.name != self._robot.name:
+            raise ValueError(
+                f"set_subgroup cannot switch C++ robots — this planner is "
+                f"bound to '{self._robot.name}', got '{robot_name}' which "
+                f"resolves to '{robot.name}'.  Build a new MotionPlanner "
+                f"for the other robot."
+            )
 
         if base_config is not None:
             self._base_config = np.asarray(base_config, dtype=np.float64).copy()
         self._robot_name = robot_name
 
-        full_names = bimanual_fr3_robot_config.joint_names
-        sg = PLANNING_SUBGROUPS.get(robot_name)
+        full_names = robot.joint_names
+        sg = robot.planning_subgroups.get(robot_name)
 
         if sg is None:
             self._planner.set_full_body()
@@ -611,10 +630,20 @@ class MotionPlanner:
 
 
 def available_robots() -> list[str]:
-    """Return all available robot names for planning."""
-    from bimanual_franka_planning.bimanual_franka import PLANNING_SUBGROUPS
+    """Return all available robot names for planning.
 
-    return ["bimanual_fr3"] + sorted(PLANNING_SUBGROUPS.keys())
+    Includes top-level robots (``"bimanual_fr3"``, ``"single_fr3"``)
+    and every named subgroup each one exposes.
+    """
+    from bimanual_franka_planning._robots import (
+        ROBOT_REGISTRY,
+        _all_planner_names,
+    )
+
+    # Sort top-level robots first, then subgroups, for stability.
+    top_level = sorted(ROBOT_REGISTRY.keys())
+    subgroups = sorted(set(_all_planner_names()) - set(top_level))
+    return top_level + subgroups
 
 
 def create_planner(

@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 
-from bimanual_franka_planning.bimanual_franka import CHAIN_CONFIGS
+from bimanual_franka_planning._robots import all_chain_configs
 from bimanual_franka_planning.types import (
     ChainConfig,
     IKConfig,
@@ -77,15 +77,24 @@ def _resolve_chain_config(
     side: str | None = None,
     urdf_path: str | None = None,
 ) -> ChainConfig:
-    """Look up and optionally patch a chain config."""
+    """Look up and optionally patch a chain config.
+
+    The chain table is the union of every registered robot's
+    ``CHAIN_CONFIGS`` (see :mod:`bimanual_franka_planning._robots`),
+    so e.g. ``"left_arm"`` / ``"right_arm"`` resolve to the bimanual
+    FR3 cell while ``"single_fr3"`` resolves to the standalone arm —
+    the caller never has to know which description module owns the
+    chain.
+    """
     if side is not None:
         chain_name = f"{chain_name}_{side}"
 
-    if chain_name not in CHAIN_CONFIGS:
-        available = ", ".join(sorted(CHAIN_CONFIGS.keys()))
+    chains = all_chain_configs()
+    if chain_name not in chains:
+        available = ", ".join(sorted(chains.keys()))
         raise ValueError(f"Unknown chain '{chain_name}'. Available chains: {available}")
 
-    chain_config = CHAIN_CONFIGS[chain_name]
+    chain_config = chains[chain_name]
     if urdf_path is not None:
         chain_config = chain_config.with_urdf_path(urdf_path)
     return chain_config
