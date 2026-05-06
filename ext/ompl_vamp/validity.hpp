@@ -1,15 +1,16 @@
 /**
  * OMPL ↔ VAMP state validity and motion validators.
  *
- * Two pairs of classes:
+ * Two pairs of class templates, parameterised on the VAMP ``Robot``
+ * type (so the same code drives ``BimanualFr3``, ``SingleFr3``, …):
  *
- *  - ``BimanualFr3ValidityChecker`` / ``BimanualFr3MotionValidator``
- *      Full-body planner: the OMPL state already has 24 DOFs, so we
- *      copy it straight into a VAMP ``Robot::Configuration``.
+ *  - ``FullBodyValidityChecker<Robot>`` / ``FullBodyMotionValidator<Robot>``
+ *      Full-body planner: the OMPL state already has ``Robot::dimension``
+ *      entries, so we copy it straight into a VAMP ``Robot::Configuration``.
  *
- *  - ``SubgroupValidityChecker`` / ``SubgroupMotionValidator``
+ *  - ``SubgroupValidityChecker<Robot>`` / ``SubgroupMotionValidator<Robot>``
  *      Subgroup planner: the OMPL state is the reduced active subset.
- *      We expand it to a 24-DOF body via ``active_indices`` +
+ *      We expand it to a full-body config via ``active_indices`` +
  *      ``frozen_config`` before calling VAMP.
  *
  * In both cases the actual collision checking is delegated to VAMP's
@@ -32,19 +33,12 @@
 #include <utility>
 #include <vamp/collision/environment.hh>
 #include <vamp/planning/validate.hh>
-// Our bimanual_fr3 FK/collision header lives in-tree so the vamp submodule
-// stays a pure header-only third-party dep. ``ext/ompl_vamp`` is on the
-// include path, which makes this resolve to
-// ``ext/ompl_vamp/robot/bimanual_fr3.hh``.
 #include <vector>
-
-#include "robot/bimanual_fr3.hh"
 
 namespace bimanual_franka {
 
 namespace ob = ompl::base;
 
-using Robot = vamp::robots::BimanualFr3;
 inline constexpr std::size_t kRake = vamp::FloatVectorWidth;
 using VampEnv = vamp::collision::Environment<vamp::FloatVector<kRake>>;
 using FloatEnv = vamp::collision::Environment<float>;
@@ -64,10 +58,11 @@ inline auto extract_real_state(const ob::State *state)
 
 // ─── Full-body checkers ─────────────────────────────────────────────
 
-class BimanualFr3ValidityChecker : public ob::StateValidityChecker {
+template <class Robot>
+class FullBodyValidityChecker : public ob::StateValidityChecker {
  public:
-  BimanualFr3ValidityChecker(const ob::SpaceInformationPtr &si,
-                             const VampEnv &env)
+  FullBodyValidityChecker(const ob::SpaceInformationPtr &si,
+                          const VampEnv &env)
       : ob::StateValidityChecker(si), env_(env) {}
 
   auto isValid(const ob::State *state) const -> bool override {
@@ -79,7 +74,8 @@ class BimanualFr3ValidityChecker : public ob::StateValidityChecker {
  private:
   const VampEnv &env_;
 
-  static auto ompl_to_vamp(const ob::State *state) -> Robot::Configuration {
+  static auto ompl_to_vamp(const ob::State *state) ->
+      typename Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
         std::array<float, Robot::Configuration::num_scalars_rounded>
             buf;
@@ -92,14 +88,15 @@ class BimanualFr3ValidityChecker : public ob::StateValidityChecker {
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < Robot::dimension; ++i)
       buf[i] = static_cast<float>(rv->values[i]);
-    return Robot::Configuration(buf.data());
+    return typename Robot::Configuration(buf.data());
   }
 };
 
-class BimanualFr3MotionValidator : public ob::MotionValidator {
+template <class Robot>
+class FullBodyMotionValidator : public ob::MotionValidator {
  public:
-  BimanualFr3MotionValidator(const ob::SpaceInformationPtr &si,
-                             const VampEnv &env)
+  FullBodyMotionValidator(const ob::SpaceInformationPtr &si,
+                          const VampEnv &env)
       : ob::MotionValidator(si), env_(env) {}
 
   auto checkMotion(const ob::State *s1, const ob::State *s2) const
@@ -119,25 +116,22 @@ class BimanualFr3MotionValidator : public ob::MotionValidator {
  private:
   const VampEnv &env_;
 
-  static auto ompl_to_vamp(const ob::State *state) -> Robot::Configuration {
+  static auto ompl_to_vamp(const ob::State *state) ->
+      typename Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
         std::array<float, Robot::Configuration::num_scalars_rounded>
             buf;
-    // Zero the SIMD padding explicitly: ``std::array<float, N> buf{}``
-    // does NOT reliably zero-init when N exceeds Robot::dimension on
-    // some compilers, leaving NaN/garbage in the padded lanes that
-    // VAMP's SIMD bound check reads — producing a spurious false from
-    // validate_motion even on physically-valid configurations.
     std::fill(buf.begin(), buf.end(), 0.0f);
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < Robot::dimension; ++i)
       buf[i] = static_cast<float>(rv->values[i]);
-    return Robot::Configuration(buf.data());
+    return typename Robot::Configuration(buf.data());
   }
 };
 
 // ─── Subgroup checkers (reduced dim → full config → VAMP) ───────────
 
+template <class Robot>
 class SubgroupValidityChecker : public ob::StateValidityChecker {
  public:
   SubgroupValidityChecker(const ob::SpaceInformationPtr &si, const VampEnv &env,
@@ -159,7 +153,7 @@ class SubgroupValidityChecker : public ob::StateValidityChecker {
   std::vector<int> active_;
   std::vector<float> frozen_;
 
-  auto expand(const ob::State *state) const -> Robot::Configuration {
+  auto expand(const ob::State *state) const -> typename Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
         std::array<float, Robot::Configuration::num_scalars_rounded>
             buf;
@@ -168,10 +162,11 @@ class SubgroupValidityChecker : public ob::StateValidityChecker {
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < active_.size(); ++i)
       buf[active_[i]] = static_cast<float>(rv->values[i]);
-    return Robot::Configuration(buf.data());
+    return typename Robot::Configuration(buf.data());
   }
 };
 
+template <class Robot>
 class SubgroupMotionValidator : public ob::MotionValidator {
  public:
   SubgroupMotionValidator(const ob::SpaceInformationPtr &si, const VampEnv &env,
@@ -201,7 +196,7 @@ class SubgroupMotionValidator : public ob::MotionValidator {
   std::vector<int> active_;
   std::vector<float> frozen_;
 
-  auto expand(const ob::State *state) const -> Robot::Configuration {
+  auto expand(const ob::State *state) const -> typename Robot::Configuration {
     alignas(Robot::Configuration::S::Alignment)
         std::array<float, Robot::Configuration::num_scalars_rounded>
             buf;
@@ -210,7 +205,7 @@ class SubgroupMotionValidator : public ob::MotionValidator {
     const auto *rv = extract_real_state(state);
     for (std::size_t i = 0; i < active_.size(); ++i)
       buf[active_[i]] = static_cast<float>(rv->values[i]);
-    return Robot::Configuration(buf.data());
+    return typename Robot::Configuration(buf.data());
   }
 };
 

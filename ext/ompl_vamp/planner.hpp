@@ -1,9 +1,13 @@
 /**
  * Main planner class — OMPL frontend with VAMP collision backend.
  *
+ * Templated on the VAMP ``Robot`` type so the same code drives every
+ * registered description (``BimanualFr3``, ``SingleFr3``, …).  Each
+ * concrete instantiation is bound separately into the Python module.
+ *
  * Two construction modes:
  *
- *  - ``OmplVampPlanner()`` — full body, 24 DOF (3 base + 21 joints).
+ *  - ``OmplVampPlanner()`` — full body, ``Robot::dimension`` DOF.
  *  - ``OmplVampPlanner(active_indices, frozen_config)`` — subgroup
  *    planning over the listed joint indices, with the rest of the
  *    body pinned to ``frozen_config`` for every collision check.
@@ -83,6 +87,7 @@
 #include <vamp/collision/filter.hh>
 #include <vamp/collision/shapes.hh>
 #include <vamp/collision/sphere_sphere.hh>
+#include <vamp/collision/validity.hh>
 #include <vector>
 
 namespace bimanual_franka {
@@ -96,20 +101,30 @@ struct PlanResult {
   double path_cost;
 };
 
+template <class Robot>
 class OmplVampPlanner {
+  // Type aliases that strip the ``typename`` noise off every dependent
+  // reference to ``Robot::``.  Used freely below.
+  using Configuration = typename Robot::Configuration;
+  using ConfigurationArray = typename Robot::ConfigurationArray;
+  template <std::size_t Rake>
+  using ConfigurationBlock = typename Robot::template ConfigurationBlock<Rake>;
+  template <std::size_t Rake>
+  using SpheresT = typename Robot::template Spheres<Rake>;
+
  public:
-  /// Full-body constructor (24 DOF).
+  /// Full-body constructor (``Robot::dimension`` DOF).
   OmplVampPlanner() : active_dim_(Robot::dimension), is_subgroup_(false) {
-    Robot::Configuration lo, hi;
+    Configuration lo, hi;
     // Use num_scalars_rounded so the FloatVector pointer-constructor
     // can read a SIMD-aligned full block; reading past dimension on a
     // size-dimension array is UB and produces NaNs in the padding.
-    alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded>
+    alignas(Configuration::S::Alignment)
+        std::array<float, Configuration::num_scalars_rounded>
             zeros{}, ones{};
     std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
-    lo = Robot::Configuration(zeros.data());
-    hi = Robot::Configuration(ones.data());
+    lo = Configuration(zeros.data());
+    hi = Configuration(ones.data());
     Robot::scale_configuration(lo);
     Robot::scale_configuration(hi);
 
@@ -136,16 +151,16 @@ class OmplVampPlanner {
     for (std::size_t i = 0; i < frozen_config.size(); ++i)
       frozen_config_[i] = static_cast<float>(frozen_config[i]);
 
-    Robot::Configuration lo, hi;
+    Configuration lo, hi;
     // Use num_scalars_rounded so the FloatVector pointer-constructor
     // can read a SIMD-aligned full block; reading past dimension on a
     // size-dimension array is UB and produces NaNs in the padding.
-    alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded>
+    alignas(Configuration::S::Alignment)
+        std::array<float, Configuration::num_scalars_rounded>
             zeros{}, ones{};
     std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
-    lo = Robot::Configuration(zeros.data());
-    hi = Robot::Configuration(ones.data());
+    lo = Configuration(zeros.data());
+    hi = Configuration(ones.data());
     Robot::scale_configuration(lo);
     Robot::scale_configuration(hi);
     auto lo_arr = lo.to_array();
@@ -641,9 +656,9 @@ class OmplVampPlanner {
   // injecting the frozen pose for joints outside ``active_indices_``
   // when running as a subgroup planner.
   auto build_full_config_(const std::vector<double> &config) const
-      -> Robot::Configuration {
-    alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded>
+      -> Configuration {
+    alignas(Configuration::S::Alignment)
+        std::array<float, Configuration::num_scalars_rounded>
             buf;
     // Zero the SIMD padding explicitly — see comment in
     // validity.hpp::ompl_to_vamp.
@@ -656,7 +671,7 @@ class OmplVampPlanner {
       for (std::size_t i = 0; i < Robot::dimension; ++i)
         buf[i] = static_cast<float>(config[i]);
     }
-    return Robot::Configuration(buf.data());
+    return Configuration(buf.data());
   }
 
   // Build the OMPL OptimizationObjective for the active cost set.
@@ -684,16 +699,16 @@ class OmplVampPlanner {
   }
 
   void rebuild_space_() {
-    Robot::Configuration lo, hi;
+    Configuration lo, hi;
     // Use num_scalars_rounded so the FloatVector pointer-constructor
     // can read a SIMD-aligned full block; reading past dimension on a
     // size-dimension array is UB and produces NaNs in the padding.
-    alignas(Robot::Configuration::S::Alignment)
-        std::array<float, Robot::Configuration::num_scalars_rounded>
+    alignas(Configuration::S::Alignment)
+        std::array<float, Configuration::num_scalars_rounded>
             zeros{}, ones{};
     std::fill(ones.begin(), ones.begin() + Robot::dimension, 1.0f);
-    lo = Robot::Configuration(zeros.data());
-    hi = Robot::Configuration(ones.data());
+    lo = Configuration(zeros.data());
+    hi = Configuration(ones.data());
     Robot::scale_configuration(lo);
     Robot::scale_configuration(hi);
     auto lo_arr = lo.to_array();
@@ -764,18 +779,20 @@ class OmplVampPlanner {
     }
 
     if (is_subgroup_) {
-      si->setStateValidityChecker(std::make_shared<SubgroupValidityChecker>(
-          si, env_, active_indices_, frozen_config_));
+      si->setStateValidityChecker(
+          std::make_shared<SubgroupValidityChecker<Robot>>(
+              si, env_, active_indices_, frozen_config_));
       if (!constrained) {
-        si->setMotionValidator(std::make_shared<SubgroupMotionValidator>(
-            si, env_, active_indices_, frozen_config_));
+        si->setMotionValidator(
+            std::make_shared<SubgroupMotionValidator<Robot>>(
+                si, env_, active_indices_, frozen_config_));
       }
     } else {
       si->setStateValidityChecker(
-          std::make_shared<BimanualFr3ValidityChecker>(si, env_));
+          std::make_shared<FullBodyValidityChecker<Robot>>(si, env_));
       if (!constrained) {
         si->setMotionValidator(
-            std::make_shared<BimanualFr3MotionValidator>(si, env_));
+            std::make_shared<FullBodyMotionValidator<Robot>>(si, env_));
       }
     }
     si->setup();
