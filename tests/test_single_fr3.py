@@ -176,7 +176,6 @@ def test_single_pinocchio_matches_trac_ik():
     )
     from bimanual_franka_planning.single_franka import (
         CHAIN_CONFIGS,
-        HOME_JOINTS,
         single_fr3_robot_config,
     )
 

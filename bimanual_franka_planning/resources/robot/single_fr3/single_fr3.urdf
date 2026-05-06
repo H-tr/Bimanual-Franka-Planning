@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="fr3">
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   <link name="base">
       </link>
   <joint name="fr3_base_joint" type="fixed">
@@ -13,7 +13,7 @@
     <child link="fr3_link0" />
     <origin rpy="0 0 0" xyz="0 0 0" />
   </joint>
-  
+
   <link name="fr3_link0">
     <visual name="fr3_link0_visual">
       <geometry>
@@ -31,7 +31,7 @@
       <inertia ixx="0.009" ixy="0.0" ixz="0.002" iyy="0.0115" iyz="0.0" izz="0.0085" />
     </inertial>
   </link>
-  
+
   <link name="fr3_link1">
     <visual name="fr3_link1_visual">
       <geometry>
@@ -57,7 +57,7 @@
     <limit effort="87.0" lower="-2.7437" upper="2.7437" velocity="2.62" />
     <dynamics D="1" K="7000" damping="0.003" friction="0.2" mu_coulomb="0" mu_viscous="16" />
   </joint>
-  
+
   <link name="fr3_link2">
     <visual name="fr3_link2_visual">
       <geometry>
@@ -83,7 +83,7 @@
     <limit effort="87.0" lower="-1.7837" upper="1.7837" velocity="2.62" />
     <dynamics D="1" K="7000" damping="0.003" friction="0.2" mu_coulomb="0" mu_viscous="16" />
   </joint>
-  
+
   <link name="fr3_link3">
     <visual name="fr3_link3_visual">
       <geometry>
@@ -109,7 +109,7 @@
     <limit effort="87.0" lower="-2.9007" upper="2.9007" velocity="2.62" />
     <dynamics D="1" K="7000" damping="0.003" friction="0.2" mu_coulomb="0" mu_viscous="16" />
   </joint>
-  
+
   <link name="fr3_link4">
     <visual name="fr3_link4_visual">
       <geometry>
@@ -135,7 +135,7 @@
     <limit effort="87.0" lower="-3.0421" upper="-0.1518" velocity="2.62" />
     <dynamics D="1" K="7000" damping="0.003" friction="0.2" mu_coulomb="0" mu_viscous="16" />
   </joint>
-  
+
   <link name="fr3_link5">
     <visual name="fr3_link5_visual">
       <geometry>
@@ -161,7 +161,7 @@
     <limit effort="12.0" lower="-2.8065" upper="2.8065" velocity="5.26" />
     <dynamics D="1" K="7000" damping="0.003" friction="0.2" mu_coulomb="0" mu_viscous="16" />
   </joint>
-  
+
   <link name="fr3_link6">
     <visual name="fr3_link6_visual">
       <geometry>
@@ -187,7 +187,7 @@
     <limit effort="12.0" lower="0.5445" upper="4.5169" velocity="4.18" />
     <dynamics D="1" K="7000" damping="0.003" friction="0.2" mu_coulomb="0" mu_viscous="16" />
   </joint>
-  
+
   <link name="fr3_link7">
     <visual name="fr3_link7_visual">
       <geometry>
@@ -224,7 +224,7 @@
     <child link="fr3_hand" />
     <origin rpy="0 0 -0.7853981633974483" xyz="0 0 0" />
   </joint>
-  
+
   <link name="fr3_hand">
     <visual name="fr3_hand_visual">
       <geometry>
@@ -242,7 +242,7 @@
       <inertia ixx="0.00186" ixy="0.0" ixz="0.0" iyy="0.0003" iyz="-2e-05" izz="0.00174" />
     </inertial>
   </link>
-  
+
   <link name="fr3_hand_tcp" />
   <joint name="fr3_hand_tcp_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.1034" />
@@ -255,28 +255,28 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/finger.dae" />
       </geometry>
     </visual>
-    
+
     <collision>
       <origin rpy="0 0 0" xyz="0 18.5e-3 11e-3" />
       <geometry>
         <box size="22e-3 15e-3 20e-3" />
       </geometry>
     </collision>
-    
+
     <collision>
       <origin rpy="0 0 0" xyz="0 6.8e-3 2.2e-3" />
       <geometry>
         <box size="22e-3 8.8e-3 3.8e-3" />
       </geometry>
     </collision>
-    
+
     <collision>
       <origin rpy="0.5235987755982988 0 0" xyz="0 15.9e-3 28.35e-3" />
       <geometry>
         <box size="17.5e-3 7e-3 23.5e-3" />
       </geometry>
     </collision>
-    
+
     <collision>
       <origin rpy="0 0 0" xyz="0 7.58e-3 45.25e-3" />
       <geometry>
@@ -296,28 +296,28 @@
         <mesh filename="package://meshes/robot_ee/franka_hand_white/visual/finger.dae" />
       </geometry>
     </visual>
-    
+
     <collision>
       <origin rpy="0 0 0" xyz="0 18.5e-3 11e-3" />
       <geometry>
         <box size="22e-3 15e-3 20e-3" />
       </geometry>
     </collision>
-    
+
     <collision>
       <origin rpy="0 0 0" xyz="0 6.8e-3 2.2e-3" />
       <geometry>
         <box size="22e-3 8.8e-3 3.8e-3" />
       </geometry>
     </collision>
-    
+
     <collision>
       <origin rpy="-0.5235987755982988 0 3.141592653589793" xyz="0 15.9e-3 28.35e-3" />
       <geometry>
         <box size="17.5e-3 7e-3 23.5e-3" />
       </geometry>
     </collision>
-    
+
     <collision>
       <origin rpy="0 0 0" xyz="0 7.58e-3 45.25e-3" />
       <geometry>

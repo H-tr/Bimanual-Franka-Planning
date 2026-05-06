@@ -54,8 +54,8 @@ void bind_planner(nb::module_ &m, const char *class_name) {
            nb::arg("co_dim"))
       .def("clear_constraints", &Planner::clear_constraints)
       .def("num_constraints", &Planner::num_constraints)
-      .def("add_compiled_cost", &Planner::add_compiled_cost,
-           nb::arg("so_path"), nb::arg("symbol_name"), nb::arg("ambient_dim"),
+      .def("add_compiled_cost", &Planner::add_compiled_cost, nb::arg("so_path"),
+           nb::arg("symbol_name"), nb::arg("ambient_dim"),
            nb::arg("weight") = 1.0)
       .def("clear_costs", &Planner::clear_costs)
       .def("num_costs", &Planner::num_costs)

@@ -104,9 +104,7 @@ class MotionPlanner:
             # active subset before every collision query.
             sg_joint_names = sg["joints"]
             active_indices = [full_names.index(j) for j in sg_joint_names]
-            self._planner = cpp_planner_cls(
-                active_indices, self._base_config.tolist()
-            )
+            self._planner = cpp_planner_cls(active_indices, self._base_config.tolist())
             self._joint_names = list(sg_joint_names)
             self._subgroup_indices = np.array(active_indices)
 

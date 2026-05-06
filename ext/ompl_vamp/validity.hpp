@@ -61,8 +61,7 @@ inline auto extract_real_state(const ob::State *state)
 template <class Robot>
 class FullBodyValidityChecker : public ob::StateValidityChecker {
  public:
-  FullBodyValidityChecker(const ob::SpaceInformationPtr &si,
-                          const VampEnv &env)
+  FullBodyValidityChecker(const ob::SpaceInformationPtr &si, const VampEnv &env)
       : ob::StateValidityChecker(si), env_(env) {}
 
   auto isValid(const ob::State *state) const -> bool override {
@@ -95,8 +94,7 @@ class FullBodyValidityChecker : public ob::StateValidityChecker {
 template <class Robot>
 class FullBodyMotionValidator : public ob::MotionValidator {
  public:
-  FullBodyMotionValidator(const ob::SpaceInformationPtr &si,
-                          const VampEnv &env)
+  FullBodyMotionValidator(const ob::SpaceInformationPtr &si, const VampEnv &env)
       : ob::MotionValidator(si), env_(env) {}
 
   auto checkMotion(const ob::State *s1, const ob::State *s2) const

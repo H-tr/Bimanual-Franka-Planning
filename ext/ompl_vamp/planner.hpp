@@ -783,9 +783,8 @@ class OmplVampPlanner {
           std::make_shared<SubgroupValidityChecker<Robot>>(
               si, env_, active_indices_, frozen_config_));
       if (!constrained) {
-        si->setMotionValidator(
-            std::make_shared<SubgroupMotionValidator<Robot>>(
-                si, env_, active_indices_, frozen_config_));
+        si->setMotionValidator(std::make_shared<SubgroupMotionValidator<Robot>>(
+            si, env_, active_indices_, frozen_config_));
       }
     } else {
       si->setStateValidityChecker(
