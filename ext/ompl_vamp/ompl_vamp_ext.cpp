@@ -106,6 +106,7 @@ NB_MODULE(_ompl_vamp, m) {
   bind_planner<vamp::robots::SingleFr3>(m, "SingleFr3OmplVampPlanner");
   // Soft-gripper variants — same kinematics, different fingertip
   // collision footprint (5–6 spheres along each rubber finger).
-  bind_planner<vamp::robots::BimanualFr3Soft>(m, "BimanualFr3SoftOmplVampPlanner");
+  bind_planner<vamp::robots::BimanualFr3Soft>(m,
+                                              "BimanualFr3SoftOmplVampPlanner");
   bind_planner<vamp::robots::SingleFr3Soft>(m, "SingleFr3SoftOmplVampPlanner");
 }

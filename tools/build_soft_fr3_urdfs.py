@@ -288,8 +288,12 @@ def _patch_finger_pair(
         if el.tag in ("link", "joint") and "name" in el.attrib:
             by_name[(el.tag, el.attrib["name"])] = el
 
-    _replace_finger_link(by_name[("link", left_link)], mode=mode, visual_name=visual_name_left)
-    _replace_finger_link(by_name[("link", right_link)], mode=mode, visual_name=visual_name_right)
+    _replace_finger_link(
+        by_name[("link", left_link)], mode=mode, visual_name=visual_name_left
+    )
+    _replace_finger_link(
+        by_name[("link", right_link)], mode=mode, visual_name=visual_name_right
+    )
     _patch_finger_joint(by_name[("joint", left_joint)], side="left")
     _patch_finger_joint(by_name[("joint", right_joint)], side="right")
 

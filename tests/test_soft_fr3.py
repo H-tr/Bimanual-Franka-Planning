@@ -107,9 +107,7 @@ def test_single_soft_validate_batch(single_soft_planner, single_soft_home):
     hi = np.asarray(single_soft_planner._planner.upper_bounds())
     samples = np.random.uniform(lo, hi, size=(20, 7))
     samples[0] = single_soft_home
-    expected = np.array(
-        [single_soft_planner.validate(s) for s in samples], dtype=bool
-    )
+    expected = np.array([single_soft_planner.validate(s) for s in samples], dtype=bool)
     got = single_soft_planner.validate_batch(samples)
     np.testing.assert_array_equal(got, expected)
 
