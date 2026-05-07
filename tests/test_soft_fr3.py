@@ -87,8 +87,12 @@ def single_soft_home():
 
 
 def test_single_soft_planner_dim(single_soft_planner):
-    assert single_soft_planner.num_dof == 7
-    assert single_soft_planner.joint_names == [f"fr3_joint{i}" for i in range(1, 8)]
+    # 7 arm joints + 2 prismatic gripper finger joints.
+    assert single_soft_planner.num_dof == 9
+    assert single_soft_planner.joint_names == (
+        [f"fr3_joint{i}" for i in range(1, 8)]
+        + ["fr3_finger_joint1", "fr3_finger_joint2"]
+    )
 
 
 def test_single_soft_home_is_valid(single_soft_planner, single_soft_home):
@@ -98,14 +102,14 @@ def test_single_soft_home_is_valid(single_soft_planner, single_soft_home):
 def test_single_soft_trivial_plan(single_soft_planner, single_soft_home):
     result = single_soft_planner.plan(single_soft_home, single_soft_home)
     assert result.success
-    assert result.path is not None and result.path.shape[1] == 7
+    assert result.path is not None and result.path.shape[1] == 9
 
 
 def test_single_soft_validate_batch(single_soft_planner, single_soft_home):
     np.random.seed(0)
     lo = np.asarray(single_soft_planner._planner.lower_bounds())
     hi = np.asarray(single_soft_planner._planner.upper_bounds())
-    samples = np.random.uniform(lo, hi, size=(20, 7))
+    samples = np.random.uniform(lo, hi, size=(20, 9))
     samples[0] = single_soft_home
     expected = np.array([single_soft_planner.validate(s) for s in samples], dtype=bool)
     got = single_soft_planner.validate_batch(samples)
@@ -134,7 +138,8 @@ def bimanual_soft_home():
 
 
 def test_bimanual_soft_planner_dim(bimanual_soft_planner):
-    assert bimanual_soft_planner.num_dof == 17
+    # 3 base + 7+7 arms + 2+2 grippers = 21.
+    assert bimanual_soft_planner.num_dof == 21
 
 
 def test_bimanual_soft_home_is_valid(bimanual_soft_planner, bimanual_soft_home):
@@ -180,14 +185,17 @@ def test_single_soft_pinocchio_matches_planner_bounds():
     pin_hi = np.asarray(model.upperPositionLimit, dtype=float)
     p_lo = np.asarray(p._planner.lower_bounds(), dtype=float)
     p_hi = np.asarray(p._planner.upper_bounds(), dtype=float)
-    np.testing.assert_allclose(p_lo, pin_lo[:7], atol=1e-4)
-    np.testing.assert_allclose(p_hi, pin_hi[:7], atol=1e-4)
+    # Compare only the 7 arm joints — Pinocchio honors the URDF mimic
+    # so its nq excludes finger_joint2, but the planner exposes both
+    # finger DOFs explicitly.
+    np.testing.assert_allclose(p_lo[:7], pin_lo[:7], atol=1e-4)
+    np.testing.assert_allclose(p_hi[:7], pin_hi[:7], atol=1e-4)
 
 
 def test_single_soft_finger_geometry():
-    """Sanity-check that the soft fingers don't overlap across the
-    centerline of the hand — a regression test for the URDF
-    finger-mounting transform."""
+    """Sanity-check that the soft fingers move symmetrically across the
+    hand centerline when the gripper is opened — a regression test for
+    the prismatic finger joint mounting transform."""
     pytest.importorskip("pinocchio")
     import pinocchio as pin
 
@@ -197,7 +205,16 @@ def test_single_soft_finger_geometry():
 
     m = pin.buildModelFromUrdf(CHAIN_CONFIGS["single_fr3_soft"].urdf_path)
     data = m.createData()
+
+    # Open the gripper by setting both finger joints to the upper limit.
+    # Pinocchio's URDF parser does not honor the ``<mimic>`` tag, so we
+    # set finger_joint1 and finger_joint2 explicitly — matching the
+    # convention the planner exposes (both DOFs visible, kept equal).
     q = np.clip(pin.neutral(m), m.lowerPositionLimit, m.upperPositionLimit)
+    for jname in ("fr3_finger_joint1", "fr3_finger_joint2"):
+        idx_q = m.joints[m.getJointId(jname)].idx_q
+        q[idx_q] = float(m.upperPositionLimit[idx_q])
+
     pin.forwardKinematics(m, data, q)
     pin.updateFramePlacements(m, data)
 
@@ -208,9 +225,10 @@ def test_single_soft_finger_geometry():
     left_in_hand = hand.actInv(left).translation
     right_in_hand = hand.actInv(right).translation
 
-    # The two finger frames should sit symmetrically across the hand's
-    # y-axis, with the inner faces at least 40 mm apart (i.e. the
-    # 50 mm preset gap minus a bit of tolerance).
+    # When the gripper is open, the two finger frames should sit
+    # symmetrically across the hand's y-axis with the inner faces at
+    # least 40 mm apart (the URDF travel range is 0..0.04 m per side,
+    # giving an 80 mm full-open gap minus a bit of tolerance).
     assert left_in_hand[1] > 0 > right_in_hand[1]
     assert abs(left_in_hand[1] - right_in_hand[1]) >= 0.04
     # And both at the same z offset on the hand.

@@ -159,12 +159,12 @@ def test_validate_batch_rejects_wrong_dimension(left_arm_planner):
 
 
 def test_validate_batch_full_body_roundtrip(home_joints):
-    """Full-body (17-DOF) batched check — no subgroup expansion path."""
+    """Full-body (21-DOF) batched check — no subgroup expansion path."""
     from bimanual_franka_planning._ompl_vamp import OmplVampPlanner
 
     planner = OmplVampPlanner()
     home = home_joints.tolist()
-    out_of_bounds = [10.0] * 17
+    out_of_bounds = [10.0] * planner.dimension()
 
     batch = [home, out_of_bounds, home, out_of_bounds] * 3  # 12 = 1 full + 1 tail
     got = planner.validate_batch(batch)

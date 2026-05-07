@@ -83,8 +83,13 @@ def single_home():
 
 
 def test_single_planner_dim(single_planner):
-    assert single_planner.num_dof == 7
-    assert single_planner.joint_names == [f"fr3_joint{i}" for i in range(1, 8)]
+    # 7 arm joints + 2 prismatic finger joints (finger_joint2 is a URDF
+    # mimic of finger_joint1 but cricket emits it as a separate DOF).
+    assert single_planner.num_dof == 9
+    assert single_planner.joint_names == (
+        [f"fr3_joint{i}" for i in range(1, 8)]
+        + ["fr3_finger_joint1", "fr3_finger_joint2"]
+    )
     assert not single_planner.is_subgroup
 
 
@@ -96,13 +101,13 @@ def test_single_trivial_plan(single_planner, single_home):
     """Planning from a state to itself must always succeed."""
     result = single_planner.plan(single_home, single_home)
     assert result.success
-    assert result.path is not None and result.path.shape[1] == 7
+    assert result.path is not None and result.path.shape[1] == 9
 
 
 def test_single_plan_to_random_goal(single_planner, single_home):
     np.random.seed(0)
     goal = single_planner.sample_valid()
-    assert goal.shape == (7,)
+    assert goal.shape == (9,)
     result = single_planner.plan(single_home, goal)
     assert result.status.value in {"success", "failed"}
     if result.success:
@@ -115,7 +120,7 @@ def test_single_validate_batch(single_planner, single_home):
     np.random.seed(0)
     lo = np.asarray(single_planner._planner.lower_bounds())
     hi = np.asarray(single_planner._planner.upper_bounds())
-    samples = np.random.uniform(lo, hi, size=(20, 7))
+    samples = np.random.uniform(lo, hi, size=(20, 9))
     samples[0] = single_home
     expected = np.array([single_planner.validate(s) for s in samples], dtype=bool)
     got = single_planner.validate_batch(samples)
@@ -153,12 +158,15 @@ def test_single_ik_round_trip():
     from bimanual_franka_planning.types import IKConfig, SE3Pose
 
     s = create_ik_solver("single_fr3", config=IKConfig(max_attempts=3))
-    home_pose = s.fk(HOME_JOINTS)
+    # The IK chain is the 7-DOF arm only (gripper joints are not part
+    # of the IK chain), so slice off the gripper portion of HOME_JOINTS.
+    arm_home = HOME_JOINTS[:7]
+    home_pose = s.fk(arm_home)
     target = SE3Pose(
         position=home_pose.position + np.array([0.03, 0.0, -0.02]),
         rotation=home_pose.rotation,
     )
-    result = s.solve(target, seed=HOME_JOINTS)
+    result = s.solve(target, seed=arm_home)
     if not result.success:
         pytest.skip(f"TRAC-IK did not converge ({result.status.value}); flaky on CI")
 
@@ -179,16 +187,14 @@ def test_single_pinocchio_matches_trac_ik():
         create_ik_solver,
         create_pinocchio_context,
     )
-    from bimanual_franka_planning.single_franka import (
-        CHAIN_CONFIGS,
-        single_fr3_robot_config,
-    )
+    from bimanual_franka_planning.single_franka import CHAIN_CONFIGS
 
     chain = CHAIN_CONFIGS["single_fr3"]
+    arm_joint_names = [f"fr3_joint{i}" for i in range(1, 8)]
     ctx = create_pinocchio_context(
         urdf_path=chain.urdf_path,
         end_effector_frame=chain.ee_link,
-        joint_names=single_fr3_robot_config.joint_names,
+        joint_names=arm_joint_names,
     )
     trac = create_ik_solver("single_fr3")
 
@@ -226,5 +232,8 @@ def test_single_pinocchio_matches_single_arm_planner_fk():
     p_hi = np.asarray(p._planner.upper_bounds(), dtype=float)
     # Cricket scales the URDF limits the same way Pinocchio reads them
     # for revolute joints, so both should agree to single-precision.
-    np.testing.assert_allclose(p_lo, pin_lo[:7], atol=1e-4)
-    np.testing.assert_allclose(p_hi, pin_hi[:7], atol=1e-4)
+    # Compare only the 7 arm joints — Pinocchio honors the URDF mimic
+    # tag so its nq excludes finger_joint2, while the planner exposes
+    # both finger DOFs explicitly.
+    np.testing.assert_allclose(p_lo[:7], pin_lo[:7], atol=1e-4)
+    np.testing.assert_allclose(p_hi[:7], pin_hi[:7], atol=1e-4)

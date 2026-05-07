@@ -44,14 +44,14 @@ def test_bimanual_fr3_robot_config_populated():
         bimanual_fr3_robot_config,
     )
 
-    assert HOME_JOINTS.shape == (17,)
+    assert HOME_JOINTS.shape == (21,)
     assert len(PLANNING_SUBGROUPS) > 0
     # The RobotConfig fields added for centralized TOTG limits must be
     # populated so ``AutolifePlanner.time_parameterize`` has defaults.
     assert bimanual_fr3_robot_config.max_velocity is not None
-    assert bimanual_fr3_robot_config.max_velocity.shape == (17,)
+    assert bimanual_fr3_robot_config.max_velocity.shape == (21,)
     assert bimanual_fr3_robot_config.max_acceleration is not None
-    assert bimanual_fr3_robot_config.max_acceleration.shape == (17,)
+    assert bimanual_fr3_robot_config.max_acceleration.shape == (21,)
 
 
 # ── native extensions ────────────────────────────────────────────────
