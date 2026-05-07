@@ -5,9 +5,17 @@ the *shape* of :mod:`bimanual_franka_planning.bimanual_franka` so the
 Python factories (``create_planner``, ``create_ik_solver``) can pick
 one or the other purely by name.
 
-State vector layout (7 DOF total):
+State vector layout (9 DOF total):
 
-    [0:7]    fr3 arm    (fr3_joint1..7)
+    [0:7]    fr3 arm        (fr3_joint1..7)
+    [7]      gripper finger1   (fr3_finger_joint1, prismatic 0..0.04 m)
+    [8]      gripper finger2   (fr3_finger_joint2, prismatic 0..0.04 m)
+
+Both finger joints are exposed as independent DOFs because the FK
+generator treats ``<mimic>`` as a hint, not a constraint.  By
+convention callers should keep the two values equal so the gripper
+stays symmetric — the URDF ``<mimic>`` tag handles that automatically
+in any downstream consumer that does honor it (PyBullet, MuJoCo, IK).
 
 The single-arm URDF lives in
 ``resources/robot/single_fr3/single_fr3.urdf`` and ships its own
@@ -19,10 +27,6 @@ Motion planning uses the dedicated
 ``single_fr3_spherized.urdf`` — the OMPL+VAMP C++ extension exposes
 it as ``_ompl_vamp.SingleFr3OmplVampPlanner``, in parallel with
 ``OmplVampPlanner`` for the bimanual cell.
-
-There are no subgroups: a single arm is already its own smallest
-planning unit.  The empty ``PLANNING_SUBGROUPS`` dict keeps the
-registry interface uniform with the bimanual description.
 """
 
 from __future__ import annotations
@@ -40,9 +44,10 @@ from bimanual_franka_planning.types.robot import (
 _PKG_ROOT = os.path.dirname(os.path.abspath(__file__))
 _RESOURCES_DIR = os.path.join(_PKG_ROOT, "resources", "robot", "single_fr3")
 
-# Atomic joint group — index slice into the full 7-DOF configuration.
+# Atomic joint groups — index slices into the full 9-DOF configuration.
 JOINT_GROUPS = {
     "arm": slice(0, 7),
+    "gripper": slice(7, 9),
 }
 
 CHAIN_CONFIGS: dict[str, ChainConfig] = {
@@ -56,10 +61,15 @@ CHAIN_CONFIGS: dict[str, ChainConfig] = {
 
 VIZ_URDF_PATH = os.path.join(_RESOURCES_DIR, "single_fr3.urdf")
 
-# Per-joint TOTG limits — same FR3 datasheet numbers each arm uses
-# in the bimanual config, just without the relative-base prefix.
-MAX_VELOCITY = np.array([2.62, 2.62, 2.62, 2.62, 5.26, 4.18, 5.26])
-MAX_ACCELERATION = np.full(7, 6.0)
+# Per-joint TOTG limits — FR3 datasheet numbers for the arm, plus
+# 0.2 m/s velocity and 1.0 m/s² acceleration for each gripper finger
+# (matching the URDF ``<limit velocity>``).
+_ARM_VELOCITY = np.array([2.62, 2.62, 2.62, 2.62, 5.26, 4.18, 5.26])
+_ARM_ACCEL = np.full(7, 6.0)
+_GRIPPER_VELOCITY = np.array([0.2, 0.2])
+_GRIPPER_ACCEL = np.array([1.0, 1.0])
+MAX_VELOCITY = np.concatenate([_ARM_VELOCITY, _GRIPPER_VELOCITY])
+MAX_ACCELERATION = np.concatenate([_ARM_ACCEL, _GRIPPER_ACCEL])
 
 single_fr3_robot_config = RobotConfig(
     urdf_path=os.path.join(_RESOURCES_DIR, "single_fr3.urdf"),
@@ -71,6 +81,8 @@ single_fr3_robot_config = RobotConfig(
         "fr3_joint5",
         "fr3_joint6",
         "fr3_joint7",
+        "fr3_finger_joint1",
+        "fr3_finger_joint2",
     ],
     camera=CameraConfig(
         link_name="fr3_link0",
@@ -84,12 +96,20 @@ single_fr3_robot_config = RobotConfig(
     max_acceleration=MAX_ACCELERATION,
 )
 
-# A single arm has no meaningful sub-group — the arm itself is the
-# only thing one would plan over.  Keeping the empty dict in place
-# means the registry can iterate over every description's
-# ``PLANNING_SUBGROUPS`` without special-casing single-arm robots.
-PLANNING_SUBGROUPS: dict[str, dict] = {}
+# Subgroups for partial planning.  The arm subgroup is the same as
+# the bimanual single-arm subgroup; the gripper subgroup wraps the
+# pair of (mimicked) finger joints.
+_ARM_JOINTS = [f"fr3_joint{i}" for i in range(1, 8)]
+_GRIPPER_JOINTS = ["fr3_finger_joint1", "fr3_finger_joint2"]
+PLANNING_SUBGROUPS = {
+    "single_fr3_arm": {"dof": 7, "joints": _ARM_JOINTS},
+    "single_fr3_gripper": {"dof": 2, "joints": _GRIPPER_JOINTS},
+}
 
 # Franka "ready" stance — same canonical neutral pose each arm in
 # the bimanual config uses, lifted out of its 17-DOF embedding.
-HOME_JOINTS = np.array([0.0, -0.785398, 0.0, -2.356194, 0.0, 1.570796, 0.785398])
+# Gripper home is fully closed (q=0); the URDF mimic keeps the two
+# fingers together at q=0.
+HOME_JOINTS = np.array(
+    [0.0, -0.785398, 0.0, -2.356194, 0.0, 1.570796, 0.785398, 0.0, 0.0]
+)

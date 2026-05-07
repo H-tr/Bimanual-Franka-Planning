@@ -49,40 +49,40 @@
   <disable_collisions link1="fr3_left_link6" link2="fr3_left_link7" reason="Adjacent"/>
   <disable_collisions link1="fr3_left_link6" link2="fr3_left_link8" reason="Default"/>
   <disable_collisions link1="fr3_left_link7" link2="fr3_left_link8" reason="Adjacent"/>
-  <group name="fr3_hand">
-    <link name="fr3_hand"/>
-    <link name="fr3_leftfinger"/>
-    <link name="fr3_rightfinger"/>
+  <group name="fr3_left_hand">
+    <link name="fr3_left_hand"/>
+    <link name="fr3_left_leftfinger"/>
+    <link name="fr3_left_rightfinger"/>
     <joint name="fr3_left_finger_joint1"/>
     <passive_joint name="fr3_left_finger_joint2"/>
   </group>
-  <group_state group="fr3_hand" name="open">
+  <group_state group="fr3_left_hand" name="open">
     <joint name="fr3_left_finger_joint1" value="0.035"/>
     <joint name="fr3_left_finger_joint2" value="0.035"/>
   </group_state>
-  <group_state group="fr3_hand" name="close">
+  <group_state group="fr3_left_hand" name="close">
     <joint name="fr3_left_finger_joint1" value="0"/>
     <joint name="fr3_left_finger_joint2" value="0"/>
   </group_state>
-  <end_effector group="fr3_hand" name="fr3_hand" parent_group="fr3_left_arm" parent_link="fr3_left_link8"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_leftfinger" reason="Adjacent"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_rightfinger" reason="Adjacent"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_rightfinger" reason="Default"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_left_link3" reason="Never"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_left_link4" reason="Never"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_left_link6" reason="Never"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_left_link7" reason="Adjacent"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_left_link8" reason="Adjacent"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_left_link3" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_left_link4" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_left_link6" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_left_link7" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_left_link8" reason="Never"/>
-  <disable_collisions link1="fr3_left_link3" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_left_link4" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_left_link6" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_left_link7" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_left_link8" link2="fr3_rightfinger" reason="Never"/>
+  <end_effector group="fr3_left_hand" name="fr3_left_hand" parent_group="fr3_left_arm" parent_link="fr3_left_link8"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_leftfinger" reason="Adjacent"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_rightfinger" reason="Adjacent"/>
+  <disable_collisions link1="fr3_left_leftfinger" link2="fr3_left_rightfinger" reason="Default"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_link3" reason="Never"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_link4" reason="Never"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_link6" reason="Never"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_link7" reason="Adjacent"/>
+  <disable_collisions link1="fr3_left_hand" link2="fr3_left_link8" reason="Adjacent"/>
+  <disable_collisions link1="fr3_left_leftfinger" link2="fr3_left_link3" reason="Never"/>
+  <disable_collisions link1="fr3_left_leftfinger" link2="fr3_left_link4" reason="Never"/>
+  <disable_collisions link1="fr3_left_leftfinger" link2="fr3_left_link6" reason="Never"/>
+  <disable_collisions link1="fr3_left_leftfinger" link2="fr3_left_link7" reason="Never"/>
+  <disable_collisions link1="fr3_left_leftfinger" link2="fr3_left_link8" reason="Never"/>
+  <disable_collisions link1="fr3_left_link3" link2="fr3_left_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_left_link4" link2="fr3_left_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_left_link6" link2="fr3_left_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_left_link7" link2="fr3_left_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_left_link8" link2="fr3_left_rightfinger" reason="Never"/>
 <group name="fr3_right_arm">
     <chain base_link="fr3_right_link0" tip_link="fr3_right_link8"/>
   </group>
@@ -127,38 +127,38 @@
   <disable_collisions link1="fr3_right_link6" link2="fr3_right_link7" reason="Adjacent"/>
   <disable_collisions link1="fr3_right_link6" link2="fr3_right_link8" reason="Default"/>
   <disable_collisions link1="fr3_right_link7" link2="fr3_right_link8" reason="Adjacent"/>
-  <group name="fr3_hand">
-    <link name="fr3_hand"/>
-    <link name="fr3_leftfinger"/>
-    <link name="fr3_rightfinger"/>
+  <group name="fr3_right_hand">
+    <link name="fr3_right_hand"/>
+    <link name="fr3_right_leftfinger"/>
+    <link name="fr3_right_rightfinger"/>
     <joint name="fr3_right_finger_joint1"/>
     <passive_joint name="fr3_right_finger_joint2"/>
   </group>
-  <group_state group="fr3_hand" name="open">
+  <group_state group="fr3_right_hand" name="open">
     <joint name="fr3_right_finger_joint1" value="0.035"/>
     <joint name="fr3_right_finger_joint2" value="0.035"/>
   </group_state>
-  <group_state group="fr3_hand" name="close">
+  <group_state group="fr3_right_hand" name="close">
     <joint name="fr3_right_finger_joint1" value="0"/>
     <joint name="fr3_right_finger_joint2" value="0"/>
   </group_state>
-  <end_effector group="fr3_hand" name="fr3_hand" parent_group="fr3_right_arm" parent_link="fr3_right_link8"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_leftfinger" reason="Adjacent"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_rightfinger" reason="Adjacent"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_rightfinger" reason="Default"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_right_link3" reason="Never"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_right_link4" reason="Never"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_right_link6" reason="Never"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_right_link7" reason="Adjacent"/>
-  <disable_collisions link1="fr3_hand" link2="fr3_right_link8" reason="Adjacent"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_right_link3" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_right_link4" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_right_link6" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_right_link7" reason="Never"/>
-  <disable_collisions link1="fr3_leftfinger" link2="fr3_right_link8" reason="Never"/>
-  <disable_collisions link1="fr3_right_link3" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_right_link4" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_right_link6" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_right_link7" link2="fr3_rightfinger" reason="Never"/>
-  <disable_collisions link1="fr3_right_link8" link2="fr3_rightfinger" reason="Never"/>
+  <end_effector group="fr3_right_hand" name="fr3_right_hand" parent_group="fr3_right_arm" parent_link="fr3_right_link8"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_leftfinger" reason="Adjacent"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_rightfinger" reason="Adjacent"/>
+  <disable_collisions link1="fr3_right_leftfinger" link2="fr3_right_rightfinger" reason="Default"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_link3" reason="Never"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_link4" reason="Never"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_link6" reason="Never"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_link7" reason="Adjacent"/>
+  <disable_collisions link1="fr3_right_hand" link2="fr3_right_link8" reason="Adjacent"/>
+  <disable_collisions link1="fr3_right_leftfinger" link2="fr3_right_link3" reason="Never"/>
+  <disable_collisions link1="fr3_right_leftfinger" link2="fr3_right_link4" reason="Never"/>
+  <disable_collisions link1="fr3_right_leftfinger" link2="fr3_right_link6" reason="Never"/>
+  <disable_collisions link1="fr3_right_leftfinger" link2="fr3_right_link7" reason="Never"/>
+  <disable_collisions link1="fr3_right_leftfinger" link2="fr3_right_link8" reason="Never"/>
+  <disable_collisions link1="fr3_right_link3" link2="fr3_right_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_right_link4" link2="fr3_right_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_right_link6" link2="fr3_right_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_right_link7" link2="fr3_right_rightfinger" reason="Never"/>
+  <disable_collisions link1="fr3_right_link8" link2="fr3_right_rightfinger" reason="Never"/>
 </robot>

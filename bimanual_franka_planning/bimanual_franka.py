@@ -25,12 +25,20 @@ the right arm w.r.t. the left arm.  Pin those three joints via
 leave them active to let the planner search over the relative pose
 (useful for cell-layout optimisation or whole-system motion).
 
-Joint order in the 17-DOF state vector (matches cricket's URDF tree
+Joint order in the 21-DOF state vector (matches cricket's URDF tree
 traversal in ``ext/ompl_vamp/robot/bimanual_fr3.hh``):
 
     [0:3]    relative_base   (x, y, yaw)
     [3:10]   right arm       (fr3_right_joint1..7)
-    [10:17]  left arm        (fr3_left_joint1..7)
+    [10:12]  right gripper   (fr3_right_finger_joint1..2, prismatic)
+    [12:19]  left arm        (fr3_left_joint1..7)
+    [19:21]  left gripper    (fr3_left_finger_joint1..2, prismatic)
+
+Each gripper exposes both finger joints as independent DOFs because
+the FK generator parses ``<mimic>`` only as a hint.  By convention,
+keep finger_joint1 = finger_joint2 within each arm so the gripper
+stays symmetric (the URDF ``<mimic>`` ensures any mimic-aware
+downstream consumer enforces this automatically).
 """
 
 from __future__ import annotations
@@ -48,12 +56,14 @@ from bimanual_franka_planning.types.robot import (
 _PKG_ROOT = os.path.dirname(os.path.abspath(__file__))
 _RESOURCES_DIR = os.path.join(_PKG_ROOT, "resources", "robot", "bimanual_fr3")
 
-# Atomic joint groups — index slices into the full 17-DOF configuration array.
+# Atomic joint groups — index slices into the full 21-DOF configuration array.
 # Order must match the cricket-generated FK header's joint_names list.
 JOINT_GROUPS = {
     "relative_base": slice(0, 3),
     "right_arm": slice(3, 10),
-    "left_arm": slice(10, 17),
+    "right_gripper": slice(10, 12),
+    "left_arm": slice(12, 19),
+    "left_gripper": slice(19, 21),
 }
 
 CHAIN_CONFIGS: dict[str, ChainConfig] = {
@@ -83,18 +93,26 @@ VIZ_URDF_PATH = os.path.join(_RESOURCES_DIR, "bimanual_fr3_viz.urdf")
 # planned over.  Order matches the 17-DOF state vector exactly.
 _FR3_VELOCITY = np.array([2.62, 2.62, 2.62, 2.62, 5.26, 4.18, 5.26])
 _FR3_ACCEL = np.full(7, 6.0)
+# Gripper limits match the URDF ``<limit velocity="0.2">`` plus a
+# conservative 1 m/s² acceleration cap.  Two fingers per arm.
+_GRIPPER_VELOCITY = np.array([0.2, 0.2])
+_GRIPPER_ACCEL = np.array([1.0, 1.0])
 MAX_VELOCITY = np.concatenate(
     [
         np.array([0.5, 0.5, 1.0]),  # relative_base x, y, yaw
         _FR3_VELOCITY,  # right arm
+        _GRIPPER_VELOCITY,  # right gripper
         _FR3_VELOCITY,  # left arm
+        _GRIPPER_VELOCITY,  # left gripper
     ]
 )
 MAX_ACCELERATION = np.concatenate(
     [
         np.array([1.0, 1.0, 2.0]),  # relative_base
         _FR3_ACCEL,  # right arm
+        _GRIPPER_ACCEL,  # right gripper
         _FR3_ACCEL,  # left arm
+        _GRIPPER_ACCEL,  # left gripper
     ]
 )
 
@@ -113,7 +131,10 @@ bimanual_fr3_robot_config = RobotConfig(
         "fr3_right_joint5",
         "fr3_right_joint6",
         "fr3_right_joint7",
-        # [10:17] left arm
+        # [10:12] right gripper
+        "fr3_right_finger_joint1",
+        "fr3_right_finger_joint2",
+        # [12:19] left arm
         "fr3_left_joint1",
         "fr3_left_joint2",
         "fr3_left_joint3",
@@ -121,6 +142,9 @@ bimanual_fr3_robot_config = RobotConfig(
         "fr3_left_joint5",
         "fr3_left_joint6",
         "fr3_left_joint7",
+        # [19:21] left gripper
+        "fr3_left_finger_joint1",
+        "fr3_left_finger_joint2",
     ],
     camera=CameraConfig(
         link_name="world_camera",
@@ -141,12 +165,20 @@ bimanual_fr3_robot_config = RobotConfig(
 # cover every meaningful planning task on a bimanual arm cell.
 _LEFT_ARM_JOINTS = [f"fr3_left_joint{i}" for i in range(1, 8)]
 _RIGHT_ARM_JOINTS = [f"fr3_right_joint{i}" for i in range(1, 8)]
+_LEFT_GRIPPER_JOINTS = ["fr3_left_finger_joint1", "fr3_left_finger_joint2"]
+_RIGHT_GRIPPER_JOINTS = ["fr3_right_finger_joint1", "fr3_right_finger_joint2"]
 PLANNING_SUBGROUPS = {
     "bimanual_fr3_left_arm": {"dof": 7, "joints": _LEFT_ARM_JOINTS},
     "bimanual_fr3_right_arm": {"dof": 7, "joints": _RIGHT_ARM_JOINTS},
+    "bimanual_fr3_left_gripper": {"dof": 2, "joints": _LEFT_GRIPPER_JOINTS},
+    "bimanual_fr3_right_gripper": {"dof": 2, "joints": _RIGHT_GRIPPER_JOINTS},
     "bimanual_fr3_dual_arm": {
         "dof": 14,
         "joints": _LEFT_ARM_JOINTS + _RIGHT_ARM_JOINTS,
+    },
+    "bimanual_fr3_dual_gripper": {
+        "dof": 4,
+        "joints": _LEFT_GRIPPER_JOINTS + _RIGHT_GRIPPER_JOINTS,
     },
 }
 
@@ -159,10 +191,16 @@ _READY = np.array([0.0, -0.785398, 0.0, -2.356194, 0.0, 1.570796, 0.785398])
 # other relative pose.
 _RELATIVE_BASE_HOME = np.array([0.0, -0.8, 0.0])
 
+# Gripper home: fully closed (q=0).  Both finger joints set to 0 so
+# the URDF mimic constraint is trivially satisfied.
+_GRIPPER_HOME = np.array([0.0, 0.0])
+
 HOME_JOINTS = np.concatenate(
     [
         _RELATIVE_BASE_HOME,  # relative_base x, y, yaw
         _READY,  # right arm joints 1-7
+        _GRIPPER_HOME,  # right gripper finger joints 1-2
         _READY,  # left arm joints 1-7
+        _GRIPPER_HOME,  # left gripper finger joints 1-2
     ]
 )

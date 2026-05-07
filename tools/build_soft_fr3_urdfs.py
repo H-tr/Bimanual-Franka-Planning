@@ -14,10 +14,13 @@ with ``rpy = (pi, 0, 0)`` rotates 180° about X so that:
     so the existing ``rpy = (0, 0, pi)`` rotation on
     ``fr3_finger_joint2`` still mirrors the right finger correctly.
 
-A small ``±half_gap`` ``y`` offset on each finger joint pre-positions
-the two fingers at a fixed open gap (no actuated DOF — the joints
-remain ``fixed``, since the planner doesn't search over gripper
-opening).
+Each finger joint is kept ``prismatic`` along its local +y axis, with
+the SAME 0..0.04 m travel range as the rigid Franka gripper.
+``finger_joint2`` mimics ``finger_joint1`` so the planner sees one
+gripper coordinate per arm.  The joint origins place each finger at
+``y=0`` (i.e. the inner pinching face at the hand centreline) so that
+``q=0`` means fully closed and ``q=0.04`` means fully open with an
+80 mm gap — matching the rigid Franka semantics exactly.
 
 Outputs (idempotent — re-run any time):
 
@@ -52,16 +55,14 @@ SOFT_FINGER_STL = ROOT / "soft_gripper_finger.stl"
 
 # ── Soft-finger geometry constants ────────────────────────────────────
 
-# Half the gap between the two finger inner surfaces (m).  Fingers are
-# 25.8 mm thick along Y, so a 50 mm gap (25 mm half-gap) puts the
-# inner faces of each finger at hand y = ±0.025 and the outer faces
-# at hand y = ±(0.025 + 0.0258) ≈ ±0.0508 — entirely on its own side
-# of the centreline (no overlap across the gap).
-HALF_GAP = 0.025
-
 # Mounting offset of each finger on the hand body (z direction) —
 # unchanged from the Franka original, so the hand mesh is reused.
 FINGER_Z_OFFSET = 0.0584
+
+# Per-side travel range of the prismatic gripper joint (m), matching
+# the rigid Franka.  Total open gap at q = FINGER_TRAVEL is 2 ×
+# FINGER_TRAVEL = 80 mm.  finger_joint2 mimics finger_joint1.
+FINGER_TRAVEL = 0.04
 
 # Pose of the soft-finger mesh inside its link.
 #
@@ -234,41 +235,57 @@ def _replace_finger_link(link: ET.Element, *, mode: str, visual_name: str) -> No
     link.append(_make_inertial())
 
 
-def _patch_finger_joint(joint: ET.Element, *, side: str) -> None:
-    """Pre-position a fixed finger joint so the two soft fingers sit at
-    a constant open gap.  ``side`` is "left" or "right" — Franka naming.
+def _patch_finger_joint(joint: ET.Element, *, side: str, is_mimic: bool) -> None:
+    """Configure a soft-finger prismatic joint.
 
-    Inside each finger link the soft mesh's material lives in
-    ``link.y ∈ [0, +0.0258]`` (positive y, after the visual/collision
-    rpy flip).  To keep the LEFT finger entirely on the +y side of the
-    hand and the RIGHT finger entirely on the -y side (as in the
-    standard Franka convention), we offset the joint origins:
+    ``side`` is "left" or "right" — Franka naming.  ``is_mimic`` marks
+    finger_joint2 as a mimic of finger_joint1 (the soft pair behaves as
+    one gripper DOF, identical to the rigid Franka).
 
-      • left  joint: ``xyz="0 +HALF_GAP 0.0584"`` rpy=0 → material in
-        hand.y ∈ [+HALF_GAP, +HALF_GAP+0.0258]
-      • right joint: ``xyz="0 -HALF_GAP 0.0584"`` rpy=π about z →
-        the rpy flip turns link.+y into hand.-y, putting material in
-        hand.y ∈ [-HALF_GAP-0.0258, -HALF_GAP]
-
-    Both fingertips therefore sit on their own side of the centreline
-    with a 2·HALF_GAP gap between the inner pinching faces.
+    Each finger's soft-mesh material occupies ``link.y ∈ [0, +0.0258]``
+    after the visual/collision rpy flip, so when the joint origin is at
+    ``y=0`` the inner pinching face sits exactly at the hand centreline
+    — i.e. ``q=0`` is fully closed.  Sliding along the joint's local
+    +y axis at ``q=0.04`` opens that side by 40 mm, mirroring
+    finger_joint2 (mimic, multiplier 1) on the opposite side via its
+    own ``rpy="0 0 π"`` flip.
     """
     origin = joint.find("origin")
     if origin is None:
         origin = ET.SubElement(joint, "origin")
     if side == "left":
-        origin.set("xyz", f"0 {HALF_GAP} {FINGER_Z_OFFSET}")
+        origin.set("xyz", f"0 0 {FINGER_Z_OFFSET}")
         origin.set("rpy", "0 0 0")
     elif side == "right":
-        origin.set("xyz", f"0 -{HALF_GAP} {FINGER_Z_OFFSET}")
+        origin.set("xyz", f"0 0 {FINGER_Z_OFFSET}")
         origin.set("rpy", "0 0 3.141592653589793")
     else:
         raise ValueError(f"unknown side {side!r}")
-    # Fingers stay fixed — no actuated gripper DOF in the planner.
-    joint.set("type", "fixed")
+
+    # Replace the joint's actuation tags with a clean prismatic spec.
     for tag in ("axis", "limit", "dynamics", "mimic", "safety_controller"):
         for child in list(joint.findall(tag)):
             joint.remove(child)
+    joint.set("type", "prismatic")
+
+    axis = ET.SubElement(joint, "axis")
+    axis.set("xyz", "0 1 0")
+
+    limit = ET.SubElement(joint, "limit")
+    limit.set("effort", "100")
+    limit.set("lower", "0.0")
+    limit.set("upper", f"{FINGER_TRAVEL}")
+    limit.set("velocity", "0.2")
+
+    if is_mimic:
+        mimic = ET.SubElement(joint, "mimic")
+        # finger_joint1 lives on the same arm.  Build the partner's name
+        # from this joint's name by swapping the trailing "2" for "1".
+        partner = joint.attrib["name"][:-1] + "1"
+        mimic.set("joint", partner)
+
+    dynamics = ET.SubElement(joint, "dynamics")
+    dynamics.set("damping", "0.3")
 
 
 def _patch_finger_pair(
@@ -294,8 +311,19 @@ def _patch_finger_pair(
     _replace_finger_link(
         by_name[("link", right_link)], mode=mode, visual_name=visual_name_right
     )
-    _patch_finger_joint(by_name[("joint", left_joint)], side="left")
-    _patch_finger_joint(by_name[("joint", right_joint)], side="right")
+    # finger_joint1 is the actuated DOF; finger_joint2 mimics it.
+    # Caller passes them in (left, right) Franka-naming order, but the
+    # mimic relationship is by trailing "1"/"2" digit, regardless of side.
+    _patch_finger_joint(
+        by_name[("joint", left_joint)],
+        side="left",
+        is_mimic=left_joint.endswith("2"),
+    )
+    _patch_finger_joint(
+        by_name[("joint", right_joint)],
+        side="right",
+        is_mimic=right_joint.endswith("2"),
+    )
 
 
 # ── Mesh staging ──────────────────────────────────────────────────────

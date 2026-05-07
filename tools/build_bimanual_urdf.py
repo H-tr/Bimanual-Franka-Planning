@@ -27,9 +27,10 @@ Joint order in the planner state vector (from URDF tree DFS):
 
 Total: 17 actuated DOFs.
 
-The two prismatic finger joints per arm are converted to ``fixed`` so the
-gripper geometry stays attached for visualisation/collision but adds no
-DOFs.
+The two prismatic finger joints per arm are kept actuated.  Each arm
+contributes one planned gripper DOF (``fr3_*_finger_joint1``); the
+opposite finger (``fr3_*_finger_joint2``) is preserved as a mimic of
+joint1 so the planner sees a single open/close coordinate per gripper.
 
 Run:
     python tools/build_bimanual_urdf.py
@@ -146,19 +147,6 @@ def _retarget_meshes(arm_root: ET.Element) -> None:
             )
 
 
-def _drop_finger_dof(arm_root: ET.Element) -> None:
-    """Convert the two prismatic finger joints to fixed."""
-    for joint in arm_root.iter("joint"):
-        name = joint.attrib.get("name", "")
-        if "finger_joint" in name:
-            joint.attrib["type"] = "fixed"
-            for tag in ("axis", "limit", "dynamics", "mimic", "safety_controller"):
-                child = joint.find(tag)
-                while child is not None:
-                    joint.remove(child)
-                    child = joint.find(tag)
-
-
 def _drop_safety_controllers(arm_root: ET.Element) -> None:
     """Strip ``<safety_controller>`` from every joint.
 
@@ -192,7 +180,6 @@ def _arm_copy(prefix: str, src_urdf: Path = SRC_URDF) -> ET.Element:
     tree = ET.parse(src_urdf)
     arm_root = tree.getroot()
     _strip_world_root(arm_root)
-    _drop_finger_dof(arm_root)
     _drop_safety_controllers(arm_root)
     _rename(arm_root, prefix)
     _retarget_meshes(arm_root)
@@ -292,6 +279,14 @@ def _build_srdf() -> str:
         out = re.sub(r"\bfr3_link", f"{prefix}link", out)
         out = re.sub(r"\bfr3_joint", f"{prefix}joint", out)
         out = re.sub(r"\bfr3_finger_joint", f"{prefix}finger_joint", out)
+        # Hand and finger link names — must be prefixed too so the SRDF's
+        # ``disable_collisions`` rules reference the actual link names in
+        # the bimanual URDF (``fr3_left_leftfinger``, etc.).  Without this,
+        # cricket would see "every finger pair enabled" once the finger
+        # joints became prismatic and treat the home pose as in collision.
+        out = re.sub(r"\bfr3_hand\b", f"{prefix}hand", out)
+        out = re.sub(r"\bfr3_leftfinger\b", f"{prefix}leftfinger", out)
+        out = re.sub(r"\bfr3_rightfinger\b", f"{prefix}rightfinger", out)
         out = re.sub(r'group name="fr3_arm"', f'group name="{prefix}arm"', out)
         out = re.sub(r'group="fr3_arm"', f'group="{prefix}arm"', out)
         out = re.sub(r"^.*<\?xml[^?]*\?>\n", "", out, flags=re.MULTILINE)
@@ -467,7 +462,10 @@ def main() -> None:
     # Assets URDF/SRDF (the source-of-truth that scripts/build_robot.sh consumes).
     main_urdf = _build_combined(SRC_URDF)
     _write_urdf(OUT_URDF, main_urdf)
-    _check_dof(main_urdf, expected=17)  # 7 left + 3 base + 7 right
+    # The regex sees every prismatic+revolute joint, including the mimic
+    # finger_joint2 on each arm.  Active planning DOF is 19 (15 revolute
+    # + 2 base prismatic + 2 finger_joint1) but joint count is 21.
+    _check_dof(main_urdf, expected=21)
 
     OUT_SRDF.write_text(_build_srdf())
     print(f"wrote {OUT_SRDF.relative_to(ROOT)}")

@@ -471,14 +471,21 @@
     <parent link="fr3_hand" />
     <child link="fr3_hand_tcp" />
   </joint>
-  <joint name="fr3_finger_joint1" type="fixed">
+  <joint name="fr3_finger_joint1" type="prismatic">
     <parent link="fr3_hand" />
     <child link="fr3_leftfinger" />
-    <origin rpy="0 0 0" xyz="0 0.025 0.0584" />
+    <origin rpy="0 0 0" xyz="0 0 0.0584" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" lower="0.0" upper="0.04" velocity="0.2" />
+    <dynamics damping="0.3" />
   </joint>
-  <joint name="fr3_finger_joint2" type="fixed">
+  <joint name="fr3_finger_joint2" type="prismatic">
     <parent link="fr3_hand" />
     <child link="fr3_rightfinger" />
-    <origin rpy="0 0 3.141592653589793" xyz="0 -0.025 0.0584" />
+    <origin rpy="0 0 3.141592653589793" xyz="0 0 0.0584" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" lower="0.0" upper="0.04" velocity="0.2" />
+    <mimic joint="fr3_finger_joint1" />
+    <dynamics damping="0.3" />
   </joint>
 </robot>
