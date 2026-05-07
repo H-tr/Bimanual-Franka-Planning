@@ -39,4 +39,4 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
         args: ['--maxkb=1024']
-        exclude: '(assets/bimanual_fr3_description/meshes/.*)|(bimanual_franka_planning/resources/robot/bimanual_fr3/(meshes|viz_meshes)/.*)|(ext/ompl_vamp/robot/bimanual_fr3\.hh$)'
+        exclude: '(assets/bimanual_fr3_description/meshes/.*)|(bimanual_franka_planning/resources/robot/(bimanual_fr3|bimanual_fr3_soft|single_fr3|single_fr3_soft)/(meshes|viz_meshes)/.*)|(ext/ompl_vamp/robot/(bimanual_fr3|bimanual_fr3_soft|single_fr3|single_fr3_soft)\.hh$)'

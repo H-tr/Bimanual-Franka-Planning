@@ -71,7 +71,12 @@ class RobotEntry:
 
 
 def _build_registry() -> dict[str, RobotEntry]:
-    from bimanual_franka_planning import bimanual_franka, single_franka
+    from bimanual_franka_planning import (
+        bimanual_franka,
+        bimanual_franka_soft,
+        single_franka,
+        single_franka_soft,
+    )
 
     entries = [
         RobotEntry(
@@ -85,6 +90,18 @@ def _build_registry() -> dict[str, RobotEntry]:
             description=single_franka,
             robot_config=single_franka.single_fr3_robot_config,
             cpp_planner_cls_name="SingleFr3OmplVampPlanner",
+        ),
+        RobotEntry(
+            name="bimanual_fr3_soft",
+            description=bimanual_franka_soft,
+            robot_config=bimanual_franka_soft.bimanual_fr3_soft_robot_config,
+            cpp_planner_cls_name="BimanualFr3SoftOmplVampPlanner",
+        ),
+        RobotEntry(
+            name="single_fr3_soft",
+            description=single_franka_soft,
+            robot_config=single_franka_soft.single_fr3_soft_robot_config,
+            cpp_planner_cls_name="SingleFr3SoftOmplVampPlanner",
         ),
     ]
     return {e.name: e for e in entries}

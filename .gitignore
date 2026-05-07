@@ -161,7 +161,9 @@ cython_debug/
 # have to regenerate them. Regenerate via `pixi run generate-fk` when
 # the spherized URDF or SRDF changes, then re-commit.
 !ext/ompl_vamp/robot/bimanual_fr3.hh
+!ext/ompl_vamp/robot/bimanual_fr3_soft.hh
 !ext/ompl_vamp/robot/single_fr3.hh
+!ext/ompl_vamp/robot/single_fr3_soft.hh
 
 # Generated build artifacts
 output.json

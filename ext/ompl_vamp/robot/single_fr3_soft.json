@@ -1,0 +1,10 @@
+{
+    "name": "SingleFr3Soft",
+    "urdf": "../../../bimanual_franka_planning/resources/robot/single_fr3_soft/single_fr3_soft_spherized.urdf",
+    "srdf": "../../../bimanual_franka_planning/resources/robot/single_fr3_soft/single_fr3_soft.srdf",
+    "end_effector": "fr3_link8",
+    "resolution": 64,
+    "template": "../../../third_party/cricket/resources/templates/fk_template.hh",
+    "subtemplates": [{"name": "ccfk", "template": "../../../third_party/cricket/resources/templates/ccfk_template.hh"}],
+    "output": "single_fr3_soft.hh"
+}

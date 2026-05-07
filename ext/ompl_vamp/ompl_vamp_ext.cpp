@@ -26,7 +26,9 @@
 
 #include "planner.hpp"
 #include "robot/bimanual_fr3.hh"
+#include "robot/bimanual_fr3_soft.hh"
 #include "robot/single_fr3.hh"
+#include "robot/single_fr3_soft.hh"
 
 namespace nb = nanobind;
 using bimanual_franka::OmplVampPlanner;
@@ -102,4 +104,9 @@ NB_MODULE(_ompl_vamp, m) {
   bind_planner<vamp::robots::BimanualFr3>(m, "OmplVampPlanner");
   // Standalone single-arm FR3.
   bind_planner<vamp::robots::SingleFr3>(m, "SingleFr3OmplVampPlanner");
+  // Soft-gripper variants — same kinematics, different fingertip
+  // collision footprint (5–6 spheres along each rubber finger).
+  bind_planner<vamp::robots::BimanualFr3Soft>(m,
+                                              "BimanualFr3SoftOmplVampPlanner");
+  bind_planner<vamp::robots::SingleFr3Soft>(m, "SingleFr3SoftOmplVampPlanner");
 }
