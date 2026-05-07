@@ -17,10 +17,15 @@ pytest.importorskip("bimanual_franka_planning._ompl_vamp")
 # ── Registry / factory dispatch ───────────────────────────────────────
 
 
-def test_registry_lists_both_robots():
+def test_registry_lists_all_robots():
     from bimanual_franka_planning._robots import ROBOT_REGISTRY
 
-    assert set(ROBOT_REGISTRY.keys()) == {"bimanual_fr3", "single_fr3"}
+    assert set(ROBOT_REGISTRY.keys()) == {
+        "bimanual_fr3",
+        "single_fr3",
+        "bimanual_fr3_soft",
+        "single_fr3_soft",
+    }
 
 
 def test_available_robots_includes_single_fr3():
