@@ -51,6 +51,13 @@ void bind_planner(nb::module_ &m, const char *class_name) {
       .def("add_sphere", &Planner::add_sphere, nb::arg("center"),
            nb::arg("radius"))
       .def("clear_environment", &Planner::clear_environment)
+      .def("attach_ee_spheres", &Planner::attach_ee_spheres, nb::arg("ee_index"),
+           nb::arg("relative_tf_row_major"), nb::arg("spheres_xyzr"),
+           "Attach a set of spheres to the end-effector identified by "
+           "``ee_index``. Replaces any prior attachment.")
+      .def("detach_ee", &Planner::detach_ee)
+      .def("has_attachment", &Planner::has_attachment)
+      .def("num_end_effectors", &Planner::num_end_effectors)
       .def("add_compiled_constraint", &Planner::add_compiled_constraint,
            nb::arg("so_path"), nb::arg("symbol_name"), nb::arg("ambient_dim"),
            nb::arg("co_dim"))
