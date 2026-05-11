@@ -297,9 +297,7 @@ class MotionPlanner:
         else:
             tf = np.asarray(transform, dtype=np.float32)
             if tf.shape != (4, 4):
-                raise ValueError(
-                    f"transform must have shape (4, 4) — got {tf.shape}"
-                )
+                raise ValueError(f"transform must have shape (4, 4) — got {tf.shape}")
 
         self._planner.attach_ee_spheres(
             ee_index,

@@ -23,8 +23,7 @@ Subgroup planners (``bimanual_fr3_left_arm`` / ``bimanual_fr3_right_arm``
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from types import MappingProxyType
-from types import ModuleType
+from types import MappingProxyType, ModuleType
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

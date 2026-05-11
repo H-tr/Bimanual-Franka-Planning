@@ -13,9 +13,8 @@ import pytest
 
 pytest.importorskip("bimanual_franka_planning._ompl_vamp")
 
-from bimanual_franka_planning.planning import create_planner
-from bimanual_franka_planning.types import PlannerConfig
-
+from bimanual_franka_planning.planning import create_planner  # noqa: E402
+from bimanual_franka_planning.types import PlannerConfig  # noqa: E402
 
 # A large sphere centred well behind the EE link (down the -z of EE frame)
 # is guaranteed to overlap the wrist / hand links for any reasonable home
@@ -69,9 +68,9 @@ def test_huge_backward_attachment_invalidates_home_single():
     home = SINGLE_HOME.copy()
     assert p.validate(home)
     p.attach_ee_spheres("ee", _HUGE_BACKWARD)
-    assert not p.validate(home), (
-        "huge attachment behind the EE should hit the robot body at home"
-    )
+    assert not p.validate(
+        home
+    ), "huge attachment behind the EE should hit the robot body at home"
 
 
 def test_detach_restores_validity_single():
@@ -92,15 +91,15 @@ def test_bimanual_left_and_right_attach_independently(home_joints):
     p = _bimanual_planner()
     assert p.validate(home_joints)
     p.attach_ee_spheres("left", _HUGE_BACKWARD)
-    assert not p.validate(home_joints), (
-        "left huge attachment should hit the left arm at home"
-    )
+    assert not p.validate(
+        home_joints
+    ), "left huge attachment should hit the left arm at home"
     p.detach_ee()
     assert p.validate(home_joints)
     p.attach_ee_spheres("right", _HUGE_BACKWARD)
-    assert not p.validate(home_joints), (
-        "right huge attachment should hit the right arm at home"
-    )
+    assert not p.validate(
+        home_joints
+    ), "right huge attachment should hit the right arm at home"
 
 
 def test_attach_replaces_prior_attachment(home_joints):
@@ -164,14 +163,10 @@ def test_bad_sphere_shape_raises():
 def test_non_positive_radius_raises():
     p = _bimanual_planner()
     with pytest.raises(ValueError, match="radii"):
-        p.attach_ee_spheres(
-            "left", np.array([[0.0, 0.0, 0.0, 0.0]], dtype=np.float32)
-        )
+        p.attach_ee_spheres("left", np.array([[0.0, 0.0, 0.0, 0.0]], dtype=np.float32))
 
 
 def test_bad_transform_shape_raises():
     p = _bimanual_planner()
     with pytest.raises(ValueError, match=r"shape \(4, 4\)"):
-        p.attach_ee_spheres(
-            "left", _TINY_FAR, transform=np.eye(3, dtype=np.float32)
-        )
+        p.attach_ee_spheres("left", _TINY_FAR, transform=np.eye(3, dtype=np.float32))

@@ -51,8 +51,9 @@ void bind_planner(nb::module_ &m, const char *class_name) {
       .def("add_sphere", &Planner::add_sphere, nb::arg("center"),
            nb::arg("radius"))
       .def("clear_environment", &Planner::clear_environment)
-      .def("attach_ee_spheres", &Planner::attach_ee_spheres, nb::arg("ee_index"),
-           nb::arg("relative_tf_row_major"), nb::arg("spheres_xyzr"),
+      .def("attach_ee_spheres", &Planner::attach_ee_spheres,
+           nb::arg("ee_index"), nb::arg("relative_tf_row_major"),
+           nb::arg("spheres_xyzr"),
            "Attach a set of spheres to the end-effector identified by "
            "``ee_index``. Replaces any prior attachment.")
       .def("detach_ee", &Planner::detach_ee)

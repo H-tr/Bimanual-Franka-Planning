@@ -748,7 +748,7 @@ q[8] = 25.0 * (q[8] - 0.0);
 
         Debug output;
 
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -756,7 +756,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[1],
                 y[2],
                 y[3]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -764,7 +764,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[5],
                 y[6],
                 y[7]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -772,7 +772,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[9],
                 y[10],
                 y[11]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -780,7 +780,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[13],
                 y[14],
                 y[15]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -788,7 +788,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[17],
                 y[18],
                 y[19]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -796,7 +796,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[21],
                 y[22],
                 y[23]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -804,7 +804,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[25],
                 y[26],
                 y[27]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -812,7 +812,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[29],
                 y[30],
                 y[31]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -820,7 +820,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[33],
                 y[34],
                 y[35]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -828,7 +828,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[37],
                 y[38],
                 y[39]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -836,7 +836,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[41],
                 y[42],
                 y[43]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -844,7 +844,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[45],
                 y[46],
                 y[47]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -852,7 +852,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[49],
                 y[50],
                 y[51]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -860,7 +860,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[53],
                 y[54],
                 y[55]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -868,7 +868,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[57],
                 y[58],
                 y[59]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -876,7 +876,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[61],
                 y[62],
                 y[63]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -884,7 +884,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[65],
                 y[66],
                 y[67]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -892,7 +892,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[69],
                 y[70],
                 y[71]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -900,7 +900,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[73],
                 y[74],
                 y[75]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -908,7 +908,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[77],
                 y[78],
                 y[79]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -916,7 +916,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[81],
                 y[82],
                 y[83]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -924,7 +924,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[85],
                 y[86],
                 y[87]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -932,7 +932,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[89],
                 y[90],
                 y[91]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -940,7 +940,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[93],
                 y[94],
                 y[95]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -948,7 +948,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[97],
                 y[98],
                 y[99]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -956,7 +956,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[101],
                 y[102],
                 y[103]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -964,7 +964,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[105],
                 y[106],
                 y[107]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -972,7 +972,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[109],
                 y[110],
                 y[111]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -980,7 +980,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[113],
                 y[114],
                 y[115]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -988,7 +988,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[117],
                 y[118],
                 y[119]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -996,7 +996,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[121],
                 y[122],
                 y[123]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1004,7 +1004,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[125],
                 y[126],
                 y[127]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1012,7 +1012,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[129],
                 y[130],
                 y[131]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1020,7 +1020,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[133],
                 y[134],
                 y[135]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1028,7 +1028,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[137],
                 y[138],
                 y[139]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1036,7 +1036,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[141],
                 y[142],
                 y[143]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1044,7 +1044,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[145],
                 y[146],
                 y[147]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1052,7 +1052,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[149],
                 y[150],
                 y[151]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1060,7 +1060,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[153],
                 y[154],
                 y[155]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1068,7 +1068,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[157],
                 y[158],
                 y[159]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1076,7 +1076,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[161],
                 y[162],
                 y[163]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1084,7 +1084,7 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[165],
                 y[166],
                 y[167]));
-        
+
         output.first.emplace_back(
             sphere_environment_get_collisions<decltype(x[0])>(
                 environment,
@@ -1092,20 +1092,20 @@ q[8] = 25.0 * (q[8] - 0.0);
                 y[169],
                 y[170],
                 y[171]));
-        
 
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1119,10 +1119,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1136,10 +1136,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1153,10 +1153,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1170,10 +1170,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1187,10 +1187,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1204,10 +1204,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1221,10 +1221,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1238,12 +1238,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 21);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1257,10 +1257,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1274,10 +1274,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1291,10 +1291,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1308,10 +1308,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1325,10 +1325,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1342,10 +1342,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1359,10 +1359,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1376,20 +1376,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 21);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1403,10 +1403,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 22);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1420,12 +1420,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 23);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1439,10 +1439,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 22);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1456,20 +1456,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 23);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1483,10 +1483,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1500,12 +1500,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 25);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1519,10 +1519,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1536,20 +1536,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 25);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1563,10 +1563,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1580,10 +1580,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1597,10 +1597,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1614,10 +1614,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1631,12 +1631,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1650,10 +1650,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1667,10 +1667,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1684,10 +1684,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1701,10 +1701,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1718,20 +1718,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 30);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1745,10 +1745,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1762,10 +1762,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1779,10 +1779,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1796,10 +1796,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1813,10 +1813,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1830,12 +1830,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1849,10 +1849,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1866,10 +1866,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1883,10 +1883,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1900,10 +1900,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1917,10 +1917,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -1934,20 +1934,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 36);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1961,10 +1961,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1978,10 +1978,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -1995,10 +1995,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -2012,10 +2012,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -2029,10 +2029,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                          y[1 ],
@@ -2046,12 +2046,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(0, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -2065,10 +2065,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -2082,10 +2082,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -2099,10 +2099,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -2116,10 +2116,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -2133,10 +2133,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                          y[5 ],
@@ -2150,20 +2150,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(1, 42);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2177,10 +2177,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2194,10 +2194,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2211,10 +2211,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2228,10 +2228,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2245,10 +2245,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2262,10 +2262,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2279,10 +2279,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2296,12 +2296,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 21);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2315,10 +2315,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2332,10 +2332,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2349,10 +2349,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2366,10 +2366,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2383,10 +2383,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2400,10 +2400,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2417,10 +2417,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2434,12 +2434,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 21);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2453,10 +2453,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2470,10 +2470,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2487,10 +2487,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2504,10 +2504,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2521,10 +2521,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2538,10 +2538,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2555,10 +2555,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2572,20 +2572,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 21);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2599,10 +2599,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 22);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2616,12 +2616,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 23);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2635,10 +2635,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 22);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2652,12 +2652,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 23);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2671,10 +2671,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 22);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2688,20 +2688,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 23);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2715,10 +2715,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2732,12 +2732,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 25);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2751,10 +2751,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2768,12 +2768,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 25);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2787,10 +2787,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -2804,20 +2804,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 25);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2831,10 +2831,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2848,10 +2848,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2865,10 +2865,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2882,10 +2882,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -2899,12 +2899,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2918,10 +2918,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2935,10 +2935,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2952,10 +2952,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2969,10 +2969,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -2986,12 +2986,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3005,10 +3005,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3022,10 +3022,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3039,10 +3039,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3056,10 +3056,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3073,20 +3073,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 30);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3100,10 +3100,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3117,10 +3117,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3134,10 +3134,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3151,10 +3151,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3168,10 +3168,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3185,12 +3185,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3204,10 +3204,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3221,10 +3221,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3238,10 +3238,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3255,10 +3255,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3272,10 +3272,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3289,12 +3289,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3308,10 +3308,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3325,10 +3325,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3342,10 +3342,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3359,10 +3359,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3376,10 +3376,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3393,20 +3393,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 36);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3420,10 +3420,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3437,10 +3437,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3454,10 +3454,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3471,10 +3471,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3488,10 +3488,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                          y[9 ],
@@ -3505,12 +3505,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(2, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3524,10 +3524,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3541,10 +3541,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3558,10 +3558,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3575,10 +3575,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3592,10 +3592,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                          y[13 ],
@@ -3609,12 +3609,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(3, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3628,10 +3628,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3645,10 +3645,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3662,10 +3662,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3679,10 +3679,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3696,10 +3696,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                          y[17 ],
@@ -3713,20 +3713,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(4, 42);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3740,10 +3740,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3757,10 +3757,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3774,10 +3774,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3791,10 +3791,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3808,10 +3808,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3825,10 +3825,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3842,10 +3842,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -3859,12 +3859,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 21);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3878,10 +3878,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3895,10 +3895,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3912,10 +3912,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3929,10 +3929,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3946,10 +3946,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3963,10 +3963,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3980,10 +3980,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -3997,12 +3997,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 21);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4016,10 +4016,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 14);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4033,10 +4033,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 15);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4050,10 +4050,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 16);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4067,10 +4067,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 17);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4084,10 +4084,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 18);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4101,10 +4101,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 19);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4118,10 +4118,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 20);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4135,20 +4135,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 21);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4162,10 +4162,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4179,12 +4179,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 25);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4198,10 +4198,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4215,12 +4215,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 25);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4234,10 +4234,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 24);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4251,20 +4251,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 25);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4278,10 +4278,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4295,10 +4295,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4312,10 +4312,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4329,10 +4329,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4346,12 +4346,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4365,10 +4365,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4382,10 +4382,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4399,10 +4399,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4416,10 +4416,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4433,12 +4433,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4452,10 +4452,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4469,10 +4469,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4486,10 +4486,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4503,10 +4503,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4520,20 +4520,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 30);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4547,10 +4547,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4564,10 +4564,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4581,10 +4581,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4598,10 +4598,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4615,10 +4615,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4632,12 +4632,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4651,10 +4651,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4668,10 +4668,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4685,10 +4685,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4702,10 +4702,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4719,10 +4719,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4736,12 +4736,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4755,10 +4755,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4772,10 +4772,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4789,10 +4789,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4806,10 +4806,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4823,10 +4823,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -4840,20 +4840,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 36);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4867,10 +4867,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4884,10 +4884,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4901,10 +4901,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4918,10 +4918,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4935,10 +4935,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                          y[21 ],
@@ -4952,12 +4952,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(5, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4971,10 +4971,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -4988,10 +4988,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -5005,10 +5005,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -5022,10 +5022,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -5039,10 +5039,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                          y[25 ],
@@ -5056,12 +5056,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(6, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -5075,10 +5075,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -5092,10 +5092,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -5109,10 +5109,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -5126,10 +5126,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -5143,10 +5143,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                          y[29 ],
@@ -5160,20 +5160,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(7, 42);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5187,10 +5187,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5204,10 +5204,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5221,10 +5221,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5238,10 +5238,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5255,12 +5255,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -5274,10 +5274,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -5291,10 +5291,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -5308,10 +5308,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -5325,10 +5325,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -5342,12 +5342,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -5361,10 +5361,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -5378,10 +5378,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -5395,10 +5395,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -5412,10 +5412,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -5429,12 +5429,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -5448,10 +5448,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -5465,10 +5465,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -5482,10 +5482,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -5499,10 +5499,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -5516,12 +5516,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -5535,10 +5535,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -5552,10 +5552,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -5569,10 +5569,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -5586,10 +5586,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -5603,12 +5603,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -5622,10 +5622,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -5639,10 +5639,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -5656,10 +5656,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -5673,10 +5673,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -5690,12 +5690,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -5709,10 +5709,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -5726,10 +5726,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -5743,10 +5743,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -5760,10 +5760,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -5777,12 +5777,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 30);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -5796,10 +5796,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 26);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -5813,10 +5813,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 27);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -5830,10 +5830,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 28);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -5847,10 +5847,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 29);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -5864,20 +5864,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 30);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5891,10 +5891,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5908,10 +5908,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5925,10 +5925,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5942,10 +5942,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5959,10 +5959,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -5976,12 +5976,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -5995,10 +5995,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6012,10 +6012,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6029,10 +6029,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6046,10 +6046,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6063,10 +6063,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6080,12 +6080,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6099,10 +6099,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6116,10 +6116,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6133,10 +6133,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6150,10 +6150,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6167,10 +6167,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6184,12 +6184,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -6203,10 +6203,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -6220,10 +6220,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -6237,10 +6237,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -6254,10 +6254,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -6271,10 +6271,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -6288,12 +6288,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -6307,10 +6307,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -6324,10 +6324,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -6341,10 +6341,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -6358,10 +6358,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -6375,10 +6375,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -6392,12 +6392,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -6411,10 +6411,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -6428,10 +6428,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -6445,10 +6445,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -6462,10 +6462,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -6479,10 +6479,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -6496,12 +6496,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -6515,10 +6515,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -6532,10 +6532,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -6549,10 +6549,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -6566,10 +6566,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -6583,10 +6583,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -6600,12 +6600,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 36);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -6619,10 +6619,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 31);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -6636,10 +6636,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 32);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -6653,10 +6653,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 33);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -6670,10 +6670,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 34);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -6687,10 +6687,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 35);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -6704,20 +6704,20 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 36);
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -6731,10 +6731,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -6748,10 +6748,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -6765,10 +6765,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -6782,10 +6782,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -6799,10 +6799,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                          y[57 ],
@@ -6816,12 +6816,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(14, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6835,10 +6835,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6852,10 +6852,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6869,10 +6869,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6886,10 +6886,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6903,10 +6903,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                          y[61 ],
@@ -6920,12 +6920,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(15, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6939,10 +6939,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6956,10 +6956,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6973,10 +6973,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -6990,10 +6990,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -7007,10 +7007,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                          y[65 ],
@@ -7024,12 +7024,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(16, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -7043,10 +7043,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -7060,10 +7060,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -7077,10 +7077,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -7094,10 +7094,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -7111,10 +7111,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                          y[69 ],
@@ -7128,12 +7128,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(17, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -7147,10 +7147,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -7164,10 +7164,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -7181,10 +7181,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -7198,10 +7198,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -7215,10 +7215,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                          y[73 ],
@@ -7232,12 +7232,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(18, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -7251,10 +7251,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -7268,10 +7268,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -7285,10 +7285,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -7302,10 +7302,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -7319,10 +7319,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                          y[77 ],
@@ -7336,12 +7336,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(19, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -7355,10 +7355,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -7372,10 +7372,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -7389,10 +7389,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -7406,10 +7406,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -7423,10 +7423,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                          y[81 ],
@@ -7440,12 +7440,12 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(20, 42);
         }
 
-        
-        
-        
 
-        
-        
+
+
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -7459,10 +7459,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 37);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -7476,10 +7476,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 38);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -7493,10 +7493,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 39);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -7510,10 +7510,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 40);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -7527,10 +7527,10 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 41);
         }
 
-        
 
-        
-        
+
+
+
 
         if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                          y[85 ],
@@ -7544,9 +7544,9 @@ q[8] = 25.0 * (q[8] - 0.0);
             output.second.emplace_back(21, 42);
         }
 
-        
-        
-        
+
+
+
 
         return output;
     }
@@ -7891,7 +7891,7 @@ q[8] = 25.0 * (q[8] - 0.0);
    y[211] = 0.0759999975562096;
    y[215] = 0.0759999975562096;
 
-        
+
 
 
 
@@ -7908,8 +7908,8 @@ if (sphere_environment_in_collision(environment,
                                     y[214],
                                     y[215]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[148],
                                         y[149],
@@ -7918,8 +7918,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[152],
                                         y[153],
@@ -7928,8 +7928,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[156],
                                         y[157],
@@ -7938,8 +7938,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[160],
                                         y[161],
@@ -7948,8 +7948,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[164],
                                         y[165],
@@ -7958,8 +7958,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[168],
                                         y[169],
@@ -7968,7 +7968,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -7988,8 +7988,8 @@ if (sphere_environment_in_collision(environment,
                                     y[210],
                                     y[211]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[124],
                                         y[125],
@@ -7998,8 +7998,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[128],
                                         y[129],
@@ -8008,8 +8008,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[132],
                                         y[133],
@@ -8018,8 +8018,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[136],
                                         y[137],
@@ -8028,8 +8028,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[140],
                                         y[141],
@@ -8038,8 +8038,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[144],
                                         y[145],
@@ -8048,7 +8048,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8068,8 +8068,8 @@ if (sphere_environment_in_collision(environment,
                                     y[206],
                                     y[207]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[104],
                                         y[105],
@@ -8078,8 +8078,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[108],
                                         y[109],
@@ -8088,8 +8088,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[112],
                                         y[113],
@@ -8098,8 +8098,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[116],
                                         y[117],
@@ -8108,8 +8108,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[120],
                                         y[121],
@@ -8118,7 +8118,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8138,8 +8138,8 @@ if (sphere_environment_in_collision(environment,
                                     y[202],
                                     y[203]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[96],
                                         y[97],
@@ -8148,8 +8148,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[100],
                                         y[101],
@@ -8158,7 +8158,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8178,8 +8178,8 @@ if (sphere_environment_in_collision(environment,
                                     y[198],
                                     y[199]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[88],
                                         y[89],
@@ -8188,8 +8188,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[92],
                                         y[93],
@@ -8198,7 +8198,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8218,8 +8218,8 @@ if (sphere_environment_in_collision(environment,
                                     y[194],
                                     y[195]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[56],
                                         y[57],
@@ -8228,8 +8228,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[60],
                                         y[61],
@@ -8238,8 +8238,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[64],
                                         y[65],
@@ -8248,8 +8248,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[68],
                                         y[69],
@@ -8258,8 +8258,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[72],
                                         y[73],
@@ -8268,8 +8268,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[76],
                                         y[77],
@@ -8278,8 +8278,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[80],
                                         y[81],
@@ -8288,8 +8288,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[84],
                                         y[85],
@@ -8298,7 +8298,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8318,8 +8318,8 @@ if (sphere_environment_in_collision(environment,
                                     y[190],
                                     y[191]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[44],
                                         y[45],
@@ -8328,8 +8328,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[48],
                                         y[49],
@@ -8338,8 +8338,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[52],
                                         y[53],
@@ -8348,7 +8348,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8368,8 +8368,8 @@ if (sphere_environment_in_collision(environment,
                                     y[186],
                                     y[187]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[32],
                                         y[33],
@@ -8378,8 +8378,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[36],
                                         y[37],
@@ -8388,8 +8388,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[40],
                                         y[41],
@@ -8398,7 +8398,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8418,8 +8418,8 @@ if (sphere_environment_in_collision(environment,
                                     y[182],
                                     y[183]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[20],
                                         y[21],
@@ -8428,8 +8428,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[24],
                                         y[25],
@@ -8438,8 +8438,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[28],
                                         y[29],
@@ -8448,7 +8448,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8468,8 +8468,8 @@ if (sphere_environment_in_collision(environment,
                                     y[178],
                                     y[179]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[8],
                                         y[9],
@@ -8478,8 +8478,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[12],
                                         y[13],
@@ -8488,8 +8488,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[16],
                                         y[17],
@@ -8498,7 +8498,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8518,8 +8518,8 @@ if (sphere_environment_in_collision(environment,
                                     y[174],
                                     y[175]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[0],
                                         y[1],
@@ -8528,8 +8528,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[4],
                                         y[5],
@@ -8538,7 +8538,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -8568,11 +8568,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[194],
                                                  y[195]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8586,10 +8586,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8603,10 +8603,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8620,10 +8620,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8637,10 +8637,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8654,10 +8654,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8671,10 +8671,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8688,10 +8688,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8705,12 +8705,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8724,10 +8724,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8741,10 +8741,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8758,10 +8758,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8775,10 +8775,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8792,10 +8792,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8809,10 +8809,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8826,10 +8826,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8843,8 +8843,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -8867,11 +8867,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[198],
                                                  y[199]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8885,10 +8885,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8902,12 +8902,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8921,10 +8921,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -8938,8 +8938,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -8962,11 +8962,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[202],
                                                  y[203]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8980,10 +8980,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -8997,12 +8997,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9016,10 +9016,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9033,8 +9033,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -9057,11 +9057,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9075,10 +9075,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9092,10 +9092,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9109,10 +9109,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9126,10 +9126,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9143,12 +9143,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9162,10 +9162,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9179,10 +9179,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9196,10 +9196,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9213,10 +9213,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9230,8 +9230,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -9254,11 +9254,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9272,10 +9272,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9289,10 +9289,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9306,10 +9306,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9323,10 +9323,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9340,10 +9340,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9357,12 +9357,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9376,10 +9376,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9393,10 +9393,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9410,10 +9410,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9427,10 +9427,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9444,10 +9444,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9461,8 +9461,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -9485,11 +9485,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9503,10 +9503,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9520,10 +9520,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9537,10 +9537,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9554,10 +9554,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9571,10 +9571,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -9588,12 +9588,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9607,10 +9607,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9624,10 +9624,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9641,10 +9641,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9658,10 +9658,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9675,10 +9675,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -9692,8 +9692,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -9716,11 +9716,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[194],
                                                  y[195]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9734,10 +9734,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9751,10 +9751,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9768,10 +9768,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9785,10 +9785,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9802,10 +9802,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9819,10 +9819,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9836,10 +9836,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -9853,12 +9853,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9872,10 +9872,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9889,10 +9889,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9906,10 +9906,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9923,10 +9923,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9940,10 +9940,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9957,10 +9957,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9974,10 +9974,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -9991,12 +9991,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10010,10 +10010,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10027,10 +10027,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10044,10 +10044,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10061,10 +10061,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10078,10 +10078,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10095,10 +10095,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10112,10 +10112,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10129,8 +10129,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -10153,11 +10153,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[198],
                                                  y[199]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10171,10 +10171,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10188,12 +10188,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10207,10 +10207,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10224,12 +10224,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10243,10 +10243,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10260,8 +10260,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -10284,11 +10284,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[202],
                                                  y[203]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10302,10 +10302,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10319,12 +10319,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10338,10 +10338,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10355,12 +10355,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10374,10 +10374,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10391,8 +10391,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -10415,11 +10415,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10433,10 +10433,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10450,10 +10450,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10467,10 +10467,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10484,10 +10484,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10501,12 +10501,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10520,10 +10520,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10537,10 +10537,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10554,10 +10554,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10571,10 +10571,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10588,12 +10588,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10607,10 +10607,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10624,10 +10624,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10641,10 +10641,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10658,10 +10658,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10675,8 +10675,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -10699,11 +10699,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10717,10 +10717,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10734,10 +10734,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10751,10 +10751,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10768,10 +10768,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10785,10 +10785,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -10802,12 +10802,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10821,10 +10821,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10838,10 +10838,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10855,10 +10855,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10872,10 +10872,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10889,10 +10889,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -10906,12 +10906,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10925,10 +10925,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10942,10 +10942,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10959,10 +10959,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10976,10 +10976,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -10993,10 +10993,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11010,8 +11010,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -11034,11 +11034,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -11052,10 +11052,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -11069,10 +11069,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -11086,10 +11086,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -11103,10 +11103,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -11120,10 +11120,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -11137,12 +11137,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -11156,10 +11156,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -11173,10 +11173,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -11190,10 +11190,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -11207,10 +11207,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -11224,10 +11224,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -11241,12 +11241,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11260,10 +11260,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11277,10 +11277,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11294,10 +11294,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11311,10 +11311,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11328,10 +11328,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -11345,8 +11345,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -11369,11 +11369,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[194],
                                                  y[195]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11387,10 +11387,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11404,10 +11404,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11421,10 +11421,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11438,10 +11438,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11455,10 +11455,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11472,10 +11472,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11489,10 +11489,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11506,12 +11506,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11525,10 +11525,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11542,10 +11542,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11559,10 +11559,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11576,10 +11576,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11593,10 +11593,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11610,10 +11610,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11627,10 +11627,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11644,12 +11644,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11663,10 +11663,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11680,10 +11680,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11697,10 +11697,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11714,10 +11714,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11731,10 +11731,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11748,10 +11748,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11765,10 +11765,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11782,8 +11782,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -11806,11 +11806,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[202],
                                                  y[203]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11824,10 +11824,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11841,12 +11841,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11860,10 +11860,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -11877,12 +11877,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11896,10 +11896,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -11913,8 +11913,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -11937,11 +11937,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11955,10 +11955,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11972,10 +11972,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -11989,10 +11989,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12006,10 +12006,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12023,12 +12023,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12042,10 +12042,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12059,10 +12059,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12076,10 +12076,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12093,10 +12093,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12110,12 +12110,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12129,10 +12129,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12146,10 +12146,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12163,10 +12163,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12180,10 +12180,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12197,8 +12197,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -12221,11 +12221,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12239,10 +12239,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12256,10 +12256,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12273,10 +12273,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12290,10 +12290,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12307,10 +12307,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12324,12 +12324,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12343,10 +12343,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12360,10 +12360,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12377,10 +12377,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12394,10 +12394,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12411,10 +12411,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12428,12 +12428,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12447,10 +12447,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12464,10 +12464,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12481,10 +12481,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12498,10 +12498,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12515,10 +12515,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12532,8 +12532,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -12556,11 +12556,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12574,10 +12574,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12591,10 +12591,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12608,10 +12608,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12625,10 +12625,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12642,10 +12642,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -12659,12 +12659,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12678,10 +12678,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12695,10 +12695,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12712,10 +12712,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12729,10 +12729,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12746,10 +12746,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -12763,12 +12763,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12782,10 +12782,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12799,10 +12799,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12816,10 +12816,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12833,10 +12833,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12850,10 +12850,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -12867,8 +12867,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -12891,11 +12891,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -12909,10 +12909,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -12926,10 +12926,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -12943,10 +12943,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -12960,10 +12960,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -12977,12 +12977,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -12996,32 +12996,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[108 ],
-                                                     y[109 ],
-                                                     y[110 ],
-                                                     y[111 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[108 ],
+                                                     y[109 ],
+                                                     y[110 ],
+                                                     y[111 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[112 ],
                                                      y[113 ],
                                                      y[114 ],
@@ -13030,10 +13030,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -13047,10 +13047,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -13064,12 +13064,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13083,10 +13083,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13100,10 +13100,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13117,10 +13117,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13134,10 +13134,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13151,12 +13151,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13170,10 +13170,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13187,10 +13187,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13204,10 +13204,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13221,10 +13221,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13238,12 +13238,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -13257,10 +13257,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -13274,10 +13274,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -13291,10 +13291,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -13308,10 +13308,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -13325,12 +13325,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -13344,10 +13344,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -13361,10 +13361,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -13378,10 +13378,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -13395,10 +13395,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -13412,12 +13412,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -13431,10 +13431,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -13448,10 +13448,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -13465,10 +13465,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -13482,10 +13482,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -13499,12 +13499,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -13518,10 +13518,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -13535,10 +13535,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -13552,10 +13552,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -13569,10 +13569,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -13586,8 +13586,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -13610,11 +13610,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -13628,10 +13628,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -13645,10 +13645,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -13662,10 +13662,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -13679,10 +13679,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -13696,10 +13696,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -13713,12 +13713,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -13732,32 +13732,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[128 ],
-                                                     y[129 ],
-                                                     y[130 ],
-                                                     y[131 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[128 ],
+                                                     y[129 ],
+                                                     y[130 ],
+                                                     y[131 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[132 ],
                                                      y[133 ],
                                                      y[134 ],
@@ -13766,10 +13766,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -13783,32 +13783,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[140 ],
-                                                     y[141 ],
-                                                     y[142 ],
-                                                     y[143 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[140 ],
+                                                     y[141 ],
+                                                     y[142 ],
+                                                     y[143 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[144 ],
                                                      y[145 ],
                                                      y[146 ],
@@ -13817,12 +13817,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13836,10 +13836,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13853,10 +13853,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13870,10 +13870,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13887,10 +13887,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13904,10 +13904,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -13921,12 +13921,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13940,10 +13940,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13957,10 +13957,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13974,10 +13974,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -13991,10 +13991,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14008,10 +14008,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14025,12 +14025,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14044,10 +14044,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14061,10 +14061,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14078,10 +14078,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14095,10 +14095,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14112,10 +14112,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14129,12 +14129,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -14148,10 +14148,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -14165,10 +14165,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -14182,10 +14182,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -14199,10 +14199,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -14216,10 +14216,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -14233,12 +14233,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -14252,10 +14252,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -14269,10 +14269,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -14286,10 +14286,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -14303,10 +14303,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -14320,10 +14320,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -14337,12 +14337,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -14356,10 +14356,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -14373,10 +14373,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -14390,10 +14390,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -14407,10 +14407,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -14424,10 +14424,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -14441,8 +14441,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -14465,11 +14465,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -14483,10 +14483,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -14500,10 +14500,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -14517,10 +14517,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -14534,10 +14534,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -14551,10 +14551,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -14568,12 +14568,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -14587,32 +14587,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[152 ],
-                                                     y[153 ],
-                                                     y[154 ],
-                                                     y[155 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[152 ],
+                                                     y[153 ],
+                                                     y[154 ],
+                                                     y[155 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[156 ],
                                                      y[157 ],
                                                      y[158 ],
@@ -14621,10 +14621,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -14638,32 +14638,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[164 ],
-                                                     y[165 ],
-                                                     y[166 ],
-                                                     y[167 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[164 ],
+                                                     y[165 ],
+                                                     y[166 ],
+                                                     y[167 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[168 ],
                                                      y[169 ],
                                                      y[170 ],
@@ -14672,12 +14672,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -14691,10 +14691,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -14708,10 +14708,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -14725,10 +14725,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -14742,10 +14742,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -14759,10 +14759,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -14776,12 +14776,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14795,10 +14795,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14812,10 +14812,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14829,10 +14829,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14846,10 +14846,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14863,10 +14863,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -14880,12 +14880,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14899,10 +14899,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14916,10 +14916,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14933,10 +14933,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14950,10 +14950,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14967,10 +14967,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -14984,12 +14984,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -15003,10 +15003,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -15020,10 +15020,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -15037,10 +15037,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -15054,10 +15054,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -15071,10 +15071,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -15088,12 +15088,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -15107,10 +15107,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -15124,10 +15124,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -15141,10 +15141,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -15158,10 +15158,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -15175,10 +15175,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -15192,12 +15192,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -15211,10 +15211,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -15228,10 +15228,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -15245,10 +15245,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -15262,10 +15262,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -15279,10 +15279,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -15296,8 +15296,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -15311,7 +15311,7 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
     // and body-vs-body machinery (via the "ccfk" subtemplate) and adds
     // an attachment-vs-env + attachment-vs-body pass anchored at its
     // own EE pose.
-    
+
     template <std::size_t rake>
     static inline bool fkcc_attach_0(
         const vamp::collision::Environment<FloatVector<rake>> &environment,
@@ -15655,7 +15655,7 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
    y[211] = 0.0759999975562096;
    y[215] = 0.0759999975562096;
 
-        
+
 
 
 
@@ -15672,8 +15672,8 @@ if (sphere_environment_in_collision(environment,
                                     y[214],
                                     y[215]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[148],
                                         y[149],
@@ -15682,8 +15682,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[152],
                                         y[153],
@@ -15692,8 +15692,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[156],
                                         y[157],
@@ -15702,8 +15702,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[160],
                                         y[161],
@@ -15712,8 +15712,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[164],
                                         y[165],
@@ -15722,8 +15722,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[168],
                                         y[169],
@@ -15732,7 +15732,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -15752,8 +15752,8 @@ if (sphere_environment_in_collision(environment,
                                     y[210],
                                     y[211]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[124],
                                         y[125],
@@ -15762,8 +15762,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[128],
                                         y[129],
@@ -15772,8 +15772,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[132],
                                         y[133],
@@ -15782,8 +15782,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[136],
                                         y[137],
@@ -15792,8 +15792,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[140],
                                         y[141],
@@ -15802,8 +15802,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[144],
                                         y[145],
@@ -15812,7 +15812,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -15832,8 +15832,8 @@ if (sphere_environment_in_collision(environment,
                                     y[206],
                                     y[207]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[104],
                                         y[105],
@@ -15842,8 +15842,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[108],
                                         y[109],
@@ -15852,8 +15852,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[112],
                                         y[113],
@@ -15862,8 +15862,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[116],
                                         y[117],
@@ -15872,8 +15872,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[120],
                                         y[121],
@@ -15882,7 +15882,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -15902,8 +15902,8 @@ if (sphere_environment_in_collision(environment,
                                     y[202],
                                     y[203]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[96],
                                         y[97],
@@ -15912,8 +15912,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[100],
                                         y[101],
@@ -15922,7 +15922,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -15942,8 +15942,8 @@ if (sphere_environment_in_collision(environment,
                                     y[198],
                                     y[199]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[88],
                                         y[89],
@@ -15952,8 +15952,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[92],
                                         y[93],
@@ -15962,7 +15962,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -15982,8 +15982,8 @@ if (sphere_environment_in_collision(environment,
                                     y[194],
                                     y[195]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[56],
                                         y[57],
@@ -15992,8 +15992,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[60],
                                         y[61],
@@ -16002,8 +16002,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[64],
                                         y[65],
@@ -16012,8 +16012,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[68],
                                         y[69],
@@ -16022,8 +16022,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[72],
                                         y[73],
@@ -16032,8 +16032,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[76],
                                         y[77],
@@ -16042,8 +16042,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[80],
                                         y[81],
@@ -16052,8 +16052,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[84],
                                         y[85],
@@ -16062,7 +16062,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -16082,8 +16082,8 @@ if (sphere_environment_in_collision(environment,
                                     y[190],
                                     y[191]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[44],
                                         y[45],
@@ -16092,8 +16092,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[48],
                                         y[49],
@@ -16102,8 +16102,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[52],
                                         y[53],
@@ -16112,7 +16112,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -16132,8 +16132,8 @@ if (sphere_environment_in_collision(environment,
                                     y[186],
                                     y[187]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[32],
                                         y[33],
@@ -16142,8 +16142,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[36],
                                         y[37],
@@ -16152,8 +16152,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[40],
                                         y[41],
@@ -16162,7 +16162,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -16182,8 +16182,8 @@ if (sphere_environment_in_collision(environment,
                                     y[182],
                                     y[183]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[20],
                                         y[21],
@@ -16192,8 +16192,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[24],
                                         y[25],
@@ -16202,8 +16202,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[28],
                                         y[29],
@@ -16212,7 +16212,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -16232,8 +16232,8 @@ if (sphere_environment_in_collision(environment,
                                     y[178],
                                     y[179]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[8],
                                         y[9],
@@ -16242,8 +16242,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[12],
                                         y[13],
@@ -16252,8 +16252,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[16],
                                         y[17],
@@ -16262,7 +16262,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -16282,8 +16282,8 @@ if (sphere_environment_in_collision(environment,
                                     y[174],
                                     y[175]))
 {
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[0],
                                         y[1],
@@ -16292,8 +16292,8 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
-    
+
+
     if (sphere_environment_in_collision(environment,
                                         y[4],
                                         y[5],
@@ -16302,7 +16302,7 @@ if (sphere_environment_in_collision(environment,
     {
         return false;
     }
-    
+
 }
 
 
@@ -16332,11 +16332,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[194],
                                                  y[195]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16350,10 +16350,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16367,10 +16367,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16384,10 +16384,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16401,10 +16401,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16418,10 +16418,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16435,10 +16435,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16452,10 +16452,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16469,12 +16469,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16488,10 +16488,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16505,10 +16505,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16522,10 +16522,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16539,10 +16539,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16556,10 +16556,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16573,10 +16573,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16590,10 +16590,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16607,8 +16607,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -16631,11 +16631,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[198],
                                                  y[199]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16649,10 +16649,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16666,12 +16666,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16685,10 +16685,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16702,8 +16702,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -16726,11 +16726,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[202],
                                                  y[203]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16744,10 +16744,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16761,12 +16761,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16780,10 +16780,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16797,8 +16797,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -16821,11 +16821,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16839,10 +16839,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16856,10 +16856,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16873,10 +16873,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16890,10 +16890,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -16907,12 +16907,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16926,10 +16926,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16943,10 +16943,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16960,10 +16960,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16977,10 +16977,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -16994,8 +16994,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -17018,11 +17018,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17036,10 +17036,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17053,10 +17053,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17070,10 +17070,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17087,10 +17087,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17104,10 +17104,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17121,12 +17121,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17140,10 +17140,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17157,10 +17157,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17174,10 +17174,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17191,10 +17191,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17208,10 +17208,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17225,8 +17225,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -17249,11 +17249,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17267,10 +17267,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17284,10 +17284,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17301,10 +17301,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17318,10 +17318,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17335,10 +17335,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[0 ],
                                                      y[1 ],
@@ -17352,12 +17352,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17371,10 +17371,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17388,10 +17388,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17405,10 +17405,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17422,10 +17422,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17439,10 +17439,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[4 ],
                                                      y[5 ],
@@ -17456,8 +17456,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[172],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -17480,11 +17480,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[194],
                                                  y[195]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17498,10 +17498,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17515,10 +17515,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17532,10 +17532,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17549,10 +17549,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17566,10 +17566,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17583,10 +17583,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17600,10 +17600,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17617,12 +17617,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17636,10 +17636,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17653,10 +17653,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17670,10 +17670,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17687,10 +17687,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17704,10 +17704,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17721,10 +17721,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17738,10 +17738,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17755,12 +17755,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17774,10 +17774,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17791,10 +17791,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17808,10 +17808,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17825,10 +17825,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17842,10 +17842,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17859,10 +17859,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17876,10 +17876,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -17893,8 +17893,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -17917,11 +17917,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[198],
                                                  y[199]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17935,10 +17935,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -17952,12 +17952,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17971,10 +17971,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -17988,12 +17988,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18007,10 +18007,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18024,8 +18024,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -18048,11 +18048,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[202],
                                                  y[203]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18066,10 +18066,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18083,12 +18083,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18102,10 +18102,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18119,12 +18119,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18138,10 +18138,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18155,8 +18155,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -18179,11 +18179,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18197,10 +18197,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18214,10 +18214,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18231,10 +18231,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18248,10 +18248,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18265,12 +18265,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18284,10 +18284,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18301,10 +18301,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18318,10 +18318,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18335,10 +18335,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18352,12 +18352,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18371,10 +18371,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18388,10 +18388,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18405,10 +18405,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18422,10 +18422,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18439,8 +18439,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -18463,11 +18463,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18481,10 +18481,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18498,10 +18498,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18515,10 +18515,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18532,10 +18532,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18549,10 +18549,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18566,12 +18566,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18585,10 +18585,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18602,10 +18602,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18619,10 +18619,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18636,10 +18636,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18653,10 +18653,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18670,12 +18670,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18689,10 +18689,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18706,10 +18706,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18723,10 +18723,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18740,10 +18740,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18757,10 +18757,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -18774,8 +18774,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -18798,11 +18798,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18816,10 +18816,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18833,10 +18833,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18850,10 +18850,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18867,10 +18867,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18884,10 +18884,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[8 ],
                                                      y[9 ],
@@ -18901,12 +18901,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18920,10 +18920,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18937,10 +18937,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18954,10 +18954,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18971,10 +18971,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -18988,10 +18988,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[12 ],
                                                      y[13 ],
@@ -19005,12 +19005,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -19024,10 +19024,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -19041,10 +19041,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -19058,10 +19058,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -19075,10 +19075,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -19092,10 +19092,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[16 ],
                                                      y[17 ],
@@ -19109,8 +19109,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[176],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -19133,11 +19133,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[194],
                                                  y[195]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19151,10 +19151,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19168,10 +19168,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19185,10 +19185,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19202,10 +19202,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19219,10 +19219,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19236,10 +19236,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19253,10 +19253,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19270,12 +19270,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19289,10 +19289,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19306,10 +19306,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19323,10 +19323,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19340,10 +19340,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19357,10 +19357,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19374,10 +19374,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19391,10 +19391,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19408,12 +19408,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19427,10 +19427,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19444,10 +19444,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19461,10 +19461,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19478,10 +19478,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19495,10 +19495,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19512,10 +19512,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19529,10 +19529,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19546,8 +19546,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -19570,11 +19570,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[202],
                                                  y[203]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19588,10 +19588,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19605,12 +19605,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19624,10 +19624,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19641,12 +19641,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19660,10 +19660,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19677,8 +19677,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -19701,11 +19701,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19719,10 +19719,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19736,10 +19736,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19753,10 +19753,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19770,10 +19770,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -19787,12 +19787,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19806,10 +19806,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19823,10 +19823,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19840,10 +19840,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19857,10 +19857,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -19874,12 +19874,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19893,10 +19893,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19910,10 +19910,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19927,10 +19927,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19944,10 +19944,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -19961,8 +19961,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -19985,11 +19985,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20003,10 +20003,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20020,10 +20020,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20037,10 +20037,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20054,10 +20054,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20071,10 +20071,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20088,12 +20088,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20107,10 +20107,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20124,10 +20124,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20141,10 +20141,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20158,10 +20158,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20175,10 +20175,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20192,12 +20192,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20211,10 +20211,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20228,10 +20228,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20245,10 +20245,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20262,10 +20262,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20279,10 +20279,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20296,8 +20296,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -20320,11 +20320,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20338,10 +20338,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20355,10 +20355,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20372,10 +20372,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20389,10 +20389,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20406,10 +20406,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[20 ],
                                                      y[21 ],
@@ -20423,12 +20423,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20442,10 +20442,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20459,10 +20459,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20476,10 +20476,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20493,10 +20493,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20510,10 +20510,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[24 ],
                                                      y[25 ],
@@ -20527,12 +20527,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20546,10 +20546,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20563,10 +20563,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20580,10 +20580,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20597,10 +20597,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20614,10 +20614,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[28 ],
                                                      y[29 ],
@@ -20631,8 +20631,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[180],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -20655,11 +20655,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                  y[206],
                                                  y[207]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -20673,10 +20673,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -20690,10 +20690,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -20707,10 +20707,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -20724,10 +20724,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -20741,12 +20741,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -20760,32 +20760,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[108 ],
-                                                     y[109 ],
-                                                     y[110 ],
-                                                     y[111 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[108 ],
+                                                     y[109 ],
+                                                     y[110 ],
+                                                     y[111 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[112 ],
                                                      y[113 ],
                                                      y[114 ],
@@ -20794,10 +20794,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -20811,10 +20811,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -20828,12 +20828,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -20847,10 +20847,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -20864,10 +20864,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -20881,10 +20881,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -20898,10 +20898,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -20915,12 +20915,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -20934,10 +20934,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -20951,10 +20951,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -20968,10 +20968,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -20985,10 +20985,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21002,12 +21002,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21021,10 +21021,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21038,10 +21038,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21055,10 +21055,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21072,10 +21072,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21089,12 +21089,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21108,10 +21108,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21125,10 +21125,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21142,10 +21142,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21159,10 +21159,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21176,12 +21176,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -21195,10 +21195,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -21212,10 +21212,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -21229,10 +21229,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -21246,10 +21246,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -21263,12 +21263,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -21282,10 +21282,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -21299,10 +21299,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -21316,10 +21316,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -21333,10 +21333,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -21350,8 +21350,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -21374,11 +21374,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                  y[210],
                                                  y[211]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -21392,10 +21392,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -21409,10 +21409,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -21426,10 +21426,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -21443,10 +21443,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -21460,10 +21460,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -21477,12 +21477,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -21496,32 +21496,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[128 ],
-                                                     y[129 ],
-                                                     y[130 ],
-                                                     y[131 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[128 ],
+                                                     y[129 ],
+                                                     y[130 ],
+                                                     y[131 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[132 ],
                                                      y[133 ],
                                                      y[134 ],
@@ -21530,10 +21530,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -21547,32 +21547,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[140 ],
-                                                     y[141 ],
-                                                     y[142 ],
-                                                     y[143 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[140 ],
+                                                     y[141 ],
+                                                     y[142 ],
+                                                     y[143 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[144 ],
                                                      y[145 ],
                                                      y[146 ],
@@ -21581,12 +21581,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -21600,10 +21600,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -21617,10 +21617,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -21634,10 +21634,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -21651,10 +21651,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -21668,10 +21668,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -21685,12 +21685,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21704,10 +21704,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21721,10 +21721,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21738,10 +21738,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21755,10 +21755,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21772,10 +21772,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -21789,12 +21789,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21808,10 +21808,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21825,10 +21825,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21842,10 +21842,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21859,10 +21859,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21876,10 +21876,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -21893,12 +21893,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21912,10 +21912,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21929,10 +21929,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21946,10 +21946,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21963,10 +21963,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21980,10 +21980,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -21997,12 +21997,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22016,10 +22016,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22033,10 +22033,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22050,10 +22050,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22067,10 +22067,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22084,10 +22084,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22101,12 +22101,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22120,10 +22120,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22137,10 +22137,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22154,10 +22154,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22171,10 +22171,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22188,10 +22188,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22205,8 +22205,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -22229,11 +22229,11 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                  y[214],
                                                  y[215]))
 {
-    
-    
 
-    
-    
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -22247,10 +22247,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -22264,10 +22264,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -22281,10 +22281,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -22298,10 +22298,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -22315,10 +22315,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[56 ],
                                                      y[57 ],
@@ -22332,12 +22332,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -22351,32 +22351,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[152 ],
-                                                     y[153 ],
-                                                     y[154 ],
-                                                     y[155 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[152 ],
+                                                     y[153 ],
+                                                     y[154 ],
+                                                     y[155 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[156 ],
                                                      y[157 ],
                                                      y[158 ],
@@ -22385,10 +22385,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
@@ -22402,32 +22402,32 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
 
-    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
-                                                     y[61 ],
-                                                     y[62 ],
-                                                     y[63 ],
-                                                     y[164 ],
-                                                     y[165 ],
-                                                     y[166 ],
-                                                     y[167 ]))
-    {
-        return false;
-    }
 
-    
 
-    
-    
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
                                                      y[61 ],
                                                      y[62 ],
                                                      y[63 ],
+                                                     y[164 ],
+                                                     y[165 ],
+                                                     y[166 ],
+                                                     y[167 ]))
+    {
+        return false;
+    }
+
+
+
+
+
+
+    if (sphere_sphere_self_collision<decltype(x[0])>(y[60 ],
+                                                     y[61 ],
+                                                     y[62 ],
+                                                     y[63 ],
                                                      y[168 ],
                                                      y[169 ],
                                                      y[170 ],
@@ -22436,12 +22436,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -22455,10 +22455,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -22472,10 +22472,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -22489,10 +22489,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -22506,10 +22506,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -22523,10 +22523,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[64 ],
                                                      y[65 ],
@@ -22540,12 +22540,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -22559,10 +22559,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -22576,10 +22576,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -22593,10 +22593,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -22610,10 +22610,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -22627,10 +22627,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[68 ],
                                                      y[69 ],
@@ -22644,12 +22644,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -22663,10 +22663,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -22680,10 +22680,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -22697,10 +22697,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -22714,10 +22714,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -22731,10 +22731,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[72 ],
                                                      y[73 ],
@@ -22748,12 +22748,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -22767,10 +22767,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -22784,10 +22784,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -22801,10 +22801,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -22818,10 +22818,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -22835,10 +22835,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[76 ],
                                                      y[77 ],
@@ -22852,12 +22852,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22871,10 +22871,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22888,10 +22888,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22905,10 +22905,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22922,10 +22922,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22939,10 +22939,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[80 ],
                                                      y[81 ],
@@ -22956,12 +22956,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22975,10 +22975,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -22992,10 +22992,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -23009,10 +23009,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -23026,10 +23026,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -23043,10 +23043,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
 
-    
-    
+
+
+
 
     if (sphere_sphere_self_collision<decltype(x[0])>(y[84 ],
                                                      y[85 ],
@@ -23060,8 +23060,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         return false;
     }
 
-    
-    
+
+
 }
 
 
@@ -23082,10 +23082,10 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
         // attachment vs. robot collisions
         //
 
-        
-        
-        
-        
+
+
+
+
 
         // Attachment vs. fr3_link0
         if (attachment_sphere_collision<decltype(x[0])>(environment,
@@ -23094,8 +23094,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                         y[174],
                                                         y[175]))
         {
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[0],
                                                             y[1],
@@ -23104,8 +23104,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[4],
                                                             y[5],
@@ -23114,12 +23114,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
+
         }
-        
-        
-        
-        
+
+
+
+
 
         // Attachment vs. fr3_link1
         if (attachment_sphere_collision<decltype(x[0])>(environment,
@@ -23128,8 +23128,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                         y[178],
                                                         y[179]))
         {
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[8],
                                                             y[9],
@@ -23138,8 +23138,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[12],
                                                             y[13],
@@ -23148,8 +23148,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[16],
                                                             y[17],
@@ -23158,12 +23158,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
+
         }
-        
-        
-        
-        
+
+
+
+
 
         // Attachment vs. fr3_link2
         if (attachment_sphere_collision<decltype(x[0])>(environment,
@@ -23172,8 +23172,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                         y[182],
                                                         y[183]))
         {
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[20],
                                                             y[21],
@@ -23182,8 +23182,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[24],
                                                             y[25],
@@ -23192,8 +23192,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[28],
                                                             y[29],
@@ -23202,12 +23202,12 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
+
         }
-        
-        
-        
-        
+
+
+
+
 
         // Attachment vs. fr3_link5
         if (attachment_sphere_collision<decltype(x[0])>(environment,
@@ -23216,8 +23216,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
                                                         y[194],
                                                         y[195]))
         {
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[56],
                                                             y[57],
@@ -23226,8 +23226,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[60],
                                                             y[61],
@@ -23236,8 +23236,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[64],
                                                             y[65],
@@ -23246,8 +23246,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[68],
                                                             y[69],
@@ -23256,8 +23256,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[72],
                                                             y[73],
@@ -23266,8 +23266,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[76],
                                                             y[77],
@@ -23276,8 +23276,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[80],
                                                             y[81],
@@ -23286,8 +23286,8 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
-            
+
+
             if (attachment_sphere_collision<decltype(x[0])>(environment,
                                                             y[84],
                                                             y[85],
@@ -23296,13 +23296,13 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
             {
                 return false;
             }
-            
+
         }
-        
+
 
         return true;
     }
-    
+
 
     // Runtime dispatch — VAMP's validator calls this; we route to the
     // per-EE specialization keyed on the attached body's ee_index.
@@ -23313,16 +23313,16 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
     {
         switch (environment.attachments->ee_index)
         {
-            
+
             case 0: return fkcc_attach_0<rake>(environment, x);
-            
+
             default: return false;
         }
     }
 
     // Per-EE forward kinematics.  ``eefk(x)`` (no index) is preserved as
     // an alias for the first EE so existing callers stay source-compat.
-    
+
     static inline auto eefk_0(const std::array<float, 9> &x) noexcept -> Eigen::Isometry3f
     {
         std::array<float, 36> v;
@@ -23421,7 +23421,7 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
 
         return to_isometry(y.data());
     }
-    
+
 
     static inline auto eefk(const std::array<float, 9> &x) noexcept -> Eigen::Isometry3f
     {
@@ -23432,9 +23432,9 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[192],
     {
         switch (ee_index)
         {
-            
+
             case 0: return eefk_0(x);
-            
+
             default: return Eigen::Isometry3f::Identity();
         }
     }

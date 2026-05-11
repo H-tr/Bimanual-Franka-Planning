@@ -73,6 +73,7 @@
 #include <ompl/geometric/planners/sbl/SBL.h>
 #include <ompl/geometric/planners/stride/STRIDE.h>
 
+#include <Eigen/Geometry>
 #include <algorithm>
 #include <array>
 #include <chrono>
@@ -84,7 +85,6 @@
 #include <stdexcept>
 #include <string>
 #include <utility>
-#include <Eigen/Geometry>
 #include <vamp/collision/attachments.hh>
 #include <vamp/collision/filter.hh>
 #include <vamp/collision/shapes.hh>
@@ -224,9 +224,9 @@ class OmplVampPlanner {
   // The ``relative_tf`` is a 4x4 row-major isometry expressed in the EE
   // link frame; the supplied spheres are interpreted in EE frame (after
   // applying ``relative_tf``).  Sphere format: x, y, z, radius.
-  void attach_ee_spheres(std::size_t ee_index,
-                         const std::array<float, 16> &relative_tf_row_major,
-                         const std::vector<std::array<float, 4>> &spheres_xyzr) {
+  void attach_ee_spheres(
+      std::size_t ee_index, const std::array<float, 16> &relative_tf_row_major,
+      const std::vector<std::array<float, 4>> &spheres_xyzr) {
     if (ee_index >= Robot::n_end_effectors) {
       throw std::invalid_argument(
           "attach_ee_spheres: ee_index " + std::to_string(ee_index) +
@@ -245,7 +245,8 @@ class OmplVampPlanner {
     att.ee_index = ee_index;
     att.spheres.reserve(spheres_xyzr.size());
     for (const auto &s : spheres_xyzr) {
-      att.spheres.emplace_back(vamp::collision::Sphere<float>{s[0], s[1], s[2], s[3]});
+      att.spheres.emplace_back(
+          vamp::collision::Sphere<float>{s[0], s[1], s[2], s[3]});
     }
     float_env_.attachments = std::move(att);
     sync_env();
