@@ -22,7 +22,8 @@ Subgroup planners (``bimanual_fr3_left_arm`` / ``bimanual_fr3_right_arm``
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from types import MappingProxyType
 from types import ModuleType
 from typing import TYPE_CHECKING
 
@@ -53,6 +54,14 @@ class RobotEntry:
     """Name of the matching ``OmplVampPlanner<Robot>`` class exported
     from ``bimanual_franka_planning._ompl_vamp``."""
 
+    ee_index: "MappingProxyType[str, int]" = field(
+        default_factory=lambda: MappingProxyType({"ee": 0})
+    )
+    """Mapping from EE side name (``"left"``, ``"right"``, ``"ee"``) to the
+    integer index expected by ``OmplVampPlanner.attach_ee_spheres``.  The
+    order matches the ``end_effectors`` list baked into the generated FK
+    header; index 0 is always the first EE."""
+
     @property
     def home_joints(self) -> "np.ndarray":
         return self.description.HOME_JOINTS
@@ -78,30 +87,37 @@ def _build_registry() -> dict[str, RobotEntry]:
         single_franka_soft,
     )
 
+    bimanual_ee_index = MappingProxyType({"left": 0, "right": 1})
+    single_ee_index = MappingProxyType({"ee": 0, "left": 0})
+
     entries = [
         RobotEntry(
             name="bimanual_fr3",
             description=bimanual_franka,
             robot_config=bimanual_franka.bimanual_fr3_robot_config,
             cpp_planner_cls_name="OmplVampPlanner",
+            ee_index=bimanual_ee_index,
         ),
         RobotEntry(
             name="single_fr3",
             description=single_franka,
             robot_config=single_franka.single_fr3_robot_config,
             cpp_planner_cls_name="SingleFr3OmplVampPlanner",
+            ee_index=single_ee_index,
         ),
         RobotEntry(
             name="bimanual_fr3_soft",
             description=bimanual_franka_soft,
             robot_config=bimanual_franka_soft.bimanual_fr3_soft_robot_config,
             cpp_planner_cls_name="BimanualFr3SoftOmplVampPlanner",
+            ee_index=bimanual_ee_index,
         ),
         RobotEntry(
             name="single_fr3_soft",
             description=single_franka_soft,
             robot_config=single_franka_soft.single_fr3_soft_robot_config,
             cpp_planner_cls_name="SingleFr3SoftOmplVampPlanner",
+            ee_index=single_ee_index,
         ),
     ]
     return {e.name: e for e in entries}
