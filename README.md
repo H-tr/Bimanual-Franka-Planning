@@ -24,7 +24,7 @@ State vector layout (17 DOF total):
 ## Features
 
 - **Inverse Kinematics** — TRAC-IK (unconstrained) and Pink (QP-based constrained) solvers with optional self-collision avoidance, on each arm independently
-- **Motion Planning** — OMPL + VAMP planner with SIMD collision checking, path validation, and subgroup planning over the left arm, right arm, or both arms (14-DOF dual-arm)
+- **Motion Planning** — OMPL + VAMP planner with SIMD collision checking, path validation, and subgroup planning over the left arm, right arm, or both arms (14-DOF dual-arm); per-joint position limits can be overridden at runtime via `MotionPlanner.set_joint_limits(...)` so a deployed controller's accepted envelope is honoured without regenerating URDFs
 - **Cartesian Coupling** — CasADi-backed `Constraint`s let you couple the two end-effectors (e.g. handover, rigid-object manipulation) and project to the manifold automatically
 - **Time Parameterization** — Time-optimal trajectory generation (TOTG) converts planned paths into executable trajectories with per-joint velocity/acceleration limits
 - **Collision Geometry** — Spherized URDF representations for efficient collision detection, pointcloud obstacle support

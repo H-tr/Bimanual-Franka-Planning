@@ -83,7 +83,10 @@ void bind_planner(nb::module_ &m, const char *class_name) {
            nb::arg("points"), nb::arg("point_radius"), nb::arg("config"))
       .def("set_subgroup", &Planner::set_subgroup, nb::arg("active_indices"),
            nb::arg("frozen_config"))
-      .def("set_full_body", &Planner::set_full_body);
+      .def("set_full_body", &Planner::set_full_body)
+      .def("set_joint_limits", &Planner::set_joint_limits, nb::arg("lower"),
+           nb::arg("upper"))
+      .def("clear_joint_limits", &Planner::clear_joint_limits);
 }
 
 }  // namespace

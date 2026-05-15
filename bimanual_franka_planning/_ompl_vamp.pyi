@@ -300,3 +300,40 @@ class OmplVampPlanner:
         are preserved.
         """
         ...
+    def set_joint_limits(
+        self,
+        lower: Sequence[float],
+        upper: Sequence[float],
+    ) -> None:
+        """Override per-joint position bounds for the planner state space.
+
+        ``lower`` and ``upper`` are *full-DOF* arrays — length equals
+        the robot's total dimension (17 for ``bimanual_fr3``, 21 for
+        ``bimanual_fr3_soft``, 9 for the single-arm variants),
+        independent of any active subgroup.  In subgroup mode the
+        active subset is applied automatically.  The custom limits
+        persist across :meth:`set_subgroup` / :meth:`set_full_body`
+        calls so a caller can configure them once at startup.
+
+        Typical use: pass the real controller's accepted joint range
+        so any path the planner returns is executable on the hardware
+        (the compile-time defaults track the URDF, which is usually
+        wider than what a deployed controller will accept).
+
+        Args:
+            lower: Per-joint lower bounds (radians for revolute
+                joints, metres for prismatic).  Length must equal the
+                robot's full dimension.
+            upper: Per-joint upper bounds, same length as ``lower``;
+                each entry must satisfy ``lower[i] <= upper[i]``.
+        """
+        ...
+    def clear_joint_limits(self) -> None:
+        """Revert to the robot's compile-time joint limits.
+
+        Drops any override set by :meth:`set_joint_limits` and
+        restores bounds derived from
+        ``Robot::scale_configuration`` (the URDF / cricket-generated
+        defaults).
+        """
+        ...
