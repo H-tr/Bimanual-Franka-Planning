@@ -385,6 +385,53 @@ class MotionPlanner:
 
         self._ndof = self._planner.dimension()
 
+    # ── Joint-limit override ──────────────────────────────────────────
+
+    def set_joint_limits(
+        self,
+        lower: np.ndarray,
+        upper: np.ndarray,
+    ) -> None:
+        """Override per-joint position bounds for the planner.
+
+        ``lower`` and ``upper`` are *full-DOF* arrays — length equals
+        the robot's total dimension (17 for ``bimanual_fr3``, 21 for
+        ``bimanual_fr3_soft``, 9 for the single-arm variants),
+        independent of which subgroup is active.
+        In subgroup mode the active subset is applied automatically.
+        The override persists across :meth:`set_subgroup`, so callers
+        can configure once at startup and switch subgroups freely.
+
+        Typical use: pass the real controller's accepted joint range
+        so every plan the search returns is executable on the
+        hardware — the compile-time defaults track the URDF, which
+        is usually wider than the controller envelope.
+
+        Args:
+            lower: Full-DOF per-joint lower bounds.
+            upper: Full-DOF per-joint upper bounds; each entry must
+                satisfy ``lower[i] <= upper[i]``.
+        """
+        lower_arr = np.asarray(lower, dtype=np.float64).reshape(-1)
+        upper_arr = np.asarray(upper, dtype=np.float64).reshape(-1)
+        full_dim = len(self._robot.joint_names)
+        if lower_arr.shape != (full_dim,) or upper_arr.shape != (full_dim,):
+            raise ValueError(
+                f"set_joint_limits expects full-DOF arrays of length "
+                f"{full_dim}, got lower={lower_arr.shape}, "
+                f"upper={upper_arr.shape}"
+            )
+        self._planner.set_joint_limits(lower_arr.tolist(), upper_arr.tolist())
+
+    def clear_joint_limits(self) -> None:
+        """Revert to the robot's compile-time joint limits.
+
+        Drops any override set by :meth:`set_joint_limits` and
+        restores bounds derived from the URDF / cricket-generated
+        ``Robot::scale_configuration`` defaults.
+        """
+        self._planner.clear_joint_limits()
+
     # ── Subgroup helpers ──────────────────────────────────────────────
 
     def extract_config(self, full_config: np.ndarray) -> np.ndarray:

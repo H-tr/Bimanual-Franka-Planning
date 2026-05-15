@@ -638,6 +638,51 @@ class OmplVampPlanner {
     rebuild_space_();
   }
 
+  /// Override per-joint position bounds for the planner's state space.
+  ///
+  /// ``lower`` and ``upper`` must each have length ``Robot::dimension``
+  /// — full-DOF arrays, independent of any active subgroup.  In
+  /// subgroup mode the active subset is selected automatically by
+  /// ``rebuild_space_()``.  The custom limits persist across
+  /// ``set_subgroup()`` / ``set_full_body()`` calls; use
+  /// ``clear_joint_limits()`` to revert to the robot's compile-time
+  /// defaults derived from ``Robot::scale_configuration``.
+  ///
+  /// Typical use: pass the *real controller's* joint limits so any
+  /// path the planner returns lies inside what the controller will
+  /// actually execute.  The compile-time defaults track the URDF
+  /// (often the manufacturer's hardware envelope), which is wider
+  /// than what a deployed controller will accept.
+  void set_joint_limits(std::vector<double> lower, std::vector<double> upper) {
+    if (lower.size() != Robot::dimension || upper.size() != Robot::dimension) {
+      throw std::invalid_argument(
+          std::string("set_joint_limits: lower/upper must each have length ") +
+          std::to_string(Robot::dimension) +
+          ", got lower=" + std::to_string(lower.size()) +
+          " upper=" + std::to_string(upper.size()) + ".");
+    }
+    for (std::size_t i = 0; i < Robot::dimension; ++i) {
+      if (!(lower[i] <= upper[i])) {
+        throw std::invalid_argument(
+            std::string("set_joint_limits: lower[") + std::to_string(i) +
+            "]=" + std::to_string(lower[i]) + " > upper[" + std::to_string(i) +
+            "]=" + std::to_string(upper[i]) + ".");
+      }
+    }
+    custom_lower_ = std::move(lower);
+    custom_upper_ = std::move(upper);
+    rebuild_space_();
+  }
+
+  /// Clear any custom limits set by :meth:`set_joint_limits`,
+  /// reverting to the robot's compile-time bounds derived from
+  /// ``Robot::scale_configuration``.
+  void clear_joint_limits() {
+    custom_lower_.clear();
+    custom_upper_.clear();
+    rebuild_space_();
+  }
+
  private:
   int active_dim_;
   bool is_subgroup_;
@@ -649,6 +694,11 @@ class OmplVampPlanner {
   std::vector<ob::ConstraintPtr> constraints_;
   std::vector<std::shared_ptr<CostLibrary>> cost_libs_;
   std::vector<double> cost_weights_;
+  // Custom per-joint position bounds (full-DOF, both empty unless
+  // ``set_joint_limits`` has been called).  When populated, override
+  // the ``Robot::scale_configuration`` defaults in ``rebuild_space_``.
+  std::vector<double> custom_lower_;
+  std::vector<double> custom_upper_;
 
   void sync_env() { env_ = VampEnv(float_env_); }
 
@@ -714,18 +764,32 @@ class OmplVampPlanner {
     auto lo_arr = lo.to_array();
     auto hi_arr = hi.to_array();
 
+    // When custom limits are set, override the scale_configuration-
+    // derived defaults.  Both vectors are either empty (defaults) or
+    // length Robot::dimension (validated by set_joint_limits).
+    const bool has_custom = !custom_lower_.empty() && !custom_upper_.empty();
+
+    auto bound_for_dim = [&](std::size_t full_i) -> std::pair<double, double> {
+      if (has_custom) {
+        return {custom_lower_[full_i], custom_upper_[full_i]};
+      }
+      return {std::min<double>(lo_arr[full_i], hi_arr[full_i]),
+              std::max<double>(lo_arr[full_i], hi_arr[full_i])};
+    };
+
     auto space = std::make_shared<ob::RealVectorStateSpace>(active_dim_);
     ob::RealVectorBounds bounds(active_dim_);
     if (is_subgroup_) {
       for (std::size_t i = 0; i < active_indices_.size(); ++i) {
-        auto idx = active_indices_[i];
-        bounds.setLow(i, std::min(lo_arr[idx], hi_arr[idx]));
-        bounds.setHigh(i, std::max(lo_arr[idx], hi_arr[idx]));
+        auto [lo_v, hi_v] = bound_for_dim(active_indices_[i]);
+        bounds.setLow(i, lo_v);
+        bounds.setHigh(i, hi_v);
       }
     } else {
       for (int i = 0; i < active_dim_; ++i) {
-        bounds.setLow(i, std::min(lo_arr[i], hi_arr[i]));
-        bounds.setHigh(i, std::max(lo_arr[i], hi_arr[i]));
+        auto [lo_v, hi_v] = bound_for_dim(static_cast<std::size_t>(i));
+        bounds.setLow(i, lo_v);
+        bounds.setHigh(i, hi_v);
       }
     }
     space->setBounds(bounds);
