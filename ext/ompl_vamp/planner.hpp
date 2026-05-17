@@ -219,7 +219,9 @@ class OmplVampPlanner {
 
   void add_compiled_constraint(const std::string &so_path,
                                const std::string &symbol_name,
-                               unsigned int ambient_dim, unsigned int co_dim) {
+                               unsigned int ambient_dim, unsigned int co_dim,
+                               unsigned int param_dim = 0,
+                               const std::vector<double> &params = {}) {
     if (static_cast<int>(ambient_dim) != active_dim_) {
       throw std::invalid_argument(
           "add_compiled_constraint: ambient_dim (" +
@@ -228,7 +230,7 @@ class OmplVampPlanner {
           std::to_string(active_dim_) + ")");
     }
     constraints_.push_back(std::make_shared<CompiledConstraint>(
-        ambient_dim, co_dim, so_path, symbol_name));
+        ambient_dim, co_dim, so_path, symbol_name, param_dim, params));
   }
 
   void clear_constraints() { constraints_.clear(); }

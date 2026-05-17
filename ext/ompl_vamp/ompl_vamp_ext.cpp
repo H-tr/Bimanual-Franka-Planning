@@ -53,7 +53,8 @@ void bind_planner(nb::module_ &m, const char *class_name) {
       .def("clear_environment", &Planner::clear_environment)
       .def("add_compiled_constraint", &Planner::add_compiled_constraint,
            nb::arg("so_path"), nb::arg("symbol_name"), nb::arg("ambient_dim"),
-           nb::arg("co_dim"))
+           nb::arg("co_dim"), nb::arg("param_dim") = 0,
+           nb::arg("params") = std::vector<double>{})
       .def("clear_constraints", &Planner::clear_constraints)
       .def("num_constraints", &Planner::num_constraints)
       .def("add_compiled_cost", &Planner::add_compiled_cost, nb::arg("so_path"),
