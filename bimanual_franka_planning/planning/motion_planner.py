@@ -174,11 +174,25 @@ class MotionPlanner:
                     f"planner active dimension ({self._ndof}).  Build the "
                     f"Constraint with a SymbolicContext for the same subgroup."
                 )
+            params = (
+                list(map(float, c.params))
+                if c.param_dim > 0 and c.params is not None
+                else []
+            )
+            if c.param_dim > 0 and c.params is None:
+                raise ValueError(
+                    f"Constraint '{c.symbol_name}' declares param_dim="
+                    f"{c.param_dim} but no params were set; call "
+                    f"Constraint.set_params(...) before passing it to the "
+                    f"planner."
+                )
             self._planner.add_compiled_constraint(
                 str(c.so_path),
                 c.symbol_name,
                 c.ambient_dim,
                 c.co_dim,
+                c.param_dim,
+                params,
             )
 
     def clear_constraints(self) -> None:

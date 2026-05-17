@@ -163,6 +163,105 @@ def test_planned_path_satisfies_constraint():
     assert max_residual < 1e-2, f"max |residual| over path = {max_residual:.3e}"
 
 
+def _build_parameterized_line_constraint(initial_params=None):
+    """Build the same horizontal-line residual as the baseline test, but
+    with ``p_start`` (3) + ``r_start[:, 0]`` (3) + ``r_start[:, 1]`` (3)
+    exposed as a 9-element runtime parameter vector.
+    """
+    from bimanual_franka_planning.bimanual_franka import HOME_JOINTS
+    from bimanual_franka_planning.planning import Constraint, SymbolicContext
+
+    ctx = SymbolicContext(SUBGROUP)
+    start = HOME_JOINTS[ctx.active_indices].copy()
+    M = np.asarray(ctx.evaluate_link_pose(EE_LINK, start))
+    p0 = M[:3, 3]
+    R0 = M[:3, :3]
+
+    tcp = ctx.link_translation(EE_LINK)
+    rot = ctx.link_rotation(EE_LINK)
+
+    p_sym = ca.SX.sym("params", 9)
+    p_start = p_sym[0:3]
+    r_col0 = p_sym[3:6]
+    r_col1 = p_sym[6:9]
+
+    residual = ca.vertcat(
+        tcp[1] - p_start[1],
+        tcp[2] - p_start[2],
+        rot[:, 0] - r_col0,
+        rot[:, 1] - r_col1,
+    )
+    params = (
+        initial_params
+        if initial_params is not None
+        else np.concatenate([p0, R0[:, 0], R0[:, 1]])
+    )
+    constraint = Constraint(
+        residual=residual,
+        q_sym=ctx.q,
+        name="line_h_test_parameterized",
+        param_sym=p_sym,
+        params=params,
+    )
+    return ctx, start, constraint
+
+
+def test_parameterized_constraint_compiles_with_two_inputs():
+    _ctx, _start, c = _build_parameterized_line_constraint()
+    assert c.so_path.exists()
+    assert c.param_dim == 9
+    assert c.ambient_dim == 7
+    assert c.co_dim == 8
+
+
+def test_parameterized_constraint_caches_across_param_values():
+    """Different param values must hit the same cached .so — the whole
+    point of parameterizing the residual."""
+    _, _, c1 = _build_parameterized_line_constraint(np.zeros(9))
+    _, _, c2 = _build_parameterized_line_constraint(np.ones(9))
+    assert c1.so_path == c2.so_path
+
+
+def test_parameterized_constraint_validates_seed():
+    from bimanual_franka_planning.planning import create_planner
+    from bimanual_franka_planning.types import PlannerConfig
+
+    _ctx, start, constraint = _build_parameterized_line_constraint()
+    planner = create_planner(
+        SUBGROUP,
+        config=PlannerConfig(planner_name="rrtc", time_limit=1.0),
+        constraints=[constraint],
+    )
+    assert planner.validate(start)
+
+
+def test_parameterized_constraint_requires_params_before_planning():
+    """A param_sym constraint without set_params must be rejected by the
+    motion planner — the runtime param vector is mandatory."""
+    from bimanual_franka_planning.planning import (
+        Constraint,
+        SymbolicContext,
+        create_planner,
+    )
+    from bimanual_franka_planning.types import PlannerConfig
+
+    ctx = SymbolicContext(SUBGROUP)
+    p_sym = ca.SX.sym("params", 3)
+    residual = ctx.link_translation(EE_LINK) - p_sym
+    constraint = Constraint(
+        residual=residual,
+        q_sym=ctx.q,
+        name="missing_params_test",
+        param_sym=p_sym,
+    )
+    with pytest.raises(ValueError, match="param_dim"):
+        create_planner(
+            SUBGROUP,
+            config=PlannerConfig(planner_name="rrtc", time_limit=1.0),
+            constraints=[constraint],
+        )
+
+
 def test_planned_path_endpoints_match_request():
     """Real correctness: path[0] == start and path[-1] == goal exactly."""
     from bimanual_franka_planning.planning import create_planner
