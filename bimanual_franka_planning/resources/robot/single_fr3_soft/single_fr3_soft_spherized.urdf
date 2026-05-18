@@ -299,46 +299,76 @@
   <link name="fr3_hand_tcp" />
   <link name="fr3_leftfinger">
     <visual name="fr3_leftfinger_visual">
-      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0" />
+      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0.02" />
       <geometry>
         <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger.stl" />
+      </geometry>
+    </visual>
+    <visual name="fr3_leftfinger_holder_visual">
+      <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 -0.0717" />
+      <geometry>
+        <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger_holder_left.stl" />
       </geometry>
     </visual>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.014" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.034" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.038" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.057999999999999996" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.062" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.082" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.086" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.106" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.108" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.128" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.02" />
       </geometry>
-      <origin xyz="0.0 0.02 0.122" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.142" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.013" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.033" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.053" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.067" rpy="0 0 0" />
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.02 0.06" />
@@ -348,46 +378,76 @@
   </link>
   <link name="fr3_rightfinger">
     <visual name="fr3_rightfinger_visual">
-      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0" />
+      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0.02" />
       <geometry>
         <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger.stl" />
+      </geometry>
+    </visual>
+    <visual name="fr3_rightfinger_holder_visual">
+      <origin rpy="-1.5707963267948966 0 1.5707963267948966" xyz="0 0 -0.0717" />
+      <geometry>
+        <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger_holder_right.stl" />
       </geometry>
     </visual>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.014" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.034" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.038" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.057999999999999996" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.062" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.082" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.086" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.106" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.024" />
       </geometry>
-      <origin xyz="0.0 0.02 0.108" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.128" rpy="0 0 0" />
     </collision>
     <collision>
       <geometry>
         <sphere radius="0.02" />
       </geometry>
-      <origin xyz="0.0 0.02 0.122" rpy="0 0 0" />
+      <origin xyz="0.0 0.02 0.142" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.013" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.033" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.053" rpy="0 0 0" />
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+      <origin xyz="0.0 0.02 0.067" rpy="0 0 0" />
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.02 0.06" />
@@ -467,7 +527,7 @@
     <origin rpy="0 0 -0.7853981633974483" xyz="0 0 0" />
   </joint>
   <joint name="fr3_hand_tcp_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.1034" />
+    <origin rpy="0 0 0" xyz="0 0 0.12340000000000001" />
     <parent link="fr3_hand" />
     <child link="fr3_hand_tcp" />
   </joint>
@@ -489,3 +549,4 @@
     <dynamics damping="0.3" />
   </joint>
 </robot>
+

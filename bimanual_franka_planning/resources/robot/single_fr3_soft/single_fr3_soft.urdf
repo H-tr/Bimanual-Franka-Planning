@@ -229,21 +229,33 @@
   </link>
   <link name="fr3_hand_tcp" />
   <joint name="fr3_hand_tcp_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.1034" />
+    <origin rpy="0 0 0" xyz="0 0 0.12340000000000001" />
     <parent link="fr3_hand" />
     <child link="fr3_hand_tcp" />
   </joint>
   <link name="fr3_leftfinger">
     <visual name="fr3_leftfinger_visual">
-      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0" />
+      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0.02" />
       <geometry>
         <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger.stl" />
       </geometry>
     </visual>
+    <visual name="fr3_leftfinger_holder_visual">
+      <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 -0.0717" />
+      <geometry>
+        <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger_holder_left.stl" />
+      </geometry>
+    </visual>
     <collision>
-      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0" />
+      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0.02" />
       <geometry>
         <mesh filename="package://meshes/robot_ee/franka_hand_soft/collision/finger.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 -0.0717" />
+      <geometry>
+        <mesh filename="package://meshes/robot_ee/franka_hand_soft/collision/finger_holder_left.stl" />
       </geometry>
     </collision>
     <inertial>
@@ -254,15 +266,27 @@
   </link>
   <link name="fr3_rightfinger">
     <visual name="fr3_rightfinger_visual">
-      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0" />
+      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0.02" />
       <geometry>
         <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger.stl" />
       </geometry>
     </visual>
+    <visual name="fr3_rightfinger_holder_visual">
+      <origin rpy="-1.5707963267948966 0 1.5707963267948966" xyz="0 0 -0.0717" />
+      <geometry>
+        <mesh filename="package://meshes/robot_ee/franka_hand_soft/visual/finger_holder_right.stl" />
+      </geometry>
+    </visual>
     <collision>
-      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0" />
+      <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0.0129 0 0.02" />
       <geometry>
         <mesh filename="package://meshes/robot_ee/franka_hand_soft/collision/finger.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-1.5707963267948966 0 1.5707963267948966" xyz="0 0 -0.0717" />
+      <geometry>
+        <mesh filename="package://meshes/robot_ee/franka_hand_soft/collision/finger_holder_right.stl" />
       </geometry>
     </collision>
     <inertial>
@@ -289,3 +313,4 @@
     <dynamics damping="0.3" />
   </joint>
 </robot>
+

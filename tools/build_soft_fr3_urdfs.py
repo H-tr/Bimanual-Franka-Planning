@@ -52,6 +52,8 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets" / "bimanual_fr3_description"
 RES = ROOT / "bimanual_franka_planning" / "resources" / "robot"
 SOFT_FINGER_STL = ROOT / "soft_gripper_finger.stl"
+HOLDER_LEFT_STL = ROOT / "finger_holder_left.stl"
+HOLDER_RIGHT_STL = ROOT / "finger_holder_right.stl"
 
 # ── Soft-finger geometry constants ────────────────────────────────────
 
@@ -63,6 +65,13 @@ FINGER_Z_OFFSET = 0.0584
 # the rigid Franka.  Total open gap at q = FINGER_TRAVEL is 2 ×
 # FINGER_TRAVEL = 80 mm.  finger_joint2 mimics finger_joint1.
 FINGER_TRAVEL = 0.04
+
+# The UMI ``wsg50-Franka mount`` finger holder is a chunky printed part
+# bolted onto each WSG-style slider; the soft finger seats on its outer
+# face.  Adding the holder shifts the soft finger ~2 cm farther from the
+# hand than where the rigid Franka finger used to sit.  Net gripper
+# extension vs. the original soft URDF (no holder modelled): +20 mm.
+SOFT_FINGER_Z_SHIFT = 0.020
 
 # Pose of the soft-finger mesh inside its link.
 #
@@ -84,27 +93,62 @@ FINGER_TRAVEL = 0.04
 #       40-mm face goes from x to y (the gripping direction).
 #   The xyz translation re-centres the resulting cross-section: the
 #   90° twist puts material at link x ∈ [-0.0258, 0], so xyz x
-#   compensates by +0.0129.
+#   compensates by +0.0129.  The +SOFT_FINGER_Z_SHIFT on z lifts the
+#   finger base off the slider so it sits on the holder's outer face.
 FINGER_MESH_RPY = "3.141592653589793 0 1.5707963267948966"
-FINGER_MESH_XYZ = "0.0129 0 0"
+FINGER_MESH_XYZ = f"0.0129 0 {SOFT_FINGER_Z_SHIFT}"
 
 # Sphere collision approximation of the rectangular soft finger
 # (now 25.8 × 40 × 123 mm in link x/y/z after the twist).  After the
 # visual/collision <origin> above, the finger material occupies (in
 # link-local coordinates)
-#   x ∈ [-0.0129, +0.0129], y ∈ [0, 0.04], z ∈ [0, 0.123]
+#   x ∈ [-0.0129, +0.0129], y ∈ [0, 0.04], z ∈ [shift, shift + 0.123]
 # Six spheres along the spine envelope the volume conservatively for
 # swept-collision checking.  Radius is the half-diagonal of the
 # 25.8 × 40 mm cross-section (≈ 0.0238 m) rounded down a touch — at
 # r=0.024 the spheres fully envelope the cross-section.
 SOFT_FINGER_SPHERES: list[tuple[tuple[float, float, float], float]] = [
-    ((0.0, 0.02, 0.014), 0.024),
-    ((0.0, 0.02, 0.038), 0.024),
-    ((0.0, 0.02, 0.062), 0.024),
-    ((0.0, 0.02, 0.086), 0.024),
-    ((0.0, 0.02, 0.108), 0.024),
-    ((0.0, 0.02, 0.122), 0.020),
+    ((0.0, 0.02, 0.014 + SOFT_FINGER_Z_SHIFT), 0.024),
+    ((0.0, 0.02, 0.038 + SOFT_FINGER_Z_SHIFT), 0.024),
+    ((0.0, 0.02, 0.062 + SOFT_FINGER_Z_SHIFT), 0.024),
+    ((0.0, 0.02, 0.086 + SOFT_FINGER_Z_SHIFT), 0.024),
+    ((0.0, 0.02, 0.108 + SOFT_FINGER_Z_SHIFT), 0.024),
+    ((0.0, 0.02, 0.122 + SOFT_FINGER_Z_SHIFT), 0.020),
 ]
+
+# ── UMI finger-holder geometry ────────────────────────────────────────
+#
+# The downloaded STLs are in the wsg50-Franka mount assembly frame:
+# 40 mm in STL X (across the gripper), 70 mm in STL -Y (forward
+# extension), 38 mm in STL Z (thickness).  LEFT/RIGHT meshes are
+# mirrored across the assembly YZ-plane.  In each finger link's frame
+# we want:
+#   STL X cross   → link Y (40 mm gripping-pad width)
+#   STL -Y axis   → link +Z (long axis along the finger)
+#   STL Z (thick) → link X (cross-pad thickness ≈ ±19 mm)
+# The required rotations have opposite handedness for LEFT vs RIGHT
+# because their STL X ranges are flipped.  The xyz shift slides the
+# holder along link +Z so its near end sits 5 mm out from the slider,
+# matching how the printed part stands proud of the Franka palm.
+HOLDER_LEFT_RPY = "-1.5707963267948966 0 -1.5707963267948966"
+HOLDER_RIGHT_RPY = "-1.5707963267948966 0 1.5707963267948966"
+HOLDER_MESH_XYZ = "0 0 -0.0717"
+
+# Sphere envelope of the holder body (40 × 38 mm cross-section, 70 mm
+# long along link Z).  Half-diagonal of the cross-section is
+# sqrt(0.020² + 0.019²) ≈ 0.0276, rounded up to 0.028 for safety.
+# Centres at (0, 0.02, z) match the soft-finger sphere convention.
+HOLDER_SPHERES: list[tuple[tuple[float, float, float], float]] = [
+    ((0.0, 0.02, 0.013), 0.028),
+    ((0.0, 0.02, 0.033), 0.028),
+    ((0.0, 0.02, 0.053), 0.028),
+    ((0.0, 0.02, 0.067), 0.028),
+]
+
+# Hand TCP z-offset relative to the hand origin.  Bumped by
+# SOFT_FINGER_Z_SHIFT from the Franka rigid-finger default (0.1034) so
+# the TCP tracks the now-longer gripper.
+HAND_TCP_Z = 0.1034 + SOFT_FINGER_Z_SHIFT
 
 # Soft finger inertial — order-of-magnitude rubber finger; not
 # planner-relevant but keeps the URDF complete for downstream sims.
@@ -191,6 +235,48 @@ def _make_sphere_collisions() -> list[ET.Element]:
     return out
 
 
+def _make_holder_visual(name: str, side: str) -> ET.Element:
+    visual = ET.Element("visual", attrib={"name": name})
+    origin = ET.SubElement(visual, "origin")
+    origin.set("rpy", HOLDER_LEFT_RPY if side == "left" else HOLDER_RIGHT_RPY)
+    origin.set("xyz", HOLDER_MESH_XYZ)
+    geom = ET.SubElement(visual, "geometry")
+    mesh = ET.SubElement(geom, "mesh")
+    mesh.set(
+        "filename",
+        f"package://meshes/robot_ee/franka_hand_soft/visual/finger_holder_{side}.stl",
+    )
+    return visual
+
+
+def _make_holder_mesh_collision(side: str) -> ET.Element:
+    col = ET.Element("collision")
+    origin = ET.SubElement(col, "origin")
+    origin.set("rpy", HOLDER_LEFT_RPY if side == "left" else HOLDER_RIGHT_RPY)
+    origin.set("xyz", HOLDER_MESH_XYZ)
+    geom = ET.SubElement(col, "geometry")
+    mesh = ET.SubElement(geom, "mesh")
+    mesh.set(
+        "filename",
+        f"package://meshes/robot_ee/franka_hand_soft/collision/finger_holder_{side}.stl",
+    )
+    return col
+
+
+def _make_holder_sphere_collisions() -> list[ET.Element]:
+    out = []
+    for (cx, cy, cz), r in HOLDER_SPHERES:
+        col = ET.Element("collision")
+        geom = ET.SubElement(col, "geometry")
+        sphere = ET.SubElement(geom, "sphere")
+        sphere.set("radius", f"{r}")
+        origin = ET.SubElement(col, "origin")
+        origin.set("xyz", f"{cx} {cy} {cz}")
+        origin.set("rpy", "0 0 0")
+        out.append(col)
+    return out
+
+
 def _make_inertial() -> ET.Element:
     inertial = ET.Element("inertial")
     origin = ET.SubElement(inertial, "origin")
@@ -208,24 +294,38 @@ def _make_inertial() -> ET.Element:
     return inertial
 
 
-def _replace_finger_link(link: ET.Element, *, mode: str, visual_name: str) -> None:
+def _replace_finger_link(
+    link: ET.Element, *, mode: str, visual_name: str, side: str
+) -> None:
     """Strip the existing finger geometry and stamp the soft-finger one.
 
+    Each finger link gets two visuals — the soft finger itself and the
+    UMI ``wsg50-Franka`` printed holder that the finger seats on — and
+    matching collisions per ``mode``.
+
     ``mode``:
-      "mesh"   — visual mesh + mesh collision (planning/visualisation URDF)
-      "sphere" — visual mesh + sphere collisions (FK-gen / spherized URDF)
-      "viz"    — visual mesh, no collision at all (visualisation-only URDF)
+      "mesh"   — mesh collision for both finger + holder (planning URDF)
+      "sphere" — sphere collisions for both finger + holder (FK-gen URDF)
+      "viz"    — visuals only, no collision (visualisation URDF)
+
+    ``side`` ∈ {"left", "right"} picks the mirrored holder STL + rotation.
     """
     # Drop everything inside the link.
     for child in list(link):
         link.remove(child)
 
     link.append(_make_visual(visual_name))
+    link.append(
+        _make_holder_visual(f"{visual_name[: -len('_visual')]}_holder_visual", side)
+    )
 
     if mode == "mesh":
         link.append(_make_mesh_collision())
+        link.append(_make_holder_mesh_collision(side))
     elif mode == "sphere":
         for sphere in _make_sphere_collisions():
+            link.append(sphere)
+        for sphere in _make_holder_sphere_collisions():
             link.append(sphere)
     elif mode == "viz":
         pass
@@ -233,6 +333,19 @@ def _replace_finger_link(link: ET.Element, *, mode: str, visual_name: str) -> No
         raise ValueError(f"unknown mode {mode!r}")
 
     link.append(_make_inertial())
+
+
+def _patch_hand_tcp_joint(root: ET.Element, joint_name: str) -> None:
+    """Shift a hand_tcp_joint's z origin to track the lengthened gripper."""
+    for j in root.iter("joint"):
+        if j.attrib.get("name") == joint_name:
+            origin = j.find("origin")
+            if origin is None:
+                origin = ET.SubElement(j, "origin")
+            origin.set("xyz", f"0 0 {HAND_TCP_Z}")
+            origin.set("rpy", "0 0 0")
+            return
+    raise ValueError(f"hand_tcp joint {joint_name!r} not found in URDF")
 
 
 def _patch_finger_joint(joint: ET.Element, *, side: str, is_mimic: bool) -> None:
@@ -306,10 +419,16 @@ def _patch_finger_pair(
             by_name[(el.tag, el.attrib["name"])] = el
 
     _replace_finger_link(
-        by_name[("link", left_link)], mode=mode, visual_name=visual_name_left
+        by_name[("link", left_link)],
+        mode=mode,
+        visual_name=visual_name_left,
+        side="left",
     )
     _replace_finger_link(
-        by_name[("link", right_link)], mode=mode, visual_name=visual_name_right
+        by_name[("link", right_link)],
+        mode=mode,
+        visual_name=visual_name_right,
+        side="right",
     )
     # finger_joint1 is the actuated DOF; finger_joint2 mimics it.
     # Caller passes them in (left, right) Franka-naming order, but the
@@ -344,6 +463,11 @@ def _mirror_meshes(src_dir: Path, dst_dir: Path) -> None:
         soft_collision.mkdir(parents=True, exist_ok=True)
         shutil.copy2(SOFT_FINGER_STL, soft_visual / "finger.stl")
         shutil.copy2(SOFT_FINGER_STL, soft_collision / "finger.stl")
+        # UMI finger holders (left + right mirrored pair).
+        shutil.copy2(HOLDER_LEFT_STL, soft_visual / "finger_holder_left.stl")
+        shutil.copy2(HOLDER_LEFT_STL, soft_collision / "finger_holder_left.stl")
+        shutil.copy2(HOLDER_RIGHT_STL, soft_visual / "finger_holder_right.stl")
+        shutil.copy2(HOLDER_RIGHT_STL, soft_collision / "finger_holder_right.stl")
 
 
 # ── Single-arm soft FR3 ───────────────────────────────────────────────
@@ -375,8 +499,9 @@ def build_single_fr3_soft() -> None:
 
     def _patch_single(src_urdf: Path, dst_urdf: Path, mode: str) -> None:
         tree = _parse(src_urdf)
+        root = tree.getroot()
         _patch_finger_pair(
-            tree.getroot(),
+            root,
             left_link="fr3_leftfinger",
             right_link="fr3_rightfinger",
             left_joint="fr3_finger_joint1",
@@ -385,8 +510,9 @@ def build_single_fr3_soft() -> None:
             visual_name_right="fr3_rightfinger_visual",
             mode=mode,
         )
+        _patch_hand_tcp_joint(root, "fr3_hand_tcp_joint")
         # Rename robot tag for clarity ("fr3_soft" instead of "fr3").
-        tree.getroot().set("name", "fr3_soft")
+        root.set("name", "fr3_soft")
         _write_urdf(tree, dst_urdf)
 
     _patch_single(src / "single_fr3.urdf", dst / "single_fr3_soft.urdf", mode="mesh")
@@ -429,9 +555,10 @@ def build_bimanual_fr3_soft() -> None:
 
     def _patch_bimanual(src_urdf: Path, dst_urdf: Path, mode: str) -> None:
         tree = _parse(src_urdf)
+        root = tree.getroot()
         for prefix in ("fr3_left_", "fr3_right_"):
             _patch_finger_pair(
-                tree.getroot(),
+                root,
                 left_link=f"{prefix}leftfinger",
                 right_link=f"{prefix}rightfinger",
                 left_joint=f"{prefix}finger_joint1",
@@ -440,7 +567,8 @@ def build_bimanual_fr3_soft() -> None:
                 visual_name_right=f"{prefix}rightfinger_visual",
                 mode=mode,
             )
-        tree.getroot().set("name", "bimanual_fr3_soft")
+            _patch_hand_tcp_joint(root, f"{prefix}hand_tcp_joint")
+        root.set("name", "bimanual_fr3_soft")
         _write_urdf(tree, dst_urdf)
 
     _patch_bimanual(
@@ -476,11 +604,12 @@ def build_bimanual_fr3_soft() -> None:
 
 
 def main() -> None:
-    if not SOFT_FINGER_STL.exists():
-        raise FileNotFoundError(
-            f"soft_gripper_finger.stl not found at {SOFT_FINGER_STL}; "
-            "drop it in the repo root before running this tool."
-        )
+    for required in (SOFT_FINGER_STL, HOLDER_LEFT_STL, HOLDER_RIGHT_STL):
+        if not required.exists():
+            raise FileNotFoundError(
+                f"{required.name} not found at {required}; "
+                "drop it in the planning/ repo root before running this tool."
+            )
     build_single_fr3_soft()
     build_bimanual_fr3_soft()
 
