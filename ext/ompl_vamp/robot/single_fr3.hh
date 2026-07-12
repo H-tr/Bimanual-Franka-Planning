@@ -19,6 +19,8 @@ struct SingleFr3
 
     static constexpr std::array<std::string_view, dimension> joint_names = {"fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7", "fr3_finger_joint1", "fr3_finger_joint2"};
     static constexpr char* end_effector = "fr3_link8";
+    static constexpr std::size_t n_end_effectors = 1;
+    static constexpr std::array<std::string_view, n_end_effectors> end_effectors = {"fr3_link8"};
 
     using Configuration = FloatVector<dimension>;
     using ConfigurationArray = std::array<FloatT, dimension>;
@@ -22210,8 +22212,14 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[240],
         return true;
     }
 
+    // Per-EE attachment collision check: one specialization per
+    // configured end-effector.  Each variant reuses the same body-vs-env
+    // and body-vs-body machinery (via the "ccfk" subtemplate) and adds
+    // an attachment-vs-env + attachment-vs-body pass anchored at its
+    // own EE pose.
+
     template <std::size_t rake>
-    static inline bool fkcc_attach(
+    static inline bool fkcc_attach_0(
         const vamp::collision::Environment<FloatVector<rake>> &environment,
         const ConfigurationBlock<rake> &x) noexcept
     {
@@ -33639,7 +33647,27 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[240],
         return true;
     }
 
-    static inline auto eefk(const std::array<float, 9> &x) noexcept -> Eigen::Isometry3f
+
+    // Runtime dispatch — VAMP's validator calls this; we route to the
+    // per-EE specialization keyed on the attached body's ee_index.
+    template <std::size_t rake>
+    static inline bool fkcc_attach(
+        const vamp::collision::Environment<FloatVector<rake>> &environment,
+        const ConfigurationBlock<rake> &x) noexcept
+    {
+        switch (environment.attachments->ee_index)
+        {
+
+            case 0: return fkcc_attach_0<rake>(environment, x);
+
+            default: return false;
+        }
+    }
+
+    // Per-EE forward kinematics.  ``eefk(x)`` (no index) is preserved as
+    // an alias for the first EE so existing callers stay source-compat.
+
+    static inline auto eefk_0(const std::array<float, 9> &x) noexcept -> Eigen::Isometry3f
     {
         std::array<float, 36> v;
         std::array<float, 12> y;
@@ -33736,6 +33764,23 @@ if (sphere_sphere_self_collision<decltype(x[0])>(y[240],
 
 
         return to_isometry(y.data());
+    }
+
+
+    static inline auto eefk(const std::array<float, 9> &x) noexcept -> Eigen::Isometry3f
+    {
+        return eefk_0(x);
+    }
+
+    static inline auto eefk(std::size_t ee_index, const std::array<float, 9> &x) noexcept -> Eigen::Isometry3f
+    {
+        switch (ee_index)
+        {
+
+            case 0: return eefk_0(x);
+
+            default: return Eigen::Isometry3f::Identity();
+        }
     }
 };
 }

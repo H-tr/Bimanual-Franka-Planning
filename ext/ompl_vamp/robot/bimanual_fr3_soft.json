@@ -2,7 +2,7 @@
     "name": "BimanualFr3Soft",
     "urdf": "../../../bimanual_franka_planning/resources/robot/bimanual_fr3_soft/bimanual_fr3_soft_spherized.urdf",
     "srdf": "../../../bimanual_franka_planning/resources/robot/bimanual_fr3_soft/bimanual_fr3_soft.srdf",
-    "end_effector": "fr3_left_link8",
+    "end_effectors": ["fr3_left_link8", "fr3_right_link8"],
     "resolution": 64,
     "template": "../../../third_party/cricket/resources/templates/fk_template.hh",
     "subtemplates": [{"name": "ccfk", "template": "../../../third_party/cricket/resources/templates/ccfk_template.hh"}],

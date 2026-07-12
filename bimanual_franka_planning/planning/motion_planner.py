@@ -269,6 +269,93 @@ class MotionPlanner:
         """True if a pointcloud is currently registered."""
         return self._planner.has_pointcloud()
 
+    # ── End-effector sphere attachment ───────────────────────────────
+
+    def attach_ee_spheres(
+        self,
+        side: "str | int",
+        spheres: np.ndarray,
+        transform: np.ndarray | None = None,
+    ) -> None:
+        """Attach a set of spheres to an end-effector.
+
+        The spheres move with the gripper and are collision-checked
+        against the world *and* against the rest of the robot body for
+        every state and motion edge VAMP evaluates.  Each planner
+        instance holds at most one attachment — calling this method
+        replaces any prior attachment.
+
+        Args:
+            side: Which end-effector to attach to.  Accepts a string key
+                from the robot's ``ee_index`` map (``"left"``, ``"right"``,
+                or ``"ee"`` for single-arm robots) or the integer index
+                directly.
+            spheres: ``(N, 4)`` array of ``[x, y, z, radius]`` rows
+                expressed in the EE link frame (after applying
+                ``transform``).
+            transform: Optional ``(4, 4)`` isometry applied to the sphere
+                positions inside the EE frame.  Defaults to the identity.
+        """
+        ee_index = self._resolve_ee_index(side)
+
+        spheres_arr = np.asarray(spheres, dtype=np.float32)
+        if spheres_arr.ndim != 2 or spheres_arr.shape[1] != 4:
+            raise ValueError(
+                f"spheres must have shape (N, 4) — got {spheres_arr.shape}"
+            )
+        if spheres_arr.size and float(np.min(spheres_arr[:, 3])) <= 0.0:
+            raise ValueError("sphere radii must be strictly positive")
+
+        if transform is None:
+            tf = np.eye(4, dtype=np.float32)
+        else:
+            tf = np.asarray(transform, dtype=np.float32)
+            if tf.shape != (4, 4):
+                raise ValueError(f"transform must have shape (4, 4) — got {tf.shape}")
+
+        self._planner.attach_ee_spheres(
+            ee_index,
+            tf.reshape(-1).tolist(),
+            spheres_arr.tolist(),
+        )
+
+    def detach_ee(self) -> bool:
+        """Drop the current EE attachment, if any.
+
+        Returns ``False`` if no attachment was registered.
+        """
+        return self._planner.detach_ee()
+
+    @property
+    def has_attachment(self) -> bool:
+        """True if an EE attachment is currently registered."""
+        return self._planner.has_attachment()
+
+    @property
+    def num_end_effectors(self) -> int:
+        """Number of end-effectors this robot exposes for attachment."""
+        return self._planner.num_end_effectors()
+
+    def _resolve_ee_index(self, side: "str | int") -> int:
+        if isinstance(side, str):
+            mapping = self._robot.ee_index
+            if side not in mapping:
+                valid = ", ".join(repr(k) for k in mapping)
+                raise ValueError(
+                    f"Unknown end-effector side {side!r} for robot "
+                    f"'{self._robot.name}'.  Valid sides: {valid}."
+                )
+            ee_index = int(mapping[side])
+        else:
+            ee_index = int(side)
+        n = self.num_end_effectors
+        if ee_index < 0 or ee_index >= n:
+            raise ValueError(
+                f"ee_index {ee_index} out of range for robot "
+                f"'{self._robot.name}' (n_end_effectors = {n})."
+            )
+        return ee_index
+
     # ── Point cloud filtering ────────────────────────────────────────
 
     def filter_pointcloud(

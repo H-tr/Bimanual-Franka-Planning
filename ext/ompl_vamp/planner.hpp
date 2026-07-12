@@ -73,6 +73,7 @@
 #include <ompl/geometric/planners/sbl/SBL.h>
 #include <ompl/geometric/planners/stride/STRIDE.h>
 
+#include <Eigen/Geometry>
 #include <algorithm>
 #include <array>
 #include <chrono>
@@ -84,6 +85,7 @@
 #include <stdexcept>
 #include <string>
 #include <utility>
+#include <vamp/collision/attachments.hh>
 #include <vamp/collision/filter.hh>
 #include <vamp/collision/shapes.hh>
 #include <vamp/collision/sphere_sphere.hh>
@@ -211,6 +213,55 @@ class OmplVampPlanner {
     float_env_ = FloatEnv{};
     env_ = VampEnv{};
   }
+
+  // ── End-effector attachment API ───────────────────────────────────
+  //
+  // Attach a set of spheres to one of the robot's end-effectors so they
+  // move with the gripper and are collision-checked at every state and
+  // motion edge.  Each planner instance holds at most one attachment —
+  // calling this method replaces any existing attachment.
+  //
+  // The ``relative_tf`` is a 4x4 row-major isometry expressed in the EE
+  // link frame; the supplied spheres are interpreted in EE frame (after
+  // applying ``relative_tf``).  Sphere format: x, y, z, radius.
+  void attach_ee_spheres(
+      std::size_t ee_index, const std::array<float, 16> &relative_tf_row_major,
+      const std::vector<std::array<float, 4>> &spheres_xyzr) {
+    if (ee_index >= Robot::n_end_effectors) {
+      throw std::invalid_argument(
+          "attach_ee_spheres: ee_index " + std::to_string(ee_index) +
+          " is out of range for robot '" + std::string(Robot::name) +
+          "' (n_end_effectors = " + std::to_string(Robot::n_end_effectors) +
+          ").");
+    }
+    Eigen::Matrix4f m;
+    for (std::size_t r = 0; r < 4; ++r)
+      for (std::size_t c = 0; c < 4; ++c)
+        m(r, c) = relative_tf_row_major[r * 4 + c];
+    Eigen::Transform<float, 3, Eigen::Isometry> tf;
+    tf.matrix() = m;
+
+    vamp::collision::Attachment<float> att(tf);
+    att.ee_index = ee_index;
+    att.spheres.reserve(spheres_xyzr.size());
+    for (const auto &s : spheres_xyzr) {
+      att.spheres.emplace_back(
+          vamp::collision::Sphere<float>{s[0], s[1], s[2], s[3]});
+    }
+    float_env_.attachments = std::move(att);
+    sync_env();
+  }
+
+  bool detach_ee() {
+    if (!float_env_.attachments.has_value()) return false;
+    float_env_.attachments.reset();
+    sync_env();
+    return true;
+  }
+
+  bool has_attachment() const { return float_env_.attachments.has_value(); }
+
+  std::size_t num_end_effectors() const { return Robot::n_end_effectors; }
 
   // ── Constraint API ────────────────────────────────────────────────
   //

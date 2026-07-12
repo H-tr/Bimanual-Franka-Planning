@@ -104,6 +104,37 @@ class OmplVampPlanner:
     def clear_environment(self) -> None:
         """Remove all obstacles from the collision environment."""
         ...
+    def attach_ee_spheres(
+        self,
+        ee_index: int,
+        relative_tf_row_major: Sequence[float],
+        spheres_xyzr: Sequence[Sequence[float]],
+    ) -> None:
+        """Attach a set of spheres to the given end-effector.
+
+        Each planner instance holds at most one attachment; calling this
+        method replaces any prior attachment.  The transform and spheres
+        are expressed in the EE link frame (the sphere positions go
+        through ``relative_tf`` before being posed by the live EE FK).
+
+        Args:
+            ee_index: Index into :meth:`num_end_effectors`.  ``0`` is
+                always the first EE configured for the robot.
+            relative_tf_row_major: 16 floats — a 4x4 isometry in row-major
+                order.
+            spheres_xyzr: Sequence of ``[x, y, z, radius]`` triplets-plus-radius
+                in the EE-relative frame.
+        """
+        ...
+    def detach_ee(self) -> bool:
+        """Drop the current EE attachment, if any. Returns ``False`` if there was none."""
+        ...
+    def has_attachment(self) -> bool:
+        """``True`` if an EE attachment is currently registered."""
+        ...
+    def num_end_effectors(self) -> int:
+        """Number of end-effectors this robot variant exposes for attachment."""
+        ...
     def add_compiled_constraint(
         self,
         so_path: str,
